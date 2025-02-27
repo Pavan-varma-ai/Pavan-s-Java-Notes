@@ -1,0 +1,699 @@
+                                                                                                          23/12/2024
+
+Q) Write a java program to determine the smallest number of coins needed to total 
+86 rupees. Use the denominations provided in the array {1,2,5,10}? 
+ 
+Output: 
+ 	1 coin(s) of 1 rupee(s) 
+ 	1 coin(s) of 5 rupee(s) 
+ 	8 coin(s) of 10 rupee(s) 
+
+
+ex:
+
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		int[] denominations={1,2,5,10};
+		int amount=86;
+
+		//caller method
+		int[] result=findMinimumCoins(denominations,amount);
+
+		for(int i=0;i<result.length;i++)
+		{
+			if(result[i]>0)
+			{
+				System.out.println(result[i]+" coin(s) of "+denominations[i]+" rupee(s)");
+			}
+		}
+	}
+	//callie method
+	public static int[] findMinimumCoins(int[] denominations,int amount)
+	{
+		int[] coinsCount=new int[denominations.length];
+
+		//reading reverse
+		for(int i=denominations.length-1;i>=0;i--)
+		{
+			coinsCount[i]=amount/denominations[i];
+
+			amount = amount % denominations[i];
+		}
+
+		return coinsCount;
+	}
+}
+
+
+Q) Write a java program to insert one element in a given index?
+
+input:
+	arr = 5 8 1 4 7 9 6
+
+	ele = 10 
+
+	index = 4
+
+output:
+	5 8 1 4 10 7 9 6 
+
+
+import java.util.Arrays;
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		int[] arr ={5,8,1,4,7,9,6};
+		int ele = 10;
+		int index = 4;
+
+		arr = Arrays.copyOf(arr,arr.length+1);	
+
+		for(int i=arr.length-1;i>=index;i--)
+		{
+			arr[i]=arr[i-1];
+		}
+		
+		arr[index]=ele;
+
+		//display
+		for(int i:arr)
+		{
+			System.out.print(i+" ");
+		}
+	}
+}
+
+Double Dimensional Array 
+===========================
+Double dimensional array is a combination of rows and columns.
+
+Double dimensional array is used to develop business oriented appliations, gaming applications , matrix type applications.
+
+The main objective of double dimensional array is memory utilization.
+
+Double dimensional array is implemented based on array of arrays approach but not in matrix form.
+
+We can declare double dimensional array as follow.
+
+ex:			rows   cols 
+			    |  | 
+	int[][] arr=new int[3][3];
+
+	Here we can store 9 elements. 
+
+
+Q) Write a java program to display array elements in matrix form?
+
+import java.util.Scanner;
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.println("Enter the rows :");
+		int rows=sc.nextInt();//3
+		
+		System.out.println("Enter the columns :");
+		int cols=sc.nextInt();//3
+
+		int[][] arr=new int[rows][cols];
+
+		//inserting elements 
+		for(int i=0;i<rows;i++)
+		{
+			for(int j=0;j<cols;j++)
+			{
+				System.out.println("Enter the element :");
+				arr[i][j]=sc.nextInt();
+			}
+		}
+
+		//display elements 
+		for(int i=0;i<rows;i++)
+		{
+			for(int j=0;j<cols;j++)
+			{
+				System.out.print(arr[i][j]+" ");
+			}
+			//new line
+			System.out.println();
+		}
+
+	}
+}
+
+
+
+Q) Write a java program to display square of a matrix?
+
+input:
+	1 2 3
+	4 5 6
+	7 8 9
+
+ex:
+
+
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		int[][] arr={
+					{1,2,3},
+					{4,5,6},
+					{7,8,9}
+				};		
+		
+		int rows=arr.length;
+		int cols=arr[0].length;
+
+		for(int i=0;i<rows;i++)
+		{
+			for(int j=0;j<cols;j++)
+			{
+				System.out.print(arr[i][j] * arr[i][j]+" ");
+			}
+			//new line
+			System.out.println();
+		}
+	}
+}
+
+Q) Write a java program to perform sum of diagonal elements?
+
+input:
+	1 2 3
+	4 5 6
+	7 8 9
+
+
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		int[][] arr={
+					{1,2,3},
+					{4,5,6},
+					{7,8,9}
+				};		
+		
+		int rows=arr.length;
+		int cols=arr[0].length;
+
+		int sum=0;
+
+		for(int i=0;i<rows;i++)
+		{
+			for(int j=0;j<cols;j++)
+			{
+				if(i==j)
+				{
+					sum+=arr[i][j];			
+				}
+			}
+		}
+
+		System.out.println(sum);
+	}
+}
+
+Q) Write a java program to perform sum of upper triangle elements?
+
+input:
+	1 2 3
+	4 5 6
+	7 8 9
+
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		int[][] arr={
+					{1,2,3},
+					{4,5,6},
+					{7,8,9}
+				};		
+		
+		int rows=arr.length;
+		int cols=arr[0].length;
+
+		int sum=0;
+
+		for(int i=0;i<rows;i++)
+		{
+			for(int j=0;j<cols;j++)
+			{
+				if(i<j)
+				{
+					sum+=arr[i][j];			
+				}
+			}
+		}
+
+		System.out.println(sum);
+	}
+}
+
+
+Q) Write a java program to perform sum of lower triangle elements?
+
+input:
+	1 2 3
+	4 5 6
+	7 8 9
+
+
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		int[][] arr={
+					{1,2,3},
+					{4,5,6},
+					{7,8,9}
+				};		
+		
+		int rows=arr.length;
+		int cols=arr[0].length;
+
+		int sum=0;
+
+		for(int i=0;i<rows;i++)
+		{
+			for(int j=0;j<cols;j++)
+			{
+				if(i>j)
+				{
+					sum+=arr[i][j];			
+				}
+			}
+		}
+
+		System.out.println(sum);
+	}
+}
+
+
+
+Q) Write a java program to display array elements in spiral form?
+
+input:
+	1 2 3
+	4 5 6
+	7 8 9
+
+output:
+	1 2 3 6 9 8 7 4 5 
+
+
+class Test 
+{
+	public static void main(String[] args) 
+	{
+		int[][] matrix={
+				{1,2,3},
+				{4,5,6},
+				{7,8,9}
+			};
+
+		int rows=matrix.length;
+		int cols=matrix[0].length;
+
+		int top=0;
+		int bottom=rows-1;
+		int left=0;
+		int right=cols-1;
+
+		while(true)
+		{
+			if(left>right)
+			{
+				break;
+			}
+			for(int i=left;i<=right;i++)
+			{
+				System.out.print(matrix[top][i]+" ");	
+			}
+			top++;
+
+			if(top>bottom)
+			{
+				break;
+			}
+			for(int i=top;i<=bottom;i++)
+			{
+				System.out.print(matrix[i][right]+" ");
+			}
+			right--;
+
+			if(left>right)
+			{
+				break;
+			}
+			for(int i=right;i>=left;i--)
+			{
+				System.out.print(matrix[bottom][i]+" ");
+			}
+			bottom--;
+
+			if(top>bottom)
+			{
+				break;
+			}
+			for(int i=bottom;i>=top;i--)
+			{
+				System.out.print(matrix[i][left]+" ");
+			}
+			left++;
+		}
+	
+	}
+}
+
+Multi Dimensional Array
+========================
+Array is said to multi dimensional array if it contains more then two dimensions.
+
+We can declare multi dimensional array as follow.
+
+ex:
+	int[][][] arr=new int[2][3][3];
+
+We can initialize the multi dimensional array as follow.
+
+ex:
+	int[][][] arr={
+			{
+				{1,2,3},
+				{4,5,6},
+				{7,8,9}
+			},
+			{
+				{10,11,12},
+				{13,14,15},
+				{16,17,18}
+			}
+		     };
+
+ex:
+--
+class Test 
+{
+	public static void main(String[] args) 
+	{
+			int[][][] arr={
+			{
+				{1,2,3},
+				{4,5,6},
+				{7,8,9}
+			},
+			{
+				{10,11,12},
+				{13,14,15},
+				{16,17,18}
+			}
+		     };
+
+		for(int i=0;i<arr.length;i++)
+		{
+			for(int j=0;j<arr[i].length;j++)
+			{
+				for(int k=0;k<arr[i][j].length;k++)
+				{
+					System.out.print(arr[i][j][k]+" ");
+				}
+			}
+			//new line 
+			System.out.println();
+		}
+	
+	}
+}
+
+Jagged Array 
+============= 
+Jagged array is also known as array of arrays.
+
+It is a multi dimensional array where each row contains different column size.
+
+ex:
+---
+class Test 
+{
+	public static void main(String[] args) 
+	{
+			int[][] arr={
+				{1,2,3,4,5},
+				{6,7},
+				{8,9,10}
+			};
+
+			for(int i=0;i<arr.length;i++)
+			{
+				for(int j=0;j<arr[i].length;j++)
+				{
+					System.out.print(arr[i][j]+" ");
+				}
+				//new line 
+				System.out.println();
+			}
+	
+	}
+}
+
+Anonynous array
+===============
+Sometimes we will declare an array without name such type of namesless array is called anonymous array.
+
+The main objective of anonymous array is just before instance use.
+
+We can declare anonymous array as follow.
+
+ex:
+	new int[]{10,20,30};
+	new int[][]{{10,20,30},{40,50,60}};
+
+ex:
+----
+
+class Test 
+{
+	public static void main(String[] args) 
+	{
+			sum(new int[]{10,20,30});
+	}
+	public static void sum(int[] arr)
+	{
+		int sum=0;
+		for(int i:arr)
+		{
+			sum+=i;
+		}
+
+		System.out.println(sum);
+	}
+}
+
+ex:
+---
+class Test 
+{
+	public static void main(String[] args) 
+	{
+			System.out.println(sum(new int[]{10,20,30}));
+	}
+	public static int sum(int[] arr)
+	{
+		int sum=0;
+		for(int i:arr)
+		{
+			sum+=i;
+		}
+
+		return sum;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

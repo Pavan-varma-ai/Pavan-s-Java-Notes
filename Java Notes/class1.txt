@@ -1,0 +1,91 @@
+Comments in java
+================
+Comments are created for documentation purpose.
+
+Using comments we can improve readability of our code.
+
+It is highly recommended to use comments in our regular programming.
+
+Diagram: 
+
+Comments are not compiled by the compiler. Hence they won't come in output.
+
+In java, we have two types of comments.
+
+1) Single line comment 
+---------------------
+	It is used to comment a single line.
+	ex:
+		// comment here 
+
+2) Multiple line comment 
+------------------------
+	It is used to comment multiple lines.
+	ex:
+		/*
+			-
+			- comment here 
+			-
+		*/
+
+
+ex:
+---
+//class declaration 
+class Test
+{
+	//main method	
+	public static void main(String[] args)
+	{
+		//variable declaration 
+		int x=10;
+
+		//output statement
+		System.out.println(x);	
+	}
+}
+
+Interview Questions
+===================
+
+Q) what is the difference between JDK,JRE and JVM?
+
+JDK
+----
+JDK is a installable software which consist Java Runtime Environment (JRE), Java Virtual Machine (JVM), compiler (javac), interpreter (java), an archiever (.jar), document generator (javadoc) and other tools needed for java application development.
+
+JRE 
+---
+JRE stands for Java Runtime Environment.
+It provides very good environment to run java applications only.
+
+JVM
+---
+JVM stands for Java Virtual Machine.
+JVM is an interpreter which is used to execute our program line by line procedure.
+
+
+Diagram: class1.2
+
+Q) Is java platform dependent or independent?
+
+Java is a platform independent programming language.
+
+Diagram: class1.3
+
+
+Q) Is JVM platform dependent or independent?
+
+JVM consider as platform dependent.
+
+
+
+
+
+
+
+
+
+
+
+

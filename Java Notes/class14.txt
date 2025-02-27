@@ -1,0 +1,700 @@
+                                                                                               Date:09/12/2024
+
+2) Static block 
+===============
+A static block is used to initialize the static variables.
+
+A static block must and should declare immediately after the class using static keyword but not inside methods and constructors.
+
+A static block will execute at the time of class loading.
+
+We can declare static block as follow.
+
+syntax:
+------
+	//static block 
+	static
+	{
+		-
+		- //set of statements 
+		-
+	}
+
+ex:
+---
+class Test  
+{
+	//static block
+	static 
+	{
+		System.out.println("static-block");
+	}
+
+	public static void main(String[] args) 
+	{
+		System.out.println("main-method");
+	}
+}
+o/p:
+	static-block
+	main-method 
+
+ex:
+--
+class Test  
+{	
+	//instance block
+	{
+		System.out.println("Instance-block");
+	}
+
+	//static block
+	static 
+	{
+		System.out.println("static-block");
+	}
+
+	public static void main(String[] args) 
+	{
+		Test t=new Test();
+		System.out.println("main-method");
+	}
+}
+o/p:
+	static-block
+	Instance-block
+	main-method
+
+ex:
+---
+class Test  
+{	
+	//static variable 
+	static int i;
+
+	//static block
+	static
+	{
+		i=200;
+	}
+
+	public static void main(String[] args) 
+	{
+		System.out.println(i);	//200
+	}
+}
+
+3) Local block 
+---------------
+A local block is used to initialize the local variables.
+
+A local block must and should declare inside methods and constructors.
+
+A local block will execute just like a normal statement.
+
+We can declare local block as follow.
+
+syntax:
+------
+	//local block 
+	{
+		-
+		- //set of statements 
+		-
+	}
+
+ex:
+---
+class Test  
+{	
+	public static void main(String[] args) 
+	{
+		System.out.println("stmt1");
+
+		//local block 
+		{
+			System.out.println("stmt2");
+		}
+
+		System.out.println("stmt3");
+	}
+}
+o/p:
+	stmt1
+	stmt2
+	stmt3
+
+ex:
+---
+class Test  
+{	
+	public static void main(String[] args) 
+	{
+		//local variable 
+		int i;
+
+		//local block
+		{
+			i=300;
+		}
+
+		System.out.println(i);//300
+	}
+}
+
+Q) Can we execute java program without main method?
+
+Yes, Untill Java 6 version it possible to execute java program without main method using static block.But from Java 7 version onwards it is not possible to execute java program without main method.
+
+ex:
+---
+class Test  
+{	
+	//static block 
+	static 
+	{
+		System.out.println("Hello World");
+		System.exit(0);
+	}
+}
+
+	
+Q) What is literal?
+
+A value which is assigned to a variable is called literal.
+
+A value which is not change during the program execution is called literal.
+
+ex:
+
+	int  i = 10;
+         |   |    |___ value of a variable / Literal 
+	 |   |________ variable name / identifier 
+	 |____________ datatype / keyword 
+
+
+Operators
+==========
+Operator is a symbol which is used to perform some operations on operands.
+
+ex:
+	c = a + b ;
+
+	Here a,b and c are operands.
+	Here = and + are operators. 
+
+We have following list of operators in java.
+
+1) Assignment operators 
+
+2) Conditional/Ternary operators 
+
+3) Logical operators 
+
+4) Bitwise operators 
+
+5) Arithmetic operators 
+
+6) Relational operators 
+
+7) Shift operators 
+
+8) Unary operators 
+
+
+1) Assignment operators 
+-------------------------
+ex:
+---
+class Test  
+{	
+	public static void main(String[] args)
+	{
+		int i=10;
+		i=20;
+		i=30;
+		System.out.println(i);//30
+	}
+}
+
+Note:
+----
+	Reinitialization is possible in java.
+
+
+ex:
+---
+class Test  
+{	
+	public static void main(String[] args)
+	{
+		final int i=10;
+		i=20;
+		i=30;
+		System.out.println(i);// C.T.E 
+	}
+}
+Note:
+-----
+	final variables can't be modify 
+
+ex:
+---
+class Test  
+{	
+	public static void main(String[] args)
+	{
+		int i=1,2,3,4,5;
+		
+		System.out.println(i); // C.T.E 
+	}
+}
+Note:
+------
+	We can't initialize more then one value at a time.
+
+ex:
+---
+class Test  
+{	
+	//global variable 
+	static int i=10;
+
+	public static void main(String[] args)
+	{
+		//local variable
+		int i=20;
+
+		System.out.println(i);//20
+	}
+}
+Note:
+	Here priority goes to local variable 
+
+
+ex:
+---
+class Test  
+{	
+	public static void main(String[] args)
+	{
+		int i,j;
+
+		i= j = 10;
+
+		System.out.println(i+" "+j); // 10  10
+	}
+}
+
+
+2) Conditional/Ternary operators 
+---------------------------------
+syntax:
+-------
+	(condition)?value1;value2;
+
+ex:
+---
+class Test  
+{	
+	public static void main(String[] args)
+	{
+		boolean b = (5>2)?true:false;
+
+		System.out.println(b);  // true 
+	}
+}
+
+ex:
+---
+class Test  
+{	
+	public static void main(String[] args)
+	{
+		boolean b = (5>20)?true:false;
+
+		System.out.println(b);  // false
+	}
+}
+
+ex:
+---
+class Test  
+{	
+	public static void main(String[] args)
+	{
+		int i=(5>2)?1:0;
+
+		System.out.println(i);  //1
+	}
+}
+
+ex:
+---
+class Test  
+{	
+	public static void main(String[] args)
+	{
+		String str = (true)?"Welcome":"Bye";
+
+		System.out.println(str);  //Welcome
+	}
+}
+
+ex:
+---
+class Test  
+{	
+	public static void main(String[] args)
+	{
+		char ch=(false)?'T':'F';
+
+		System.out.println(ch);  //F
+	}
+}
+
+Q) Write a java program to find out greatest of two numbers?
+
+import java.util.Scanner;
+class Test  
+{	
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the first number : ");
+		int a=sc.nextInt();
+
+		System.out.println("Enter the second number : ");
+		int b=sc.nextInt();
+
+		//logic 
+		int max = (a>b)?a:b;
+
+		System.out.println("Greatest of two number is ="+max);
+	}
+}
+
+
+Q) Write a java program to find out greatest of three numbers?
+
+import java.util.Scanner;
+class Test  
+{	
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the first number : ");
+		int a=sc.nextInt();
+
+		System.out.println("Enter the second number : ");
+		int b=sc.nextInt();
+
+		System.out.println("Enter the third number : ");
+		int c=sc.nextInt();
+
+		//logic 
+		int max = (a>b)?((a>c)?a:c):((b>c)?b:c);
+
+		System.out.println("Greatest of three number is ="+max);
+	}
+}
+
+3) Logical operators 
+----------------------
+
+i) logical AND operator (&&)
+----------------------------
+A logical AND operator deals with boolean values either true or false.
+
+Truth table 
+------------
+T	T	= T
+T	F	= F 
+F	T	= F 
+F	F	= F 
+
+ex:
+---
+class Test  
+{	
+	public static void main(String[] args)
+	{
+		System.out.println(true && true); // true 
+		
+		System.out.println(true && false); // false 
+
+		System.out.println(false && true); // false 
+
+		System.out.println(false && false); // false
+ 	}
+}
+
+ex:
+---
+class Test  
+{	
+	public static void main(String[] args)
+	{
+		boolean b = (5>2) && (6<10);
+
+		System.out.println(b); // true 
+ 	}
+}
+
+ex:
+---
+class Test  
+{	
+	public static void main(String[] args)
+	{
+		boolean b = true && true && false;
+
+		System.out.println(b); // false
+ 	}
+}
+
+ex:
+---
+class Test  
+{	
+	public static void main(String[] args)
+	{
+		String str = ((5>20) && (10>6))?"Hi":"Thanks";
+
+		System.out.println(str); // Thanks
+ 	}
+}
+
+ii) Logical OR operator (||) 
+----------------------------
+Logical OR operator deals with boolean values either true or false.
+
+Truth table 
+-----------
+T	T	= T 
+T	F	= T
+F	T	= T 
+F	F	= F 
+
+ex:
+---
+class Test  
+{	
+	public static void main(String[] args)
+	{
+		System.out.println(true || true); // true 
+		System.out.println(true || false ); // true
+		System.out.println(false || true); // true
+		System.out.println(false || false ); // false
+ 	}
+}
+
+ex:
+---
+class Test  
+{	
+	public static void main(String[] args)
+	{
+		boolean b = (5>20) || (6<2);
+		
+		System.out.println(b); // false 
+ 	}
+}
+
+ex:
+---
+class Test  
+{	
+	public static void main(String[] args)
+	{
+		boolean b = (5>2) || (6<2);
+		
+		System.out.println(b); // true 
+ 	}
+}
+
+ex:
+---
+class Test  
+{	
+	public static void main(String[] args)
+	{
+		boolean b = (10 == 10) || false && (5>2);
+
+		System.out.println(b);// true 
+ 	}
+}
+
+iii) Logical NOT operator (!)
+------------------------------
+Logical NOT operator deals with boolean values either true or false.
+
+ex:
+--
+class Test  
+{	
+	public static void main(String[] args)
+	{
+		boolean b = !(5>2);
+
+		System.out.println(b);//false
+ 	}
+}
+
+ex:
+---
+class Test  
+{	
+	public static void main(String[] args)
+	{
+		boolean b = !(5>20);
+
+		System.out.println(b);//true
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+

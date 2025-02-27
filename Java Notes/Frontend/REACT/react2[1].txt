@@ -1,0 +1,244 @@
+
+                                                                                                            07/02/2025
+JSX
+=====
+JSX stands for Java Script XML.
+
+JSX allows us to write HTML in javascript.
+
+JSX elements contain tag name, attribute and children.
+
+JSX is not necessity to develop react applications instead we can use Babel.
+
+JSX makes our code simple and elegant.
+
+JSX internally converts to pure javascript which is understandable by browser.
+
+
+JSX elements 
+=============
+JSX elements allow us to write HTML elements in javascript and insert the elements to DOM without using createElement() or appendChild() method. 
+
+ex:
+----
+	JSX
+	----
+		<h1> Heading Tag </h1>
+ 
+	Babel
+	-----
+		React.createElement("h1",null,"Heading Tag");
+
+		Here 
+		h1 is a tag name.
+		null is a optional attribute	
+		Heading Tag is a children
+
+
+ex:
+---
+	JSX
+	----
+		<div>
+			<h1>Heading Tag</h1>
+		</div>
+
+	Babel
+	-----
+		React.createElement("div",null,
+				React.createElement("h1",null,"Heading Tag"));
+
+
+ex:
+----
+	JSX
+	----
+		<h1 id="myId"> Heading Tag </h1>
+
+	Babel
+	------
+		React.createElement("h1",{id:"myId"},"Heading Tag");
+
+ex:
+----
+	JSX
+	----
+		<h1 className="myClass"> Heading Tag </h1>
+
+	Babel
+	-----
+		React.createElement("h1",{className:"myClass"},"Heading Tag");		
+
+
+ex:
+----
+	JSX
+	----
+		<h1 id="myId" className="myClass"> Heading Tag </h1>
+
+	Babel
+	-----
+		React.createElement("h1",{id:"myId",className:"myClass"},"Heading Tag");	
+
+JSX Expression 
+==============
+JSX allows to represent expression in curly braces i.e {}.
+
+JSX expression can be a react variable, operation  or any javascript valid expression.
+
+JSX expression executes the expresion and gives the result.
+
+ex:
+	var i=10;
+	{i}
+
+ex:
+	{10*20}
+
+ex:
+	{Math.pow(5,3)}
+
+
+NPM
+====
+NPM stands for Node Package Manager.
+
+It is a integrated tool for NodeJs.
+
+It is used to download node dependencies or packages.
+
+To download or install node dependencies/packages we need to use below command.
+ex:
+	npm install -g  <package_name>;
+
+All node modules will install inside "node_modules" folder.
+
+
+
+Steps to setup npm for react applications
+==========================================
+step1:
+-----
+	Download and Install nodejs.
+	ex:
+		https://nodejs.org/en/download
+
+step2:
+------
+	Copy npm and nodejs directory.
+	ex:
+		C:\Users\DELL\AppData\Roaming\npm
+		C:\Program Files\nodejs
+
+step3:
+-----
+	Paste npm and nodejs directory in environmental variables.
+	ex:	
+		Right click to This PC --> properties --> Advanced system settings -->
+		environmental variables --> user variable --> click to new button -->
+		variable name : Path 
+		variable value : C:\Users\DELL\AppData\Roaming\npm;C:\Program Files\nodejs;
+		-->ok-->ok-->ok.
+step4:
+------
+	Check environmental setup done perfectly or not.
+	ex:
+		cmd>  node -v 
+		cmd>  npm -v 
+
+
+Steps to develop first React Application
+========================================
+step1:
+------
+	Make sure NodeJS and NPM setup done perfectly.
+
+step2:
+------
+	Download and Install VSC(Visual Studio Code) Editor.
+	ex:
+		https://code.visualstudio.com/
+
+
+step3:
+------
+	Create a  reactprojects folder inside any drive.
+
+step4:
+------
+	Open the command prompt from reactprojects folder.
+
+step5:
+------
+	Open VSC editor by using below command.
+	ex:
+		reactprojects> code  .  
+
+step6:
+------
+	Create a react application i.e myapp1.
+	ex:
+		reactprojects> npx  create-react-app  myapp1 
+
+
+step7:
+----
+	Switch to the project.
+	ex:
+		reactprojects> cd  myapp1
+
+step8:
+-----
+	Install web-vitals dependency.
+	ex:
+		reactprojects/myapp1> npm install web-vitals	
+	
+step9:
+-------
+	Run react application.
+	ex:
+		reactprojects/myapp1> npm start 
+
+
+step10:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

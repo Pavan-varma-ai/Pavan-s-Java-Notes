@@ -1,0 +1,503 @@
+                                                                                                    03/01/2025
+
+Q) What is the difference between Java and JavaScript?
+
+Java						JavaScript 
+-----------					-------------
+It is a non-scripting language.			It is a scripting language.
+
+It is a strongly typed checking language.	It is a weakly typed checking language.
+
+It can be run individually.			It can't run individually.	
+
+It does not required browser window for 	It requires browser window for execution.
+execution.
+
+It is a object oriented programming language.	It is a object based programming language.
+
+It is complex language.				It is easy language.	
+
+
+History of javaScript 
+======================
+Original name of JavaScript is a LiveScript.
+
+LiveScript was developed by Netscape Corporation in the year of 1990's.
+
+In 1995, A popular scientist of Netscape Corporation renamed LiveScript to JavaScript.
+
+JavaScript is a loosely typed checking language.
+
+Offical name of JavaScript is ECMA script.
+
+ECMA stands for Europeon Computer Manufacturer Association.
+
+
+Advantages of javaScript 
+========================
+1) It is used to develop interactive web pages. 
+
+2) It display dialog boxes and pop-up boxes.
+
+3) It is used to add dynamic content in web page.
+
+4) It is a weakly typed checking languag.
+
+5) It is used to perform client side form validation.
+
+6) It supports drag and drop menu.
+
+7) It supports date and time.
+
+8) It supports cookies.
+
+9) It supports objects like Date,String,RegEx and etc.
+
+and etc.
+
+JavaScript Syntax
+==================
+<script type="text/javascript" language="javascript">
+	-
+	- stmt1;
+	- stmt2;
+	- 
+</script>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+</head>
+<body>
+       <script type="text/javascript" language="javascript">
+            document.write("Welcome to JavaScript");
+       </script>
+</body>
+</html>
+
+Note:
+	Here  type and language attributes are optional.
+	Here semicolon is optional.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+</head>
+<body>
+       <script >
+            document.write("Welcome to JavaScript")
+       </script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+</head>
+<body>
+       <script >
+            document.writeln("Welcome to JavaScript");
+            document.writeln("This is Niyaz Sir class");
+       </script>
+</body>
+</html>
+
+We can't mix markup language with scripting language.
+ex:
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+</head>
+<body>
+       <script >
+            document.writeln("Welcome to JavaScript");
+           <br>
+            document.writeln("This is Niyaz Sir class");
+       </script>
+</body>
+</html>
+
+To overcome above limitatio we need to use below code.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+</head>
+<body>
+       <script >
+            document.writeln("Welcome to JavaScript");
+            document.writeln("<br>");
+            document.writeln("This is Niyaz Sir class");
+       </script>
+</body>
+</html>
+
+If any document contains HTML , CSS and JavaScript then it is called DHTML.
+DHTML stands for Dynamic Hypertext Markup Language.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+</head>
+<body>
+       <script >
+            document.writeln("<h1 style='color:blue;'>Welcome to JavaScript</h1>");
+            document.writeln("<br>");
+            document.writeln("<p style='font-size:40px;background-color:cyan;'>This is Niyaz Sir class</p>");
+       </script>
+</body>
+</html>
+
+JavaScript Engine 
+==================
+JavaScript engine allows to execute javascript code in a browser window.
+
+It is used to convert user understandable scripting language to machine understandable scripting language.
+
+By default every browser contains javascript engine.
+
+ex:
+	Browser 		JavaScript Engine 
+	----------		----------------
+	Chrome			V8 engine 
+	Firefox			spidermonkey 
+	Edge			Chakra 
+	and etc.	
+
+
+
+JavaScript comments
+====================
+Comments are created for documentation purpose.
+
+Comments are used to improve the readability of our code.
+
+In javascript, we have two types of comments.
+
+1) Single line comment
+-----------------
+	It is used to comment a single line.
+	ex:
+		// comment here  
+
+2) Multiple line comment 
+-------------------------
+	It is more convenient because we can comment a single line as well as multiple lines.
+	ex:
+		/*
+			-
+			-
+			-
+		*/
+
+Output statements in javascript
+================================
+Whenever we want to display any userdefined statements or data then we need to use output statement.
+
+We have two types of output statements in javascript.
+
+1) document.writeln()
+
+2) console.log() 		
+
+1) document.writeln()
+---------------------
+It is used to display the output on browser window.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+</head>
+<body>
+       <script >
+            document.writeln("Welcome to Javascript");
+       </script>
+</body>
+</html>
+
+2) console.log() 
+--------------
+It is used to display the output on browser console.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+</head>
+<body>
+       <script >
+            console.log("Welcome to Javascript");
+       </script>
+</body>
+</html>
+
+JavaScript variables 
+====================
+A name which is given to a memory location is called variable.
+
+Purpose of variable is used to store the data.
+
+In javascript, variables are also known as identifiers.
+
+We have same rules for variables as we have rules for identifiers.
+
+Rules to declare a variable
+----------------------------
+Rule1:
+------
+	Variable must and should starts with alphabet, underscore or dollar symbol 
+	but not with digit.
+	ex:
+		var a123; //valid 
+		var _abcd; //valid 
+		var $alary; //valid 
+		var 1abdcd; //invalid 
+
+Rule2:
+-----
+	Every variable is a case sensitive.
+	ex:
+		int number;
+		int NUMBER;
+		int NumBer;	
+
+In javascript, we have two types of variables.
+
+1) Local variables 
+
+2) Global variables 
+
+1) Local variables 
+------------------
+If we declare a variable inside the function or a block is called local variable.
+
+Local variable we can access with in the function only. 
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+</head>
+<body>
+       <script >
+            function f1()
+            {
+                //local variable 
+                var i=10;
+
+                document.writeln(i);
+            }
+
+            //call 
+            f1();
+       </script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+</head>
+<body>
+       <script >
+            function f1()
+            {
+                //local variable 
+                var i=10;
+
+                document.writeln(i);
+            }
+            function f2()
+            {
+                document.writeln(i); // invalid 
+            }
+
+            //call 
+            f1();
+            f2();
+       </script>
+</body>
+</html>
+
+2) Global variables 
+-------------------
+If we declare any variable outside the function or a block is called global variable.
+
+Global variable we can access within the function and outside the function.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+</head>
+<body>
+       <script >
+            //global variable 
+            var i=100;
+
+            function f1()
+            {
+                document.writeln(i); 
+            }
+
+            //calling 
+            f1();
+       </script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+</head>
+<body>
+       <script >
+            //global variable 
+            var i=100;
+
+            function f1()
+            {
+                document.writeln(i); 
+            }
+
+            function f2()
+            {
+              document.writeln(i);
+            }
+
+            //calling 
+            f1();
+            f2();
+       </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

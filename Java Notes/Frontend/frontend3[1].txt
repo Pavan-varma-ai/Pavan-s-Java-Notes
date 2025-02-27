@@ -1,0 +1,310 @@
+                                                                                                                     Date: 11/12/2024
+
+
+
+font tag 
+=========
+A font tag is used for text size , font family and color of a text.
+
+HTML5 does not support <font> tag.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<font color="blue" size="30" face="cursive"> 
+			Welcome to HTML class
+		</font>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<font color="blue" size="30" face="monospace"> 
+			Welcome to HTML class
+		</font>
+	</body>
+</html>
+
+Nested Tags
+===========
+We can declare nested tags in HTML.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<center>
+			<font color="blue">
+				<p>Welcome to HTML class</p>
+			</font>
+		</center>
+	</body>
+</html>
+
+Phrase Tags 
+============
+Phrase tags are special purpose tags.
+
+The defined special meaning to the block of text or a code.
+
+We have following list of phrase tags.
+
+1) Abbreviation - <abbr> 
+
+2) Quote  - <q> 
+
+3) Address - <address>	
+
+4) Keyboard - <kbd>
+
+5) Code - <code>
+
+6) Strike - <strike> or <s> 
+
+and etc.
+
+1) Abbreviation - <abbr> 
+------------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<p>
+		<abbr title="Hypertext Markup Language"> HTML </abbr> is widely used language on web to develop web pages
+		</p>
+	</body>
+</html>
+
+
+2) Short quote  - <q>
+-----------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<p>
+		 <q>HTML is widely used language on web to develop web pages</q>
+		</p>
+	</body>
+</html>
+
+3) Address - <address>	
+----------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<address>
+			H No 7-1-618/NG/302,
+			Flat No 302, Aditya Enclave, Ameerpet, Hyderabad, Telangana, 500016
+			Land Mark: Beside Ameerpet Metro Station
+		</address>
+	</body>
+</html>
+
+4) Keyboard - <kbd>
+---------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<p>To copy press CTRL+ C </p>
+
+		<p>To copy press <kbd> CTRL+ C </kbd> </p>
+
+	</body>
+</html>
+
+5) Code - <code>
+-----------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<code>
+			System.out.println("Hello World!");
+		</code>
+	</body>
+</html>
+
+6) Strike - <strike> or <s>
+---------------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<s>HTML is a database language</s>
+		<br>
+		<strike>HTML is a database language</strike>
+
+	</body>
+</html>
+
+
+Q) Types of tags in HTML?
+
+We have two types of tags in HTML.
+
+1) Paired Tags 
+---------------
+Tag which contains opening tag and closing tag is called paired tag.
+
+Paired tags are also known as container tags.
+
+ex:
+	<html>, <head>, <body> , <h1> , <p> and etc.
+
+
+2) Unpaired Tags 
+----------------
+Tags which contains only opening tag and does not have any closing tag is called unpaired tag.
+
+Unpaired tags are also known as empty tags.
+
+ex:
+	<link>, <meta> , <br> , <hr> and etc.
+
+
+HTML images
+===========
+A <img> tag is used to display the images in a web page.
+
+It is open tag and it contains only attributes.
+
+It does not have any closing tag.
+
+A <img> tag contains following attributes.
+
+ex:
+	attribute 	description 
+	---------	------------
+	src		It is used to locate a file.
+	width		It is used to set the width of the image.
+	height		It is used to set the height of the image.
+	alt		It is used to display alternate message if image is not found.
+
+We have following list of images.
+ex:
+	Format 		Abbreviation		
+	------		-------------
+	JPEG		Joint Photographic Expert Group
+	PNG		Portable Network Graphics
+	SVG		Scalable Vector Graphics
+	GIF		Graphical Interchange Format
+	and etc.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<img src="images/james.jpg" width="200px" height="200px"/>
+
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<img src="images/jame.jpg" width="200px" height="200px"
+				alt="No Image Found"/>
+
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/858a38aa-2988-43fd-98fe-882711aeb6e4/d6ftdgs-d3aeacef-5d23-4bb3-ac5e-1dc548ee96e2.jpg/v1/fill/w_1024,h_1386,q_75,strp/james_gosling_by_haniforep_d6ftdgs-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTM4NiIsInBhdGgiOiJcL2ZcLzg1OGEzOGFhLTI5ODgtNDNmZC05OGZlLTg4MjcxMWFlYjZlNFwvZDZmdGRncy1kM2FlYWNlZi01ZDIzLTRiYjMtYWM1ZS0xZGM1NDhlZTk2ZTIuanBnIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.EHgcE5GtxO4sGd0BHXzneSAJiGkmXhcidxRWBSO7uGo" width="200px" height="200px"
+				alt="No Image Found"/>
+
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

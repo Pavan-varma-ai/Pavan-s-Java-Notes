@@ -1,0 +1,416 @@
+
+
+                                                                                                                           13/02/2025
+Event Handling in React 
+========================
+Action to which javascript response is called event.
+
+Handling event on react elements is similar to handling event on DOM elements.
+
+ex:
+	JavaScript Event 
+	-----------------
+		<button onclick="f1()"> clickme </button>
+
+	React Event 
+	-----------
+		> function component
+		ex:
+			<button onClick={handleClick}> clickme </button>
+ 
+		> class component 
+		ex:
+			<button onClick={this.handleClick}> clickme </button>
+	
+Event Handling in Function component
+=====================================
+	
+Project structure 
+----------------
+myapp9
+|
+|---node_modules
+|
+|---public
+	|
+	|---index.html
+	|---favicon.ico
+	|---manifest.json 
+|-----src
+|	|
+	|---index.js 
+	|---index.css
+	|
+	|---App.js 
+	|---App.css
+	|---App.test.js
+|
+|---package.json
+|---READMD.md
+
+step1:
+------
+	Open the VSC editor.
+	ex:
+		reactprojects> code . 
+
+
+step2:
+------
+	Create a react application in VSC terminal i.e myapp9.
+	ex:
+		npx  create-react-app myapp9
+
+step3:
+------
+	Switch to the react project.
+	ex:
+		cd  myapp9
+
+step4:
+-----
+	Install web-vitals using npm command.
+	ex:
+		npm install web-vitals
+
+step5:
+-----
+	Run the react application.
+	ex:
+		npm start 
+
+step6:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000/
+
+step7:
+-----
+	Goto App.js file and add below code.
+
+App.js 
+-------
+import React from 'react'
+
+function App()
+{
+  const handleClick=()=>{
+    console.log("You have clicked")
+  }
+
+  return (
+    <button onClick={handleClick}> clickMe </button>
+  )
+}
+
+export default App
+
+or
+
+App.js 
+------
+import React from 'react'
+
+function App()
+{
+
+  const handleClick=(e)=>{
+      e.preventDefault();
+  }
+
+  return (
+    <a href="http://www.facebook.com/login" onClick={handleClick}> facebook </a>
+  )
+}
+
+export default App
+
+
+
+Event Handling in class component
+=====================================
+	
+Project structure 
+----------------
+myapp9
+|
+|---node_modules
+|
+|---public
+	|
+	|---index.html
+	|---favicon.ico
+	|---manifest.json 
+|-----src
+|	|
+	|---index.js 
+	|---index.css
+	|
+	|---App.js 
+	|---App.css
+	|---App.test.js
+|
+|---package.json
+|---READMD.md
+
+step1:
+------
+	Open the VSC editor.
+	ex:
+		reactprojects> code . 
+
+
+step2:
+------
+	Create a react application in VSC terminal i.e myapp9.
+	ex:
+		npx  create-react-app myapp9
+
+step3:
+------
+	Switch to the react project.
+	ex:
+		cd  myapp9
+
+step4:
+-----
+	Install web-vitals using npm command.
+	ex:
+		npm install web-vitals
+
+step5:
+-----
+	Run the react application.
+	ex:
+		npm start 
+
+step6:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000/
+
+step7:
+-----
+	Goto App.js file and add below code.
+
+App.js 
+-------
+import React, { Component } from 'react'
+
+export default class App extends Component 
+{
+
+  handleClick=()=>{
+    console.log("You have clicked")
+  }
+
+  render() 
+  {
+    return (
+      <button onClick={this.handleClick}> clickMe </button>
+    )
+  }
+}
+
+Update the state using react event handling
+============================================
+To update the state using react event handling we need to use setState() function.
+
+Project structure 
+----------------
+myapp10
+|
+|---node_modules
+|
+|---public
+	|
+	|---index.html
+	|---favicon.ico
+	|---manifest.json 
+|-----src
+|	|
+	|---index.js 
+	|---index.css
+	|
+	|---App.js 
+	|---App.css
+	|---App.test.js
+|
+|---package.json
+|---READMD.md
+
+step1:
+------
+	Open the VSC editor.
+	ex:
+		reactprojects> code . 
+
+
+step2:
+------
+	Create a react application in VSC terminal i.e myapp10.
+	ex:
+		npx  create-react-app myapp10
+
+step3:
+------
+	Switch to the react project.
+	ex:
+		cd  myapp10
+
+step4:
+-----
+	Install web-vitals using npm command.
+	ex:
+		npm install web-vitals
+
+step5:
+-----
+	Run the react application.
+	ex:
+		npm start 
+
+step6:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000/
+
+step7:
+-----
+	Goto App.js file and add below code.
+
+App.js 
+-------
+import React, { Component } from 'react'
+
+export default class App extends Component 
+{
+  state={
+    rollno:101,
+    name:"Alan"
+  }
+
+  handleClick=(e)=>{
+      e.preventDefault();
+      this.setState({rollno:501,name:"Lisa"});
+  }
+
+  render() 
+  {
+    return (
+      <>
+          <h1>Roll No :{this.state.rollno}</h1>
+          <h1>Name :{this.state.name}</h1>
+
+          <button onClick={this.handleClick}> update </button>
+      </>
+    )
+  }
+}
+
+
+Interview Questions 
+==================
+
+Q) What is the difference between props and state?
+
+props						state
+-----------					--------
+It is read-only.				It is updatable.
+
+It is a immutable.				It is mutable.
+
+Stateless component can have props.		Statefull component can have state.
+
+We can share the props from one component 	State holds information about component.
+to another component as an argument.
+
+Child components can access props.		It is private and can't access by child.
+
+
+
+Phases of React Component 
+===========================
+We have four phases of react component.
+
+1) Mounting 
+-----------
+Mounting is a process of creating an element and inserting it in a DOM tree.
+
+
+2) Updating 
+-------------
+Updating is a process of changing state or props of a component and update changes to nodes already existing in the DOM.
+
+3) Error Handling 
+-------------------
+Error Handling used when there is a error during rendering ,in lifecycle
+method or in the constructor of any child component.
+
+
+4) Unmounting 
+---------------
+Unmounting is a process of removing elements from the DOM.
+In general it will clear the reserved memory.
+
+
+Diagram: react6.1
+
+
+Q) Explain react life cycle methods of mounting phase?
+
+We have four life cycle methods of mounting phase.
+
+1) constructor()
+2) getDerivedStateFromProps(props,state)
+3) render()
+4) componentDidMount() 
+
+
+Q) Explain react life cycle methods of updating phase?
+
+We have five life cycle methods of mounting phase.
+
+1) getDerivedStateFromProps(props,state)
+2) shouldComponentUpdate()
+3) render()
+4) getSnapshotBeforeUpdate()
+5) componentDidUpdate()
+ 
+
+
+Q) Explain react life cycle methods of unmounting phase?
+
+We have one life cycle methods of mounting phase.
+
+1) componentWillUnmount()
+
+
+Note:
+-----
+All react life cycle methods we can use inside class component.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

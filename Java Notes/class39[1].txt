@@ -1,0 +1,258 @@
+                                                                                                                        09/01/2025
+
+
+Garbage Collector 
+=================
+Garbage collector is a deamon thread which is used to destroy unused or useless objects from java.
+
+There are two ways to call garbage collector in java.
+
+1) System.gc() 
+
+2) Runtime.getRuntime().gc() 
+
+ex:
+---
+class Test  
+{
+	//instance variable 
+	int i=10;
+
+	public static void main(String[] args) 
+	{
+		Test t=new Test();
+		System.out.println(t.i); // 10 
+
+		t=null;		
+		System.gc();
+	}
+
+	public void finalize()
+	{
+		System.out.println("finalize method called");
+	}
+}
+
+ex:
+---
+class Test  
+{
+	//instance variable 
+	int i=10;
+
+	public static void main(String[] args) 
+	{
+		Test t=new Test();
+		System.out.println(t.i); // 10 
+
+		t=null;		
+		Runtime.getRuntime().gc();
+	}
+
+	public void finalize()
+	{
+		System.out.println("finalize method called");
+	}
+}
+
+ex:
+---
+import java.util.Scanner;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=null;
+		try
+		{
+			sc=new Scanner(System.in);
+			System.out.println("Enter the first number :");
+			int a=sc.nextInt();
+			System.out.println("Enter the second number :");
+			int b=sc.nextInt();
+			System.out.println("Division of two numbers is ="+a/b);
+			
+		}
+		catch (ArithmeticException ae)
+		{
+			ae.printStackTrace();
+		}
+		finally
+		{
+			sc.close();
+		}
+	}
+}
+
+Try with Resources
+===================
+A try-with-resources introduced in Java 7 version.
+
+The try -with-resources statement is a try statement that declares one or more resources.
+
+The try -with-resources statement ensures that each resource is closed at the end of the statement.
+
+ex:
+---
+import java.util.Scanner;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		try(Scanner sc=new Scanner(System.in);)
+		{
+			
+			System.out.println("Enter the first number :");
+			int a=sc.nextInt();
+			System.out.println("Enter the second number :");
+			int b=sc.nextInt();
+			System.out.println("Division of two numbers is ="+a/b);
+			
+		}
+		catch (ArithmeticException ae)
+		{
+			ae.printStackTrace();
+		}
+		
+	}
+}
+
+throw statement
+================
+Sometimes we will create exception objects explicitly and handover to JVM manually by using throw statement.
+
+ex:
+	throw new ArithmeticException("don't divide by zero");
+
+ex:
+---
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		System.out.println(10/0);
+	}
+}
+Here exception object is created and handover to JVM by main method.
+
+ex:
+---
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		throw new ArithmeticException("don't divide by zero");
+	}
+}
+
+
+throws statement 
+================
+If any checked exception raised in our program we must and should handle that exception by using try and catch block or by using throws statement.
+
+ex:
+---
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		try
+		{
+			Thread.sleep(4000);
+			System.out.println("Welcome to Java");
+		}
+		catch (InterruptedException ie)
+		{
+			ie.printStackTrace();
+		}
+	}
+}
+
+
+ex:
+---
+class Test  
+{
+	public static void main(String[] args)throws InterruptedException 
+	{
+			Thread.sleep(6000);
+			System.out.println("Welcome to Java");
+	}
+}
+
+
+2) Userdefined exceptions 
+==========================
+Exceptions which are created by the programmer based on the application requirements are called userdefined exceptions.
+
+ex:
+	NoPracticeException 
+	NoJobException 
+	TooYoungException 
+	TooOldException 
+	
+ex:
+---
+import java.util.Scanner;
+class TooYoungException extends RuntimeException 
+{
+	TooYoungException(String s)
+	{
+		super(s);
+	}
+}
+class TooOldException extends RuntimeException 
+{
+	TooOldException(String s)
+	{
+		super(s);
+	}
+}
+class Test  
+{
+	public static void main(String[] args)
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the age :");
+		int age=sc.nextInt();
+
+		if(age<18)
+			throw new TooYoungException("U r not eligible to vote");
+		else
+			throw new TooOldException("U r eligible to vote");
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

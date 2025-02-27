@@ -1,0 +1,94 @@
+
+                                                                                                                   06/02/2025
+ReactJS 
+========
+It is a declarative, efficient and flexible javascript library that is used to develop frontend applications and User interfaces.
+
+It is open source, component based javascript library responsible only for view layer of the application.
+
+It is developed by Jordan Walke who was a scientist of Facebook.
+
+It is initially developed and maintained by Facebook and later they have used in their own products like whatsapp and instagram.
+
+The latest version of reactjs is v19.0.0.
+
+The official website for react is https://www.react.dev.
+
+It is used to create reusable components.
+
+A component is a building block of react application.
+
+
+Advantages of ReactJS 
+=====================
+
+1) Simple to learn and simple to use 
+
+2) It is used to develop reusable components.
+
+3) It supported by all major browsers.
+
+4) It supports one way data binding.
+
+5) Good documentation and community support.
+
+6) It supports virtual DOM.
+
+
+
+
+Q) What is the difference between angular and react?
+
+Angular						React
+-------------------				---------------------
+It is a product of Google.			It is a product of Facebook.
+
+It is developed in Oct,2015.			It is developed in May,2013.
+
+It is a javascript framework that is used	It is a frontend javascript library responsible only
+to develop web and mobile applications.		for view layer of the application.
+
+It supports two way data binding.		It supports one way data binding.
+
+It supports traditional DOM.			It supports virutal DOM.
+
+It is used to develop rich featured 		It is used to develop Single Page Applications (SPA).
+applications.					
+
+Typescript language is used.			JSX language is used.	
+
+Jasmine and Karma is used as a testing 		Jest and Enzyme is used as a testing frameworks	
+frameworks.
+
+It uses 4200 port number.			It uses 3000 port number.
+
+List of companies are using angular are 	List of companies are using reactjs are 
+ex:						ex:
+	paypal						facebook
+	jetblue 					whatsapp 
+	gmail 						instagram 
+	Netflix 					Shopify
+	Freelancer 					Tesla 
+	and etc.					and etc
+
+
+How ReactJS works?
+===================
+Diagram: react1.1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

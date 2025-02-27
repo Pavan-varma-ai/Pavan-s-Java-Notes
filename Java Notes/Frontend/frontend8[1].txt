@@ -1,0 +1,220 @@
+                                                                                                               Date:19/12/2024
+
+Graphics in HTML
+================
+There are two ways to draw the graphics in HTML.
+
+1) SVG 
+
+2) CANVAS 
+
+1) SVG 
+--------
+SVG stands for Scalable Vector Graphics.
+
+It is used to draw two dimensional vector based graphics in HTML.
+
+World Wide Web Consortium (W3C) prefers SVG technology to draw vector based graphics.
+
+A <svg> element is a container tag.
+
+A <svg> element contains many methods to draw line, circle, rectangle, polygon, graphic images and etc.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+			<svg style="border:2px solid black">
+				<circle cx="150px" cy="70px" r="50px"
+					fill="#FFFF00" stroke="#FF0000" stroke-width="5px"/>
+			</svg>
+	</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+			<svg style="border:2px solid black">
+				<rect x="50px" y="30px" width="200px" height="100px"
+				fill="#FFFF00" stroke="#00ff00" stroke-width="3px"/>
+			</svg>
+	</body>
+</html>
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+			<svg style="border:2px solid black; height:250px;">
+				<polygon points="100,10 40,198 190,78 10,78 160,198"
+				fill="#00ff00" stroke="#000"/>
+			</svg>
+	</body>
+</html>
+
+2) CANVAS 
+----------
+It is used to draw vector graphics via javascript.
+
+A <canvas> tag introduced in HTML5.
+
+A <canvas> element is container tag.
+
+A <canvas> element contains many methods to draw line, circle , rectangle, graphic images, text and etc.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+			<canvas style="border:2px solid black;" id="myId">
+			
+			</canvas>
+			
+			<script>
+				var context = document.getElementById('myId');
+				var c = context.getContext("2d");
+				c.moveTo(0,0);
+				c.lineTo(800,400);
+				c.stroke();
+			</script>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+			<canvas style="border:2px solid black;" id="myId">
+			
+			</canvas>
+			
+			<script>
+				var context = document.getElementById('myId');
+				var c = context.getContext("2d");
+				c.beginPath();
+				c.arc(150, 70, 40, 0, 2 * Math.PI);
+				c.stroke();
+			</script>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+			<canvas style="border:2px solid black;" id="myId">
+			
+			</canvas>
+			
+			<script>
+				var context = document.getElementById('myId');
+				var c = context.getContext("2d");
+				c.font = "30px Serif";
+				c.fillText("Hello World", 50, 70);
+			</script>
+	</body>
+</html>
+
+
+Q) What is the difference between HTML and HTML5?
+
+HTML						HTML5
+------						------------
+A <!DOCTYPE> represent HTML document.		A <!DOCTYPE html> represent HTML5 document.
+
+It is bit slow.					It is more faster because it is light weight.
+
+It is inflexible for the developer.		It is flexible for the developer.
+
+It is less mobile friendly.			It is more mobile friendly.
+
+It does not support drag and drop effects.	It supports drag and drop effects.
+
+We can draw vector graphics using technologies	We can draw vector graphics using internal  
+like silver light, adobe flash, VML and etc.	technologies like SVG and CANVAS.
+
+It does not allow javascript to execute.	It allows javascript to execute internally with 
+						the help of javascript web work API.
+
+Shapes like circle, rectangle, polygon and etc	Shapes like circle, rectangle, polygon and etc
+is not easy to draw.				is easy to draw.
+
+We can play audio or video with help of flash	We can play audio or video with the help of 
+player.						<audio> and <video> tag.
+
+It can't handle inaccurate syntax.		It can handle inaccurate syntax.
+
+
+How our HTML document execute in a browser window
+==================================================
+Diagram: frontend8.1
+
+HTML parse will parse the data from HTML document and give it to DOM.
+
+DOM stands for Document Object Model.
+
+DOM is a tree node structure where document is a root node.
+
+Finally tree node structure will execute in a browser window.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,908 @@
+                                                                                                                             28/12/2024
+
+
+CSS transition property
+=======================
+CSS transition property allows us to change property value smoothly , over a given duration.
+
+To see the effects on an element ,we need to use mouse over to the element.
+
+We have following properties in CSS transition.
+ex:
+	transition-delay
+	transition-duration
+	transition-property
+	transition-timing-function
+	transitiond
+
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+  <style>
+      div
+      {
+          width:200px;
+          height:200px;
+          background-color: #FF0000;
+          box-sizing: border-box;
+          transition-property:width,height,background-color;
+      }
+      div:hover
+      {
+         width:400px;
+         height:400px;
+         background-color: blue;
+      }
+  </style>
+</head>
+<body>
+    <div>
+      
+    </div>
+</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+  <style>
+      div
+      {
+          width:200px;
+          height:200px;
+          background-color: #FF0000;
+          box-sizing: border-box;
+          transition-property:all;
+      }
+      div:hover
+      {
+         width:400px;
+         height:400px;
+         background-color: blue;
+      }
+  </style>
+</head>
+<body>
+    <div>
+      
+    </div>
+</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+  <style>
+      div
+      {
+          width:200px;
+          height:200px;
+          background-color: #FF0000;
+          box-sizing: border-box;
+          transition-property:all;
+          transition-duration:2s;
+      }
+      div:hover
+      {
+         width:400px;
+         height:400px;
+         background-color: blue;
+      }
+  </style>
+</head>
+<body>
+    <div>
+      
+    </div>
+</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+  <style>
+      div
+      {
+          width:200px;
+          height:200px;
+          background-color: #FF0000;
+          box-sizing: border-box;
+          transition-property:all;
+          transition-duration:2s;
+          transition-timing-function: linear;
+      }
+      div:hover
+      {
+         width:400px;
+         height:400px;
+         background-color: blue;
+      }
+  </style>
+</head>
+<body>
+    <div>
+      
+    </div>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+  <style>
+      div
+      {
+          width:200px;
+          height:200px;
+          background-color: #FF0000;
+          box-sizing: border-box;
+          transition-property:all;
+          transition-duration:2s;
+          transition-timing-function: ease-in;
+      }
+      div:hover
+      {
+         width:400px;
+         height:400px;
+         background-color: blue;
+      }
+  </style>
+</head>
+<body>
+    <div>
+      
+    </div>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+  <style>
+      div
+      {
+          width:200px;
+          height:200px;
+          background-color: #FF0000;
+          box-sizing: border-box;
+          transition-property:all;
+          transition-duration:2s;
+          transition-timing-function: ease-out;
+      }
+      div:hover
+      {
+         width:400px;
+         height:400px;
+         background-color: blue;
+      }
+  </style>
+</head>
+<body>
+    <div>
+      
+    </div>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+  <style>
+      div
+      {
+          width:200px;
+          height:200px;
+          background-color: #FF0000;
+          box-sizing: border-box;
+          transition-property:all;
+          transition-duration:2s;
+          transition-timing-function: ease-in-out;
+      }
+      div:hover
+      {
+         width:400px;
+         height:400px;
+         background-color: blue;
+      }
+  </style>
+</head>
+<body>
+    <div>
+      
+    </div>
+</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+  <style>
+      div
+      {
+          width:200px;
+          height:200px;
+          background-color: #FF0000;
+          box-sizing: border-box;
+          transition-property:all;
+          transition-duration:2s;
+          transition-timing-function: linear;
+          transition-delay: 4s;
+      }
+      div:hover
+      {
+         width:400px;
+         height:400px;
+         background-color: blue;
+      }
+  </style>
+</head>
+<body>
+    <div>
+      
+    </div>
+</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+  <style>
+      div
+      {
+          width:200px;
+          height:200px;
+          background-color: #FF0000;
+          box-sizing: border-box;
+          transition: 2s all linear 5s;
+      }
+      div:hover
+      {
+         width:400px;
+         height:400px;
+         background-color: blue;
+      }
+  </style>
+</head>
+<body>
+    <div>
+      
+    </div>
+</body>
+</html>
+
+
+CSS Design1
+============
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+  <style>
+        img
+        {
+            width:200px;
+            height:200px;
+            display: block;
+            margin:150px auto;
+            transition:2s all linear;
+        }
+        img:hover
+        {
+           transform: rotate(360deg);
+        }
+  </style>
+</head>
+<body>
+        <img src="images/gosling.jpg"/>
+
+</body>
+</html>
+
+
+CSS Design2 
+===========
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+  <style>
+        div
+        {
+            width:800px;
+            height:200px;
+            /*border:2px solid black;*/
+            margin: 100px auto;
+        }
+        img
+        {
+            width: 200px;
+            height: 200px;
+            margin: 0 30px;
+            filter: grayscale(100%);
+            transition: 1s all ease-in-out;
+        }
+        img:hover
+        {
+            transform: scale(1.2);
+            filter: grayscale(0%);
+        }
+  </style>
+</head>
+<body>
+        <div>
+        <img src="images/girl1.jpg"/>
+        <img src="images/girl2.jpg"/>
+        <img src="images/girl3.jpg"/>  
+        </div>
+</body>
+</html>
+
+CSS opacity property
+======================
+The opacity property sets the opacity level for an element.
+
+The opacity-level describes the transparency-level, where 1 is not transparent at all, 0.5 is 50% see-through, and 0 is completely transparent.
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+  <style>
+        div
+        {
+          width:200px;
+          height:200px;
+          background-color: #FF0000;
+          opacity: 1;
+        }
+  </style>
+</head>
+<body>
+        <div>  
+        </div>
+</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+  <style>
+        div
+        {
+          width:200px;
+          height:200px;
+          background-color: #FF0000;
+          opacity: .5;
+        }
+  </style>
+</head>
+<body>
+        <div>  
+        </div>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+  <style>
+        div
+        {
+          width:200px;
+          height:200px;
+          background-color: #FF0000;
+          opacity: .1;
+        }
+  </style>
+</head>
+<body>
+        <div>  
+        </div>
+</body>
+</html>
+
+
+CSS position property
+=====================
+The position property specifies the type of positioning method used for an element (static, relative, absolute, fixed, or sticky).
+
+The following are the list of values to position property.
+
+static 
+---------------
+	It is default value. Elements render in order, as they appear in the document flow 	
+
+absolute 
+--------------
+	The element is positioned relative to its first positioned (not static) ancestor element 	
+fixed 	
+-----------
+	The element is positioned relative to the browser window 	
+relative 
+-------------
+	The element is positioned relative to its normal position, so "left:20px" adds 20 pixels 	to the element's LEFT position.
+ 	
+sticky 	
+-----------
+	The element is positioned based on the user's scroll position 
+
+
+css position property mandatory should have following properties.
+i)left
+ii)right
+iii)top
+iv)bottom
+
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+  <style>
+          img
+          {
+            width:200px;
+            height:200px;
+            border:2px solid black;
+            position: static;
+            left: 0;
+            top:0;
+          }
+  </style>
+</head>
+<body>
+        <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+
+        <img src="images/micky.png"/>
+
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+  <style>
+          img
+          {
+            width:200px;
+            height:200px;
+            border:2px solid black;
+            position: absolute;
+            left: 100px;
+            top:100px;
+          }
+  </style>
+</head>
+<body>
+        <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+
+        <img src="images/micky.png"/>
+
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+  <style>
+          img
+          {
+            width:200px;
+            height:200px;
+            border:2px solid black;
+            position: relative;
+            left: 100px;
+            top:100px;
+          }
+  </style>
+</head>
+<body>
+        <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+
+        <img src="images/micky.png"/>
+
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+  <style>
+          img
+          {
+            width:200px;
+            height:200px;
+            border:2px solid black;
+            position: fixed;
+            left: 100px;
+            top:100px;
+          }
+  </style>
+</head>
+<body>
+        <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+
+        <img src="images/micky.png"/>
+
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+  <style>
+          img
+          {
+            width:200px;
+            height:200px;
+            border:2px solid black;
+            position: sticky;
+            left: 0;
+            top:0;
+          }
+  </style>
+</head>
+<body>
+        <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+
+        <img src="images/micky.png"/>
+
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+         <p>
+          Web technology is the use of software tools, programming languages, and frameworks to create and manage websites and web applications. It allows computers to communicate with each other and for people to interact with hosted information, like websites. 
+        </p>
+</body>
+</html>
+
+
+CSS Design 
+==========
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+  <style>
+        .img1
+        {
+          width:200px;
+          height:200px;
+          position: relative;
+          left:400px;
+        } 
+        .img2
+        {
+          width:200px;
+          height:200px;
+        }
+  </style>
+</head>
+<body>
+        <img src="images/girl1.jpg" class="img1" />
+        <img src="images/girl2.jpg" class="img2" />
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

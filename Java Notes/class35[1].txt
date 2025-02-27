@@ -1,0 +1,384 @@
+                                                                                                                                   04/0/204
+
+Q) Write a java program to display below output?
+
+input:
+	str = ihubstudent
+	
+	index = 4
+
+	word = for 
+
+output:
+	ihubforstudent
+
+class  Test 
+{
+	public static void main(String[] args) 
+	{
+		String str = "ihubstudent";
+		int index = 4;
+		String word = "for"; 
+		
+		String word1=str.substring(0,index);
+		String word2=str.substring(index,str.length());
+
+		str = word1+word+word2;
+
+		System.out.println(str);
+
+	}
+}
+
+Q) Write a java program to display the string in a given format?
+
+input:
+	NEX123
+
+output:
+	Number of Digits : 3 
+	Sum of Digits : 6
+	It is a even number
+
+
+class  Test 
+{
+	public static void main(String[] args) 
+	{
+		String str="NEX123";
+
+		String digits=str.replaceAll("[^0-9]","");
+		System.out.println("Number of Digits :"+digits.length());
+
+		int sum=0;
+		for(int i=0;i<digits.length();i++)
+		{
+			int n = Character.getNumericValue(digits.charAt(i));
+			sum += n;
+		}
+		System.out.println("Sum of Digits : "+sum);
+
+		if(sum%2==0)
+			System.out.println("It is a even number");
+		else 
+			System.out.println("It is a odd number");
+	}
+}
+
+
+Q) Write a java program to display the string in a given format?
+
+input:
+	abc.txt 
+
+output:
+	txt 
+
+ex:
+---
+class  Test 
+{
+	public static void main(String[] args) 
+	{
+		String str="ihubtalent.java";
+
+		int index = str.lastIndexOf('.');
+
+		String result = str.substring(index+1);
+		
+		System.out.println(result);
+	}
+}
+
+Q) Write a java program to display the string in a given format?
+
+input:
+	XYZ
+
+output:
+	XY
+	XZ
+	YX
+	YZ
+	ZX
+	ZY 
+
+class  Test 
+{
+	public static void main(String[] args) 
+	{
+		String str="XYZ";
+
+		for(int i=0;i<str.length();i++)
+		{
+			for(int j=0;j<str.length();j++)
+			{
+				if(i!=j)
+				{
+					System.out.println(str.charAt(i)+""+str.charAt(j));
+				}
+			}
+		}
+	}
+}
+
+
+Q) Write a java program to display reverse of a given number?
+
+input:
+	hello 
+
+output:
+	olleh 
+
+ex:
+---
+class  Test 
+{
+	public static void main(String[] args) 
+	{
+		String str="hello";
+
+		//reading reverse 
+		String rev="";
+
+		for(int i=str.length()-1;i>=0;i--)
+		{
+			rev+=str.charAt(i);	
+		}
+
+		System.out.println(rev);
+	}
+}
+
+
+Q) Write a java program to check given string is a palindrome or not?
+
+input:	
+	racar 
+
+output:
+	It is a palindrome string 
+
+ex:
+----
+class  Test 
+{
+	public static void main(String[] args) 
+	{
+		String str="racar";
+
+		//reading reverse 
+		String rev="";
+
+		for(int i=str.length()-1;i>=0;i--)
+		{
+			rev+=str.charAt(i);	
+		}
+
+		if(str.equals(rev))
+			System.out.println("It is a palindrome string");
+		else
+			System.out.println("It is not a palindrome string");
+	}
+}
+
+
+
+Q) Write a java program to display reverse of a sentence?
+
+input:
+	This is java class 
+
+output:
+	class java is This 
+
+ex:
+---
+class  Test 
+{
+	public static void main(String[] args) 
+	{
+		String str="This is java class";
+
+		//convert string to array 
+		String[] sarr=str.split(" "); // This     is     java      class
+
+		//reading reverse
+		for(int i=sarr.length-1;i>=0;i--)
+		{
+			System.out.print(sarr[i]+" ");
+		}
+	}
+}
+
+
+Q) Write a java program to display reverse of a word in a string?
+
+input:
+	This is java class
+
+output:
+	sihT si avaj ssalc
+
+
+class  Test 
+{
+	public static void main(String[] args) 
+	{
+		String str="This is java class";
+
+		//convert string to array 
+		String[] sarr=str.split(" "); // This     is     java      class
+
+		//for each loop
+		for(String s:sarr)
+		{
+			char[] carr=s.toCharArray(); // T     h     i     s 
+
+			//reading reverse 
+			for(int i=carr.length-1;i>=0;i--)
+			{
+				System.out.print(carr[i]);
+			}
+			//space
+			System.out.print(" ");
+		}
+
+		
+	}
+}
+
+Q) Write a java program to display the string in a alphabetic order?
+
+input:
+	zakmbcp
+
+output:
+	abckmpz
+
+
+import java.util.Arrays;
+class  Test 
+{
+	public static void main(String[] args) 
+	{
+		String str="zakmbcp";
+
+		char[] carr=str.toCharArray();	
+		
+		Arrays.sort(carr);
+
+		for(char c:carr)
+		{
+			System.out.print(c);
+		}
+	}
+}
+
+
+Q) Write a java program to display the vowels present in a string?
+
+input:
+	umbrella 
+
+output:
+	u e a 
+
+ex:
+
+class  Test 
+{
+	public static void main(String[] args) 
+	{
+		String str="umbrella";
+
+		for(char ch: str.toCharArray())
+		{
+			if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u')
+			{
+				System.out.print(ch+" ");
+			}
+		}
+	}
+}
+
+
+Q) Write a java program to display the string starting with capital letter?
+
+input:
+	This  is java Class  for Students
+
+output:
+	This  Class  Students 
+
+ex:
+---
+
+class  Test 
+{
+	public static void main(String[] args) 
+	{
+		String str="This is java Class for Students";
+
+		String[] sarr=str.split(" ");
+
+		for(String s:sarr) // This  
+		{
+			if(s.charAt(0)>='A' && s.charAt(0)<='Z')
+			{
+				System.out.print(s+" ");
+			}
+		}
+	}
+}
+
+Assignment
+=========
+Q) Write a java program to find out number of uppercase letters, lowercase letters, digits , words and spaces?
+
+input:
+	This Is Java Class35
+
+output:
+
+	uppercase letters : 4 
+	lowercase letters : 11
+	Digits		  : 2 
+	words             : 4
+        spaces            : 3 
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

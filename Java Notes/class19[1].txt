@@ -1,0 +1,385 @@
+                                                                                                                                    Date:14/12/2024
+
+Q) 
+There is a well length of 10m and one frog unfortunately fell down in that well. So every day frog tries to come out from well. So frog will jump 2m and rollback 1m everyday .Then print in how many days frog will be outside of the well.
+
+Input:
+		Enter the length of the well: 10 
+		Enter the length of jump: 2
+		Enter the length of rollback: 1
+Output:
+		In 10 days frog will be outside of the well.
+ex:
+---
+import java.util.Scanner;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the length of the well:");
+		int wellLength = sc.nextInt(); // 10 
+
+		System.out.println("Enter the length of jump:");
+		int jumpLength = sc.nextInt(); // 2 
+
+		System.out.println("Enter the length of rollback:");
+		int rollbackLength = sc.nextInt(); // 1 
+
+		int currentPosition=0;
+
+		int day=0;
+
+		while(jumpLength<wellLength)
+		{
+			if(currentPosition>=wellLength)
+			{
+				break;
+			}
+			day++;
+
+			currentPosition+=jumpLength;
+			currentPosition-=rollbackLength;
+		}
+		System.out.println("In "+day+" days frog will be outside of the well");
+	}
+}
+
+
+Q) Write a java program to display reverse of a given number in words?
+
+input:
+	123
+
+output:
+	ThreeTwoOne 
+
+ex:
+---
+import java.util.Scanner;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the number :");
+		int n = sc.nextInt();//123
+
+		while(n>0)
+		{
+			switch(n%10)
+			{
+				case 0 : System.out.print("Zero"); break;
+				case 1 : System.out.print("One"); break;
+				case 2 : System.out.print("Two"); break;
+				case 3 : System.out.print("Three"); break;
+				case 4 : System.out.print("Four"); break;
+				case 5 : System.out.print("Five"); break;
+				case 6 : System.out.print("Six"); break;
+				case 7 : System.out.print("Seven"); break;
+				case 8 : System.out.print("Eight"); break;
+				case 9 : System.out.print("Nine"); break;
+			}
+			n=n/10;
+		}
+	}
+}
+
+
+iii) for loop
+=============
+It executes the source code how long our condition is true.
+
+syntax:
+------
+	for(initialization;condition;incrementation/decrementation)
+	{
+		-
+		- //code to be execute 
+		-
+	}
+
+If number of iterations are known by the user then we need to use for loop.
+
+If number of iterations are not known by the user then we need to use while loop.
+
+If number of iterations are not known by the user but code must execute atleast for one time then we need to use do while loop.
+
+ex:
+---
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		for(int i=1;i<=10;i++)
+		{
+			System.out.print(i+" ");//1 2 3 4 5 6 7 8 9 10
+		}
+	}
+}
+
+ex:
+---
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		for(int i=1;i<=10;i++)
+		{
+			System.out.print(i+" ");//infinite 1 
+
+			i--;
+		}
+	}
+}
+
+ex:
+---
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		for(;;)
+		{
+			System.out.print("Hello "); // infinite Hello 
+		}
+	}
+}
+
+ex:
+---
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		for(int i=1;i<=10;i++)
+		{
+			if(i%2==0)
+			{
+				System.out.print(i+" ");//2 4 6 8 10
+			}
+		}
+	}
+}
+
+ex:
+---
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int cnt=0;
+		for(int i=1;i<=10;i++)
+		{
+			if(i%2!=0)  
+			{
+				cnt++;
+			}
+		}
+		System.out.println(cnt);//5
+	}
+}
+
+Q) Write a java program to check given number is prime or not?
+
+2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 
+43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97.
+
+
+input:
+	5
+
+output:
+	It is a prime number 
+
+
+import java.util.Scanner;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the number :");
+		int n = sc.nextInt();
+
+		boolean flag=true;
+
+		for(int i=2;i<=n/2;i++)
+		{
+			if(n%i==0)
+			{
+				flag=false;
+				break;
+			}
+		}
+		if(flag==true)
+			System.out.println("It is a prime number");
+		else
+			System.out.println("It is not a prime number");
+	}
+}
+
+
+Q) Write a java program to display list of prime numbers from 1 to 100?
+
+output:
+	2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 
+	43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97.
+
+ex:
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		for(int n=2;n<=100;n++)
+		{
+			boolean flag=true;
+			
+			for(int i=2;i<=n/2;i++)
+			{
+				if(n%i==0)
+				{
+					flag=false;
+					break;
+				}
+			}
+			if(flag==true)
+				System.out.print(n+" ");
+		}
+	}
+}
+
+Q) Write a java program to check given number is perfect or not?
+
+input:
+	6
+
+Output:
+	It is a perfect number 
+
+
+import java.util.Scanner;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.println("Enter the number :");
+		int n=sc.nextInt();//6
+
+		int sum=0;
+		for(int i=1;i<n;i++)
+		{
+			if(n%i==0)
+			{
+				sum+=i;
+			}
+		}
+
+		if(n==sum)
+			System.out.println("It is a perfect number");
+		else
+			System.out.println("It is not a perfect number");
+	}
+}
+
+
+Q) Write a java program to find out GCD (Greatest Common Divisor) of two numbers?
+
+input:
+	12  18
+
+output:
+	GCD of two numbers is 6 
+
+ex:
+---
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int a=12,b=18,gcd=0;
+		
+		for(int i=1;i<=a && i<=b;i++)
+		{
+			if(a%i==0 && b%i==0)
+			{
+				gcd=i;
+			}
+		}
+
+		System.out.println("GCD of two numbers is = "+gcd);
+	}
+}
+
+
+Q) Write a java program to find out fibonacci series of a given number?
+
+fibonacci series : 0 1 1 2 3 5 8
+
+input:
+	6
+
+output:
+	0 1 1 2 3 5 8  
+
+import java.util.Scanner;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the number :");
+		int n = sc.nextInt();
+
+		int a=0,b=1,c;
+
+		System.out.print(a+" "+b+" ");
+
+		for(int i=2;i<=n;i++)
+		{
+			c = a + b;
+			System.out.print(c+" ");
+			a = b;
+			b = c;
+		}
+	}
+}
+
+Assignment
+============
+Q) Write a java program to display alter even numbers from 1 to 20?
+
+output:
+	2  6  10  14  18
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

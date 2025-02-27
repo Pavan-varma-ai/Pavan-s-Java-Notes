@@ -1,0 +1,66 @@
+Q) Is java purely object oriented or not?
+
+No, java will not consider as purely object oriented programming language because java does not support many OOPS concepts like multiple inheritance, operator overloading and more ever we depends upon primitive datatypes which are non-objects.
+
+
+
+Q) Write a java program to display the size of int datatype?
+
+class Test
+{
+	public static void main(String[] args)
+	{
+		System.out.println(Integer.BYTES);	
+	}
+}
+
+Q) Write a java program to display the size of long datatype?
+
+class Test
+{
+	public static void main(String[] args)
+	{
+		System.out.println(Long.BYTES);	
+	}
+}
+
+Q) Write a java program to display the range of byte datatype?
+
+ex:
+--
+class Test
+{
+	public static void main(String[] args)
+	{
+		System.out.println(Byte.MIN_VALUE);	
+		System.out.println(Byte.MAX_VALUE);	
+	}
+}
+
+
+Q) Write a java program to display the range of int datatype?
+
+ex:
+--
+class Test
+{
+	public static void main(String[] args)
+	{
+		System.out.println(Integer.MIN_VALUE);	
+		System.out.println(Integer.MAX_VALUE);	
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

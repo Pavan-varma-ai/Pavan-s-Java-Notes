@@ -1,0 +1,538 @@
+                                                                                                                      22/01/205
+
+DOM 
+====
+DOM stands for Document Object Model.
+
+Whenever HTML document loaded in a browser window then it represent document object.
+
+Diagram: frontend25.1
+
+Internally , DOM is a tree node structure.
+
+A document object always looks for three notes.
+
+1) Element node 
+
+2) Attribute node 
+
+3) Text node 
+
+A document object is used to add dynamic content in a web page.
+
+A document is a property of window. We can call all the functions of ducument directly or by using window.
+
+ex:
+	document.write("Hello");
+	or
+	window.document.write("Hello");
+
+
+We have following list of functions in document object.
+
+1) document.write()
+
+2) document.writeln()
+
+3) document.getElementById()
+
+4) document.getElementsByName()
+
+5) document.getElementsByTagName() 
+
+6) document.getElementsByClassName()
+
+7) addEventListener()
+
+8) removeEventListener() 
+
+
+
+1) document.write()
+-------------------
+It is used to display custom messages without space at the end.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+</head>
+<body>
+      
+     <script>
+         document.write("IHUB");
+         document.write("TALENT");
+     </script>
+</body>
+</html>
+
+
+2) document.writeln()
+-----------------------
+It is used to display the custom messages with space at the end.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+
+</head>
+<body>
+      
+     <script>
+         document.writeln("IHUB");
+         document.writeln("TALENT");
+     </script>
+</body>
+</html>
+
+3) document.getElementById()
+----------------------------
+It is used to read the elements by using specified id.
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+
+</head>
+<body>
+     
+     Name : <input type="text" id="t1"/>  
+
+     <button onclick="f1()"> click </button>
+     
+     <script>
+         function f1()
+         {
+            var name = document.getElementById('t1').value;
+            document.writeln("welcome :"+name);
+         }
+     </script>
+</body>
+</html>
+
+ex:-
+----
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+
+</head>
+<body>
+     
+     Name : <input type="text" id="t1"/>  
+
+     <button onclick="f1()"> click </button>
+
+     <br>
+     <div id="result"></div>
+     
+     <script>
+         function f1()
+         {
+            var name = document.getElementById('t1').value;
+            document.getElementById('result').innerHTML=name;
+         }
+     </script>
+</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+
+</head>
+<body>
+     
+    <table>
+        <tr>
+            <td>No1:</td>
+            <td><input type="text" id="t1"/></td>
+        </tr>
+        <tr>
+            <td>No2:</td>
+            <td><input type="text" id="t2"/></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td><button onclick="f1()">ADD</button></td>
+        </tr>
+        <tr>
+            <td>Result:</td>
+            <td><div id="result"></div></td>
+        </tr>
+    </table>
+
+    <script>
+        function f1()
+        {
+            var val1=document.getElementById('t1').value;
+            var val2=document.getElementById('t2').value;
+            var c = parseInt(val1)+parseInt(val2);
+            document.getElementById('result').innerHTML=c;
+        }
+    </script>
+</body>
+</html>
+
+How to hide and show small portion of a form page
+==================================================
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+
+</head>
+<body>
+    <fieldset id="cur_id">
+    <legend>Current Address</legend>    
+    <table align="center">
+        <tr>
+            <td>House No:</td>
+            <td><input type="text" id="t1"/></td>
+        </tr>
+         <tr>
+            <td>Locality:</td>
+            <td><input type="text" id="t2"/></td>
+        </tr>
+         <tr>
+            <td>City:</td>
+            <td><input type="text" id="t3"/></td>
+        </tr>
+    </table>
+    </fieldset>
+    <br>
+    <input type="checkbox" id="box" onclick="f1()" />Permanent address is same as Current address?    
+    <br>
+    <br>
+    <fieldset id="per_id">
+    <legend>Permanent Address</legend>    
+    <table align="center">
+        <tr>
+            <td>House No:</td>
+            <td><input type="text" id="t1"/></td>
+        </tr>
+         <tr>
+            <td>Locality:</td>
+            <td><input type="text" id="t2"/></td>
+        </tr>
+         <tr>
+            <td>City:</td>
+            <td><input type="text" id="t3"/></td>
+        </tr>
+    </table>
+    </fieldset>
+
+    <script>
+        function f1()
+        {
+            if(document.getElementById('box').checked)
+            {
+                document.getElementById('per_id').style.display="none";
+            }   
+            else
+            {
+                document.getElementById("per_id").style.display="block";
+            }
+        }
+    </script>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+
+</head>
+<body>
+    <fieldset id="cur_id">
+    <legend>Current Address</legend>    
+    <table align="center">
+        <tr>
+            <td>House No:</td>
+            <td><input type="text" id="t1"/></td>
+        </tr>
+         <tr>
+            <td>Locality:</td>
+            <td><input type="text" id="t2"/></td>
+        </tr>
+         <tr>
+            <td>City:</td>
+            <td><input type="text" id="t3"/></td>
+        </tr>
+    </table>
+    </fieldset>
+    <br>
+    <input type="checkbox" id="box" onclick="f1()" />Permanent address is same as Current address?    
+    <br>
+    <br>
+    <fieldset id="per_id">
+    <legend>Permanent Address</legend>    
+    <table align="center">
+        <tr>
+            <td>House No:</td>
+            <td><input type="text" id="res1"/></td>
+        </tr>
+         <tr>
+            <td>Locality:</td>
+            <td><input type="text" id="res2"/></td>
+        </tr>
+         <tr>
+            <td>City:</td>
+            <td><input type="text" id="res3"/></td>
+        </tr>
+    </table>
+    </fieldset>
+
+    <script>
+        function f1()
+        {
+            if(document.getElementById('box').checked)
+            {
+               var val1=document.getElementById('t1').value;
+                var val2=document.getElementById('t2').value;
+                 var val3=document.getElementById('t3').value;
+
+                 document.getElementById('res1').value=val1;
+                 document.getElementById('res2').value=val2;
+                 document.getElementById('res3').value=val3;
+            }   
+            else
+            {
+                document.getElementById('res1').value="";
+                 document.getElementById('res2').value="";
+                 document.getElementById('res3').value="";
+            }
+        }
+    </script>
+</html>
+
+
+4) document.getElementsByName()
+--------------------------------
+It is used to read the elements using specified name.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+
+</head>
+<body>
+            Name: <input type="text" name="t1"/> 
+            <button onclick="f1()"> click </button>
+
+            <script>
+                function f1()
+                {
+                    var name = document.getElementsByName('t1')[0].value;  
+                    document.writeln("welcome :"+name); 
+                }
+            </script>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+
+</head>
+<body>
+            Name: <input type="text" name="t1"/> 
+            <button onclick="f1()"> click </button>
+            <br>
+            <div id="result"></div>
+
+            <script>
+                function f1()
+                {
+                    var name = document.getElementsByName('t1')[0].value;  
+                    
+                    document.getElementById('result').innerHTML=name;
+                }
+            </script>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+
+</head>
+<body>
+            Name: <input type="text" name="t1"/> 
+            <button onclick="f1()"> click </button>
+            <br>
+            <div id="result"></div>
+
+            <script>
+                function f1()
+                {
+                    var len = document.getElementsByName('t1').length;  
+                    
+                    document.getElementById('result').innerHTML=len;
+                }
+            </script>
+</html>
+
+ex;
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+
+</head>
+<body>
+            Name: <input type="text" name="t1"/> 
+            <button onclick="f1()"> click </button>
+            <br>
+            <div id="result"></div>
+
+            <script>
+                function f1()
+                {
+                    var len = document.getElementsByName('t1')[0].tagName;  
+                    
+                    document.getElementById('result').innerHTML=len;
+                }
+            </script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

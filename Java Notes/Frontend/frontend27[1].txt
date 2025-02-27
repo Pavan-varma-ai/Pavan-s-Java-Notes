@@ -1,0 +1,326 @@
+                                                                                                                          24/01/2025
+
+document.removeEventListener()
+==============================
+It is used to remove event handler from specific element.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+
+</head>
+<body>
+          <h1 id="hover"> Mouse Over Here </h1>
+
+          <button onclick="f2()"> stop </button>
+
+          <div id="result"></div>
+
+          <script>
+              var x = document.getElementById('hover');
+              
+              x.addEventListener('mouseover',f1);
+
+              function f1()
+              {
+             document.getElementById('result').innerHTML+="<div>Mouse Over</div>";
+              }
+
+              function f2()
+              {
+                x.removeEventListener('mouseover',f1); 
+                 document.getElementById('result').innerHTML+="<div>Mouse Stop</div>";
+              }
+
+          </script>
+</html>
+
+JavaScript Date 
+================
+JavaScript Date is used to display date and time.
+
+Using JavaScript Date we can display timer on the web page.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+
+</head>
+<body>
+        <script>
+                var d = new Date();
+                document.writeln(d);
+        </script>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+
+</head>
+<body>
+        <script>
+                var date = new Date();
+                var d = date.getDate();
+                var m = date.getMonth()+1;
+                var y = date.getFullYear();
+                document.writeln(d+"/"+m+"/"+y);
+        </script>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+
+</head>
+<body>
+        <script>
+                var date = new Date();
+                var h = date.getHours();
+                var m = date.getMinutes();
+                var s = date.getSeconds();
+                document.writeln(h+":"+m+":"+s);
+        </script>
+</html>
+
+ex:
+---
+index.html
+-------------
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+    <!-- add external css -->
+    <link rel="stylesheet" type="text/css" href="css/mystyles.css">
+</head>
+<body>
+        <div id="result">
+            
+        </div>
+
+        <script>
+            window.onload=function(){ getTime()}
+
+            function getTime()
+            {
+                var date=new Date();
+                var h = date.getHours();
+                var m = date.getMinutes();
+                var s = date.getSeconds();
+
+                m = check(m);
+                s = check(s);
+
+                document.getElementById('result').innerHTML=h+":"+m+":"+s;
+            }
+
+            function check(i)
+            {
+                if(i<10)
+                {
+                    i = "0"+i; 
+                }
+
+                return i;
+            }
+
+            setInterval(getTime,1000);
+        </script>
+</body>        
+</html>
+
+
+mystyles.css
+--------------
+*
+{
+    margin: 0;
+    padding:0;
+}
+body
+{
+    height: 100vh;
+    background: linear-gradient(red,yellow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div
+{
+    color:#FFF;
+    font-weight: bold;
+}
+
+
+
+
+Q) What is the difference between innerText and innerHTML?
+
+innerText 
+----------
+It is used to display normal text in javascript dynamically.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+</head>
+<body>
+        <div id="result"></div>
+
+        <script>
+    document.getElementById('result').innerText="<p>innerText property</p>"  
+        </script>
+</body>        
+</html>
+
+innerHTML
+---------
+It is used to display HTML code in javascript dynamically.
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+</head>
+<body>
+        <div id="result"></div>
+
+        <script>
+    document.getElementById('result').innerHTML="<p style='color:red'>innerHTML property</p>"  
+        </script>
+</body>        
+</html>
+
+
+How to hide and show password in javascript 
+===========================================
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+
+    <!-- fontawesome icon cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <style>
+        #myId
+        {
+            position: relative;
+            right:25px;
+        }
+        .myClass
+        {
+            padding-right:25px;
+        }
+    </style>
+
+</head>
+<body>
+        Password: 
+        <input type="password" id="t1" class="myClass"/>  
+        <span class="fa fa-eye" id="myId" onclick="f1()"></span> 
+        <script>
+            function f1()
+            {
+                var x = document.getElementById('t1');
+
+                if(x.type=="password")
+                {
+                    x.type="text";
+                }
+                else
+                {
+                    x.type="password";
+                }
+            }
+        </script>     
+</body>        
+</html>
+
+
+Q) What is higher order function in javascript?
+
+A function which operates on other function by taking function as an argument or by returing a function.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+
+</head>
+<body>
+        <script>
+            function f1(f2)
+            {
+                   f2(); 
+            }
+            f1(function(){document.writeln("Function 2")});
+        </script>     
+</body>        
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+
+</head>
+<body>
+        <script>
+            function f1()
+            {
+                   return function(){
+                        document.writeln("Function Returing");
+                   } 
+            }
+            var f2=f1();
+            f2();
+        </script>     
+</body>        
+</html>
+
+
+
+
+
+
+    
+
+
+
+
+     
+
+
+
+
+
+
+
+
+
+
+
+

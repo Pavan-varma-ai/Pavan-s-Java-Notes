@@ -1,0 +1,944 @@
+
+                                                                                                                   31/01/2025
+Bootstrap images
+================
+Bootstrap supports three types of images.
+
+1) Rounded Image 
+
+2) Circle Image 
+
+3) Thumbnail Image 
+
+1) Rounded Image 
+-----------------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+
+	<!-- bootstrap plugins -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+		<div class="container mt-5">
+			 <img src="images/john.jpg" class="w-50 h-50 rounded" />
+		</div>
+</body>
+</html>
+
+2) Circle Image 
+----------------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+
+	<!-- bootstrap plugins -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+		<div class="container mt-5">
+			 <img src="images/john.jpg" class="w-25 h-25 rounded-circle" />
+		</div>
+</body>
+</html>
+
+3) Thumbnail Image 
+------------------
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+
+	<!-- bootstrap plugins -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+		<div class="container mt-5">
+			 <img src="images/john.jpg" class="w-25 h-25 img-thumbnail" />
+		</div>
+</body>
+</html>
+
+Bootstrap design for Bootstrap images using grid system
+=======================================================
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+
+	<!-- bootstrap plugins -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+		<div class="container mt-5">
+			 <div class="row">
+			 		<div class="col-md-4 col-sm-6 col-12">
+			 			<img src="images/john.jpg" class="w-100 h-100 img-thumbnail"/>
+			 		</div>
+			 		<div class="col-md-4 col-sm-6 col-12">
+			 			<img src="images/john.jpg" class="w-100 h-100 img-thumbnail" />
+			 		</div>
+			 		<div class="col-md-4 col-sm-6 col-12">
+			 			<img src="images/john.jpg" class="w-100 h-100 img-thumbnail" />
+			 		</div>
+			 </div>
+		</div>
+</body>
+</html>
+
+Bootstrap Tables
+================
+Table is used to represent our data in the form of rows and columns.
+
+Table is a collection of rows and columns.
+
+To create a bootstrap table we need to use ".table" class.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+
+	<!-- bootstrap plugins -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+		<div class="container mt-5">
+			 <table class="table">
+			 	<tr>
+			 		<th>Id</th>
+			 		<th>Name</th>
+			 		<th>Address</th>
+			 	</tr>
+			 	<tr>
+			 		<td>101</td>
+			 		<td>Alan</td>
+			 		<td>Florida</td>
+			 	</tr>
+			 	<tr>
+			 		<td>102</td>
+			 		<td>Lisa</td>
+			 		<td>Texas</td>
+			 	</tr>
+			 	<tr>
+			 		<td>103</td>
+			 		<td>Nancy</td>
+			 		<td>Chicago</td>
+			 	</tr>
+			 	<tr>
+			 		<td>104</td>
+			 		<td>Jose</td>
+			 		<td>Vegas</td>
+			 	</tr>
+			 </table>
+
+		</div>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+
+	<!-- bootstrap plugins -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+		<div class="container mt-5">
+			 <table class="table  table-bordered">
+			 	<tr>
+			 		<th>Id</th>
+			 		<th>Name</th>
+			 		<th>Address</th>
+			 	</tr>
+			 	<tr>
+			 		<td>101</td>
+			 		<td>Alan</td>
+			 		<td>Florida</td>
+			 	</tr>
+			 	<tr>
+			 		<td>102</td>
+			 		<td>Lisa</td>
+			 		<td>Texas</td>
+			 	</tr>
+			 	<tr>
+			 		<td>103</td>
+			 		<td>Nancy</td>
+			 		<td>Chicago</td>
+			 	</tr>
+			 	<tr>
+			 		<td>104</td>
+			 		<td>Jose</td>
+			 		<td>Vegas</td>
+			 	</tr>
+			 </table>
+
+		</div>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+
+	<!-- bootstrap plugins -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+		<div class="container mt-5">
+			 <table class="table  table-borderless">
+			 	<tr>
+			 		<th>Id</th>
+			 		<th>Name</th>
+			 		<th>Address</th>
+			 	</tr>
+			 	<tr>
+			 		<td>101</td>
+			 		<td>Alan</td>
+			 		<td>Florida</td>
+			 	</tr>
+			 	<tr>
+			 		<td>102</td>
+			 		<td>Lisa</td>
+			 		<td>Texas</td>
+			 	</tr>
+			 	<tr>
+			 		<td>103</td>
+			 		<td>Nancy</td>
+			 		<td>Chicago</td>
+			 	</tr>
+			 	<tr>
+			 		<td>104</td>
+			 		<td>Jose</td>
+			 		<td>Vegas</td>
+			 	</tr>
+			 </table>
+
+		</div>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+
+	<!-- bootstrap plugins -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+		<div class="container mt-5">
+			 <table class="table  table-hover">
+			 	<tr>
+			 		<th>Id</th>
+			 		<th>Name</th>
+			 		<th>Address</th>
+			 	</tr>
+			 	<tr>
+			 		<td>101</td>
+			 		<td>Alan</td>
+			 		<td>Florida</td>
+			 	</tr>
+			 	<tr>
+			 		<td>102</td>
+			 		<td>Lisa</td>
+			 		<td>Texas</td>
+			 	</tr>
+			 	<tr>
+			 		<td>103</td>
+			 		<td>Nancy</td>
+			 		<td>Chicago</td>
+			 	</tr>
+			 	<tr>
+			 		<td>104</td>
+			 		<td>Jose</td>
+			 		<td>Vegas</td>
+			 	</tr>
+			 </table>
+
+		</div>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+
+	<!-- bootstrap plugins -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+		<div class="container mt-5">
+			 <table class="table  table-bordered table-striped">
+			 	<tr>
+			 		<th>Id</th>
+			 		<th>Name</th>
+			 		<th>Address</th>
+			 	</tr>
+			 	<tr>
+			 		<td>101</td>
+			 		<td>Alan</td>
+			 		<td>Florida</td>
+			 	</tr>
+			 	<tr>
+			 		<td>102</td>
+			 		<td>Lisa</td>
+			 		<td>Texas</td>
+			 	</tr>
+			 	<tr>
+			 		<td>103</td>
+			 		<td>Nancy</td>
+			 		<td>Chicago</td>
+			 	</tr>
+			 	<tr>
+			 		<td>104</td>
+			 		<td>Jose</td>
+			 		<td>Vegas</td>
+			 	</tr>
+			 </table>
+
+		</div>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+
+	<!-- bootstrap plugins -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+		<div class="container mt-5">
+			 <table class="table  table-bordered table-striped table-dark">
+			 	<tr>
+			 		<th>Id</th>
+			 		<th>Name</th>
+			 		<th>Address</th>
+			 	</tr>
+			 	<tr>
+			 		<td>101</td>
+			 		<td>Alan</td>
+			 		<td>Florida</td>
+			 	</tr>
+			 	<tr>
+			 		<td>102</td>
+			 		<td>Lisa</td>
+			 		<td>Texas</td>
+			 	</tr>
+			 	<tr>
+			 		<td>103</td>
+			 		<td>Nancy</td>
+			 		<td>Chicago</td>
+			 	</tr>
+			 	<tr>
+			 		<td>104</td>
+			 		<td>Jose</td>
+			 		<td>Vegas</td>
+			 	</tr>
+			 </table>
+
+		</div>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+
+	<!-- bootstrap plugins -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+		<div class="container mt-5">
+			 <table class="table  table-bordered table-striped table-success">
+			 	<tr>
+			 		<th>Id</th>
+			 		<th>Name</th>
+			 		<th>Address</th>
+			 	</tr>
+			 	<tr>
+			 		<td>101</td>
+			 		<td>Alan</td>
+			 		<td>Florida</td>
+			 	</tr>
+			 	<tr>
+			 		<td>102</td>
+			 		<td>Lisa</td>
+			 		<td>Texas</td>
+			 	</tr>
+			 	<tr>
+			 		<td>103</td>
+			 		<td>Nancy</td>
+			 		<td>Chicago</td>
+			 	</tr>
+			 	<tr>
+			 		<td>104</td>
+			 		<td>Jose</td>
+			 		<td>Vegas</td>
+			 	</tr>
+			 </table>
+
+		</div>
+</body>
+</html>
+
+
+Bootstrap Alerts
+================
+To create a bootstrap alert we need to use '.alert' class along with contextual classes.
+
+We have following list of contextual classes.
+
+ex:
+	alert-info 
+	alert-danger 
+	alert-warning 
+	alert-success 
+	and etc.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+
+	<!-- bootstrap plugins -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+		<div class="container mt-5">
+			 <div class="alert alert-info">
+			 	<strong>Info!</strong> Please don't sleep in the class
+			 </div>
+
+			 <div class="alert alert-warning">
+			 	<strong>Warning!</strong> No practice no Job
+			 </div>
+
+			 <div class="alert alert-danger">
+			 	<strong>Danger!</strong> Please Don't Ignore the practice
+			 </div>
+
+			 <div class="alert alert-success">
+			 	<strong>Success!</strong> I Got a job
+			 </div>
+		</div>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+
+	<!-- bootstrap plugins -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+		<div class="container mt-5">
+			 <div class="alert alert-info collapse">
+			 	<strong>Info!</strong> Please don't sleep in the class
+			 </div>
+		</div>
+</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+
+	<!-- bootstrap plugins -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+		<div class="container mt-5">
+			 <div class="alert alert-info  alert-dismissible">
+			 	<strong>Info!</strong> Please don't sleep in the class
+			 	<button class="btn-close" data-bs-dismiss="alert"></button>
+			 </div>
+		</div>
+</body>
+</html>
+
+Bootstrap 
+==========
+To create Bootstrap button we need to use '.btn' class along with contextual classes.
+
+We have following list of contextual classes.
+
+ex:
+	btn-primary 
+	btn-secondary 
+	btn-info 
+	btn-warning 
+	btn-success
+	btn-danger 
+	and etc
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+
+	<!-- bootstrap plugins -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+		<div class="container mt-5">
+			
+			<button class="btn btn-primary"> primary button </button>
+			<button class="btn btn-secondary"> secondary button </button>
+			<button class="btn btn-info"> info button </button>
+			<button class="btn btn-warning"> warning button </button>
+			<button class="btn btn-success"> success button </button>
+			<button class="btn btn-danger"> danger button </button>
+
+
+		</div>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+
+	<!-- bootstrap plugins -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+		<div class="container mt-5">
+			
+			<button class="btn btn-primary btn-sm"> primary button </button>
+			<button class="btn btn-primary btn-md"> primary button </button>
+			<button class="btn btn-primary btn-lg"> primary button </button>
+
+
+		</div>
+</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+
+	<!-- bootstrap plugins -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+		<div class="container mt-5">
+			
+			<button class="btn btn-outline-primary"> primary button </button>
+			<button class="btn btn-outline-secondary"> secondary button </button>
+			<button class="btn btn-outline-info"> info button </button>
+			<button class="btn btn-outline-warning"> warning button </button>
+			<button class="btn btn-outline-success"> success button </button>
+			<button class="btn btn-outline-danger"> danger button </button>
+		</div>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+
+	<!-- bootstrap plugins -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+		<div class="container mt-5">
+			
+			<a href="" class="btn btn-primary"> click Me </a>
+
+			<br><br>
+
+			<a href="" class="btn btn-outline-primary"> click Me </a>
+			
+		</div>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+
+	<!-- bootstrap plugins -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+		<div class="container mt-5">
+			
+			<button class="btn btn-link"> Read More</button>
+			
+		</div>
+</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage</title>
+    
+    <!-- add bootstrap plugins -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+      
+        <div class="container mt-5">
+
+                <button class="btn btn-primary btn-sm"> Home </button>
+                <button class="btn btn-primary btn-sm"> About </button>
+                <button class="btn btn-primary btn-sm"> Service </button>
+
+                <br><br>
+    
+                <button class="btn btn-primary"> Home </button>
+                <button class="btn btn-primary"> About </button>
+                <button class="btn btn-primary"> Service </button>
+
+                <br><br>
+    
+                <button class="btn btn-primary btn-lg"> Home </button>
+                <button class="btn btn-primary btn-lg"> About </button>
+                <button class="btn btn-primary btn-lg"> Service </button>
+            
+        </div>
+      
+</body>
+</html>
+
+
+
+
+Bootstrap button groups 
+=======================
+A Bootstrap button group is a collection of buttons.
+
+To create a bootstrap button groups we need to use ".btn-group" class.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+
+	<!-- bootstrap plugins -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+		<div class="container mt-5">
+			
+			<div class="btn-group">
+			<button class="btn btn-primary"> Home </button>
+			<button class="btn btn-info"> About </button>
+			<button class="btn btn-warning"> Service </button>
+			</div>
+		</div>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyPage!</title>
+
+	<!-- bootstrap plugins -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+		<div class="container mt-5">
+
+			<div class="btn-group btn-group-sm">
+			<button class="btn btn-primary"> Home </button>
+			<button class="btn btn-info"> About </button>
+			<button class="btn btn-warning"> Service </button>
+			</div>
+			
+			<div class="btn-group">
+			<button class="btn btn-primary"> Home </button>
+			<button class="btn btn-info"> About </button>
+			<button class="btn btn-warning"> Service </button>
+			</div>
+
+			<div class="btn-group btn-group-lg">
+			<button class="btn btn-primary"> Home </button>
+			<button class="btn btn-info"> About </button>
+			<button class="btn btn-warning"> Service </button>
+			</div>
+		</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

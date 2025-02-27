@@ -1,0 +1,500 @@
+                                                                                                                        Date:13/12/2024
+
+Notepad++ Editor
+================
+Download link : https://notepad-plus-plus.org/downloads/v8.7.1/
+
+
+HTML Tables
+===========
+Table is a collection of rows and columns.
+
+Table is used to represent our data in the form of rows and columns.
+
+A <table> tag is used to represent table.
+
+A <tr> tag is used to represent table row.
+
+A <th> tag is used to represent table heading.
+
+A <td> tag is used to represent table data.
+
+Table heading is bold and centered.
+
+Table data is normal text and left align.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<table border="0">
+			<tr>
+				<th>ID</th>
+				<th>NAME</th>
+				<th>EMAIL</th>
+			</tr>
+			<tr>
+				<td>101</td>
+				<td>Alan</td>
+				<td>alan@gmail.com</td>
+			</tr>
+			<tr>
+				<td>102</td>
+				<td>Jose</td>
+				<td>jose@zoho.com</td>
+			</tr>
+			<tr>
+				<td>103</td>
+				<td>Lisa</td>
+				<td>lisa@yahoo.com</td>
+			</tr>
+			<tr>
+				<td>104</td>
+				<td>Riya</td>
+				<td>riya@outlook.com</td>
+			</tr>
+		</table>	
+	</body>
+</html>
+
+ex:
+---
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<table border="1" align="center">
+		<caption>Employee Details</caption>
+			<tr>
+				<th>ID</th>
+				<th>NAME</th>
+				<th>EMAIL</th>
+			</tr>
+			<tr>
+				<td>101</td>
+				<td>Alan</td>
+				<td>alan@gmail.com</td>
+			</tr>
+			<tr>
+				<td>102</td>
+				<td>Jose</td>
+				<td>jose@zoho.com</td>
+			</tr>
+			<tr>
+				<td>103</td>
+				<td>Lisa</td>
+				<td>lisa@yahoo.com</td>
+			</tr>
+			<tr>
+				<td>104</td>
+				<td>Riya</td>
+				<td>riya@outlook.com</td>
+			</tr>
+		</table>	
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<table border="1" align="center" width="50%">
+		<caption>Employee Details</caption>
+			<tr bgcolor="#C3C3C3">
+				<th>ID</th>
+				<th>NAME</th>
+				<th>EMAIL</th>
+			</tr>
+			<tr>
+				<td>101</td>
+				<td>Alan</td>
+				<td>alan@gmail.com</td>
+			</tr>
+			<tr>
+				<td>102</td>
+				<td>Jose</td>
+				<td>jose@zoho.com</td>
+			</tr>
+			<tr>
+				<td>103</td>
+				<td>Lisa</td>
+				<td>lisa@yahoo.com</td>
+			</tr>
+			<tr>
+				<td>104</td>
+				<td>Riya</td>
+				<td>riya@outlook.com</td>
+			</tr>
+		</table>	
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<table border="1" align="center" bgcolor="#C3C3C3" cellspacing="10px" cellpadding="10px">
+		<caption>Employee Details</caption>
+			<tr >
+				<th>ID</th>
+				<th>NAME</th>
+				<th>EMAIL</th>
+			</tr>
+			<tr>
+				<td>101</td>
+				<td>Alan</td>
+				<td>alan@gmail.com</td>
+			</tr>
+			<tr>
+				<td>102</td>
+				<td>Jose</td>
+				<td>jose@zoho.com</td>
+			</tr>
+			<tr>
+				<td>103</td>
+				<td>Lisa</td>
+				<td>lisa@yahoo.com</td>
+			</tr>
+			<tr>
+				<td>104</td>
+				<td>Riya</td>
+				<td>riya@outlook.com</td>
+			</tr>
+		</table>	
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<table border="1" align="center" >
+		<caption>Employee Details</caption>
+			<tr >
+				<th>ID</th>
+				<th>NAME</th>
+				<th>EMAIL</th>
+			</tr>
+			<tr>
+				<td>101</td>
+				<td>Alan</td>
+				<td>alan@gmail.com</td>
+			</tr>
+			<tr>
+				<td>102</td>
+				<td>Jose</td>
+				<td>jose@zoho.com</td>
+			</tr>
+			<tr>
+				<td>103</td>
+				<td>Lisa</td>
+				<td>lisa@yahoo.com</td>
+			</tr>
+			<tr>
+				<td>104</td>
+				<td>Riya</td>
+				<td>riya@outlook.com</td>
+			</tr>
+			<tr>
+				<td colspan="3"><center>Thank You</center></td>
+			</tr>
+		</table>	
+	</body>
+</html>
+
+
+HTML form
+===========
+Form is used to accept the data from the enduser.
+
+It passes the data to server or database for processing.
+
+A <form> tag is used to create a form in a HTML.
+
+We have following list of form components.
+
+ex:
+	label 
+	text field
+	password field
+	checkbox 
+	radio 
+	buttons 
+	and etc.
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<form>
+			<label>UserName:</label>
+			<input type="text" name="t1"/>
+			
+			<br>
+			
+			<label>Password:</label>
+			<input type="password" name="t2"/>
+			
+			<br>
+			
+			<label>Age:</label>
+			<input type="number" name="t3"/>
+			
+			<br>
+			
+			<label>Gender:</label>
+			<input type="radio" name="gender" value="male"/> MALE 
+			<input type="radio" name="gender" value="female"/> FEMALE
+			
+			<br>
+			
+			<label>Maritial Status:</label>
+			<input type="checkbox" name="ms" value="married"/> MARRIED
+			<input type="checkbox" name="ms" value="single"/> SINGLE
+			
+			<br>
+			<label>Address:</label>
+			<textarea rows="5" cols="10"></textarea>
+			
+			<br>
+			<label>Country:</label>
+			<select name="country">
+				<option value="">none</option>
+				<option value="india">India</option>
+				<option value="america">America</option>
+				<option value="australia">Australia</option>
+			</select>
+			
+			<br>
+			
+			<input type="reset" value="reset"/>
+			<input type="submit" value="submit"/>
+			
+		</form>	
+	</body>
+</html>
+
+
+A "action" attribute describes what action has to performed when user click on submit button.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<form action="#">
+			<label>UserName:</label>
+			<input type="text" name="t1"/>
+			
+			<br>
+			
+			<label>Password:</label>
+			<input type="password" name="t2"/>
+			
+			<br>
+			
+			<label>Age:</label>
+			<input type="number" name="t3"/>
+			
+			<br>
+			
+			<label>Gender:</label>
+			<input type="radio" name="gender" value="male"/> MALE 
+			<input type="radio" name="gender" value="female"/> FEMALE
+			
+			<br>
+			
+			<label>Maritial Status:</label>
+			<input type="checkbox" name="ms" value="married"/> MARRIED
+			<input type="checkbox" name="ms" value="single"/> SINGLE
+			
+			<br>
+			<label>Address:</label>
+			<textarea rows="5" cols="10"></textarea>
+			
+			<br>
+			<label>Country:</label>
+			<select name="country">
+				<option value="">none</option>
+				<option value="india">India</option>
+				<option value="america">America</option>
+				<option value="australia">Australia</option>
+			</select>
+			
+			<br>
+			
+			<input type="reset" value="reset"/>
+			<input type="submit" value="submit"/>
+			
+		</form>	
+	</body>
+</html>
+
+A "target" attribute describes a submitted data must be open in a same window or new window.
+
+
+ex:
+--
+index.html
+----------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>
+	</head>
+	<body>
+		<form action="a.html" target="_blank">
+			<label>UserName:</label>
+			<input type="text" name="t1"/>
+			
+			<br>
+			
+			<label>Password:</label>
+			<input type="password" name="t2"/>
+			
+			<br>
+			
+			<label>Age:</label>
+			<input type="number" name="t3"/>
+			
+			<br>
+			
+			<label>Gender:</label>
+			<input type="radio" name="gender" value="male"/> MALE 
+			<input type="radio" name="gender" value="female"/> FEMALE
+			
+			<br>
+			
+			<label>Maritial Status:</label>
+			<input type="checkbox" name="ms" value="married"/> MARRIED
+			<input type="checkbox" name="ms" value="single"/> SINGLE
+			
+			<br>
+			<label>Address:</label>
+			<textarea rows="5" cols="10"></textarea>
+			
+			<br>
+			<label>Country:</label>
+			<select name="country">
+				<option value="">none</option>
+				<option value="india">India</option>
+				<option value="america">America</option>
+				<option value="australia">Australia</option>
+			</select>
+			
+			<br>
+			
+			<input type="reset" value="reset"/>
+			<input type="submit" value="submit"/>
+			
+		</form>	
+	</body>
+</html>
+
+a.html
+------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>A.html</title>
+	</head>
+	<body bgcolor="#FFFF00">
+			<center>
+				<h1>Welcome to Another file</h1>
+			</center>
+	</body>
+</html>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

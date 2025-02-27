@@ -1,0 +1,483 @@
+                                                                                                                                             28/0/2025
+
+Daemon thread 
+==============
+Deamon thread is a low priority thread that runs in a background to perform some operations like garbage collection, monitoring and etc.
+
+Daemon thread provides services to user threads. 
+
+Life of daemon thread is depends upon user threads because when user threads died then daemon thread will die automatically.
+
+There are many daemon threads are running internally.
+
+ex:
+	Garbage collector 
+	Finalizer 
+	ActionListener
+	signal dispatch 
+	and etc.
+
+We can change the nature of daemon thread before we start the threads.After starting the thread if we change the nature of a daemon thread then we will get IllegalThreadStateException.	
+
+To start the daemon thread we need to use setDeamon(true) method.
+
+To check a thread is a daemon or not we need to use isDeamon() method.
+
+By default our main thread is a daemon thread.
+
+ex:
+---
+class MyThread extends Thread 
+{
+	public void run()
+	{
+		for(int i=1;i<=5;i++)
+		{
+			System.out.println(Thread.currentThread().isDaemon());
+			System.out.println("Child-Thread");
+		}
+	}
+}
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		MyThread t=new MyThread();
+		t.setDaemon(true);
+		t.start();
+		
+		for(int i=1;i<=5;i++)
+		{
+			System.out.println("Parent-Thread");
+		}
+	}
+}
+
+Problem without synchronization 
+===============================
+If we don't have synchronization then we will face following problems.
+
+1) Data inconsistency 
+
+2) Thread interference 
+
+ex:
+---
+class Table  
+{
+	void printTable(int n)
+	{
+		for(int i=1;i<=5;i++)
+		{
+			System.out.println(n*i);
+			try
+			{
+				Thread.sleep(2000);
+			}
+			catch (InterruptedException ie)
+			{
+				ie.printStackTrace();
+			}
+		}
+	}
+}
+class MyThread1 extends Thread 
+{
+	Table  t;
+	MyThread1(Table  t)
+	{
+		this.t=t;
+	}
+	public void run()
+	{
+		t.printTable(5);
+	}
+}
+class MyThread2 extends Thread 
+{
+	Table  t;
+	MyThread2(Table t)
+	{
+		this.t=t;
+	}
+	public void run()
+	{
+		t.printTable(10);
+	}
+}
+class Test 
+{
+	public static void main(String[] args)
+	{
+		Table obj=new Table();
+		MyThread1 t1=new MyThread1(obj);
+		MyThread2 t2=new MyThread2(obj);
+
+		t1.start();
+		t2.start();
+	}
+}
+
+
+
+synchronization
+================
+A synchronized keyword is applicable for methods and blocks.
+
+A synchronization is allowed one thread to execute given object.Hence we achieve thread safety.
+
+The main advantage of synchronization is we solve data inconsistence problem.
+
+The main disadvantage of synchronization is ,it will increase waiting time of a thread which reduce the performance of the system.
+
+If there is no specific requirement then it is never recommanded to use synchronization concept.
+
+synchronization internally uses lock mechanism.
+
+Whenever a thread wants to access object , first it has to acquire lock of an object and thread will release the lock when it completes it's task.
+
+When a thread wants to execute synchronized method.It automatically gets the lock of an object.
+
+When one thread is executing synchronized method then other threads are not allowed to execute other synchronized methods in a same object concurently.But other threads are allowed to execute non-synchronized method concurently.
+
+ex:
+class Table
+{
+	synchronized void printTable(int n)
+	{
+		for(int i=1;i<=5;i++)
+		{
+				System.out.println(n*i);
+				try
+				{
+					Thread.sleep(2000);
+				}
+				catch (InterruptedException ie)
+				{
+					ie.printStackTrace();
+				}
+		}
+	}
+}
+class MyThread1 extends Thread
+{
+	Table t;
+	MyThread1(Table t)
+	{
+		this.t=t;
+	}
+	public void run()
+	{
+		t.printTable(5);
+	}
+}
+
+class MyThread2 extends Thread
+{
+	Table t;
+	MyThread2(Table t)
+	{
+		this.t=t;
+	}
+	public void run()
+	{
+		t.printTable(10);
+	}
+}
+
+class Test 
+{
+	public static void main(String[] args)
+	{
+		Table obj=new Table();
+		MyThread1 t1=new MyThread1(obj);
+		MyThread2 t2=new MyThread2(obj);
+
+		t1.start();
+		t2.start();
+	}
+}
+
+synchronized block
+====================
+If we want to perform synchronization on specific resource of a program then we need to use 
+synchronization.
+
+ex:
+	If we have 100 lines of code and if we want to perform synchronization only for 
+	10 lines then we need to use synchronized block.
+
+If we keep all the logic in synchronized block then it will act as a synchronized method.
+
+ex:
+class Table
+{
+	 void printTable(int n)
+	{
+		synchronized(this)
+		{
+		for(int i=1;i<=5;i++)
+		{
+				System.out.println(n*i);
+				try
+				{
+					Thread.sleep(2000);
+				}
+				catch (InterruptedException ie)
+				{
+					ie.printStackTrace();
+				}
+		}
+		}//sync
+	}
+}
+class MyThread1 extends Thread
+{
+	Table t;
+	MyThread1(Table t)
+	{
+		this.t=t;
+	}
+	public void run()
+	{
+		t.printTable(5);
+	}
+}
+
+class MyThread2 extends Thread
+{
+	Table t;
+	MyThread2(Table t)
+	{
+		this.t=t;
+	}
+	public void run()
+	{
+		t.printTable(10);
+	}
+}
+
+class Test 
+{
+	public static void main(String[] args)
+	{
+		Table obj=new Table();
+		MyThread1 t1=new MyThread1(obj);
+		MyThread2 t2=new MyThread2(obj);
+
+		t1.start();
+		t2.start();
+	}
+}
+
+
+
+3)Static synchronization
+=====================
+In static synchronization the lock will be on class but not on object.
+
+If we declare any static method as synchronized then it is called static synchronization method.
+
+ex:
+class Table
+{
+	static synchronized void printTable(int n)
+	{
+	
+		for(int i=1;i<=5;i++)
+		{
+				System.out.println(n*i);
+				try
+				{
+					Thread.sleep(2000);
+				}
+				catch (InterruptedException ie)
+				{
+					ie.printStackTrace();
+				}
+		}
+		
+	}
+}
+class MyThread1 extends Thread
+{
+	
+	public void run()
+	{
+		Table.printTable(5);
+	}
+}
+
+class MyThread2 extends Thread
+{
+
+	public void run()
+	{
+		Table.printTable(10);
+	}
+}
+
+class Test 
+{
+	public static void main(String[] args)
+	{
+		
+		MyThread1 t1=new MyThread1();
+		MyThread2 t2=new MyThread2();
+
+		t1.start();
+		t2.start();
+	}
+}
+
+Inter-Thread Communication
+===========================
+Two threads can communication by using wait(), notify() and notifyAll() method.
+
+A thread which is waiting for notification has to call wait() method and a thread which is giving notification has to call notify() or notifyAll() method.
+
+A wait(), notify() and notifyAll() methods of Object class but not Thread class.
+
+To invoke wait(), notify() and notifyAll() method compulsory we required synchronized area othewise we will get IllegalStateMonitorException.
+
+A thread which calls wait() method on a current object then it will release the lock of that object immediately and it goes waiting state.
+
+A thread which calls notify() And notifyAll() method on a current object then it will release the lock of that object but not immediately.
+
+Except wait(), notify() and notifyAll() method there is no way to release the lock.
+
+ex:
+---
+class MyThread extends Thread 
+{
+	int total=0;
+
+	public void run()
+	{
+		synchronized(this)
+		{
+			System.out.println("Child started Calculation");
+			
+			for(int i=1;i<=10;i++)
+			{
+				total+=i;
+			}
+
+			System.out.println("Child Giving notification");
+			this.notify();
+		}
+	}
+}
+class Test 
+{
+	public static void main(String[] args)throws InterruptedException 
+	{
+		MyThread t=new MyThread();
+		t.start();
+
+		synchronized(t)
+		{
+			System.out.println("Main method is waiting");
+			t.wait();
+			System.out.println("Main method got notification");
+			System.out.println(t.total);//55
+		}
+	}
+}
+
+DeadLock 
+=========
+Deadlock will occur in a situation where one thread is waiting for object lock which is acquired by another thread and that thread is waiting for object lock is which acquired by first thread. Here both the threads are ready to release lock but nobody will release. This situation is called DeadLock.
+
+Diagram: java44.1
+
+class Test 
+{
+	public static void main(String[] args)
+	{
+		final String res1="hi";
+		final String res2="bye";
+
+		//Anonymous inner class
+		Thread t1=new Thread()
+		{
+			public void run()
+			{
+				synchronized(res1)
+				{
+					System.out.println("Thread1: Locking Resource1");
+					synchronized(res2)
+					{
+						System.out.println("Thread1: Locking Resource2");
+					}
+				}
+			}
+		};
+
+		//Anonymous inner class
+		Thread t2=new Thread()
+		{
+			public void run()
+			{
+				synchronized(res2)
+				{
+					System.out.println("Thread2: Locking Resource2");
+					synchronized(res1)
+					{
+						System.out.println("Thread2: Locking Resource1");
+					}
+				}
+			}
+		};
+
+		t1.start();
+		t2.start();
+	}
+}
+
+Q) What are the disadvantages of Multithreading?
+
+	1) Thread starvation 
+	2) DeadLock 
+	3) Debugging 
+
+
+
+
+
+
+Assignment 
+==========
+Q) Write a java program to seggregate array elements without using sort() method?
+
+input:
+	0 1 1 0 0 1 0 1 0 1 
+
+output:
+	0 0 0 0 0 1 1 1 1 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

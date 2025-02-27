@@ -1,0 +1,397 @@
+                                                                                                                          20/01/2025
+
+JavaScript object
+=================
+JavaScript object is an entity having states and behaviours.
+
+In general, javascript object is a collection of properties and actions.
+
+Javascript is not a object oriented programming language. It is a object based programming language because we don't need to declare the class in order to get/create the object.
+
+There are three ways to create javascript objects.
+
+1) By using Object literal 
+
+2) By creating instance of an Object i.e using new operator 
+
+3) By creating Object constructor i.e using new operator 
+
+
+1) By using Object literal 
+--------------------------
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+</head>
+<body>
+        <script>
+            var emp=
+            {
+                empId:101,
+                empName:"Alan",
+                empSal:1000
+            }
+
+            document.writeln("Employee Id :"+emp.empId+"<br>");
+            document.writeln("Employee Name :"+emp.empName+"<br>");
+            document.writeln("Employee Salary :"+emp.empSal+"<br>");
+        </script>
+</body>
+</html>
+
+
+
+2) By creating instance of an Object
+-------------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+</head>
+<body>
+        <script>
+            var emp=new Object();
+            emp.empId=201;
+            emp.empName="Jose";
+            emp.empSal=2000;
+            
+            document.writeln("Employee Id :"+emp.empId+"<br>");
+            document.writeln("Employee Name :"+emp.empName+"<br>");
+            document.writeln("Employee Salary :"+emp.empSal+"<br>");
+        </script>
+</body>
+</html>
+
+3) By creating Object constructor
+--------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+</head>
+<body>
+        <script>
+            function emp(empId,empName,empSal)
+            {
+                this.empId=empId;
+                this.empName=empName;
+                this.empSal=empSal;
+            }
+            var e = new emp(301,"Kelvin",3000);
+
+            document.writeln("Employee Id :"+e.empId+"<br>");
+            document.writeln("Employee Name :"+e.empName+"<br>");
+            document.writeln("Employee Salary :"+e.empSal+"<br>");
+        </script>
+</body>
+</html>
+
+
+JavaScript Array
+=================
+JavaScript array is a collection of similar elements.
+
+Array index always starts with zero because it is a logical process.
+
+There are three ways to declare the array in javascript.
+
+1) Using Array literal
+
+2) By creating instance of an Array i.e using new operator 
+
+3) By creating Array constructor i.e using new operator 
+
+
+1) Using Array literal
+-----------------------
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+</head>
+<body>
+        <script>
+           var arr=[10,20,30];
+           document.writeln(arr[0]+"<br>");
+           document.writeln(arr[1]+"<br>");
+           document.writeln(arr[2]+"<br>");
+        </script>
+</body>
+</html>
+
+
+
+2) By creating instance of an Array
+----------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+</head>
+<body>
+        <script>
+           var arr=new Array();
+           arr[0]=10;
+           arr[1]=20;
+           arr[2]=30;
+           
+           document.writeln(arr[0]+"<br>");
+           document.writeln(arr[1]+"<br>");
+           document.writeln(arr[2]+"<br>");
+        </script>
+</body>
+</html>
+
+
+3) By creating Array constructor
+------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+</head>
+<body>
+        <script>
+           var arr=new Array(5,8,1,9,4);
+    
+           for(var i=0;i<arr.length;i++)
+           {
+                document.writeln(arr[i]);
+           }
+        </script>
+</body>
+</html>
+
+
+Q) Write a javascript program to insert the elements and remove the elements from array?
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+</head>
+<body>
+        <script>
+           var arr=[];
+
+           arr.push(10);
+           arr.push(20);
+           arr.push(30);
+
+           arr.pop();
+
+           for(var i=0;i<arr.length;i++)
+           {
+                document.writeln(arr[i]+" ");
+           }
+        </script>
+</body>
+</html>
+
+
+Q) Write a javascript program to perform sum of array elements?
+
+input:
+	7 9 1 3 4 
+
+output:
+	24
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+</head>
+<body>
+        <script>
+           var arr=[7,9,1,3,4];
+
+           var sum=0;
+           for(var i in arr)
+           {
+                sum+=arr[i];
+           }
+           document.writeln(sum);
+        </script>
+</body>
+</html>
+
+
+Q) Write a javascript program to copy one array to another array?
+
+input:
+	5 8 1 5 2 
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+</head>
+<body>
+        <script>
+           var arr1=[5,8,1,5,2];
+
+           var arr2=[];
+
+            for(var i in arr1)
+            {
+                arr2.push(arr1[i]);
+            }
+
+            for(var i in arr2)
+            {
+                document.writeln(arr2[i]);
+            }
+
+        </script>
+</body>
+</html>
+
+
+JavaScript String 
+==================
+JavaScript String is a collection of characters.
+
+There are two ways to create a String in javascript.
+
+1) Using string literal 
+
+2) By creating instance of a String i.e using new operator 
+
+
+1) Using string literal 
+------------------------
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+</head>
+<body>
+        <script>
+           var str1="hi";
+           document.writeln(str1);
+
+           var str2='bye';
+           document.writeln(str2);
+        </script>
+</body>
+</html>
+
+2) By creating instance of a String
+-----------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+</head>
+<body>
+        <script>
+           var str=new String("ihub");
+           document.writeln(str);
+        </script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+</head>
+<body>
+        <script>
+           var str="ihubtalent";
+           document.writeln(str.toUpperCase()+"<br>");
+           document.writeln(str.toLowerCase()+"<br>");
+           document.writeln(str.length+"<br>");
+           document.writeln(str.concat("institute")+"<br>");
+           document.writeln(str.substring(1,3)+"<br>");
+        </script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+</head>
+<body>
+        <script>
+           var str="hello";
+           
+           var rev="";
+
+           for(var i=str.length-1;i>=0;i--)
+           {
+                rev+=str[i];
+           }
+
+           document.writeln(rev);
+        </script>
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+</head>
+<body>
+        <script>
+           var str="racar";
+           
+           var rev="";
+
+           for(var i=str.length-1;i>=0;i--)
+           {
+                rev+=str[i];
+           }
+
+           if(str==rev)
+                document.writeln("It is a palindrome string");
+            else
+                document.writeln("It is not a palindrome string");
+        </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

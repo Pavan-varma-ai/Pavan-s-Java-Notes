@@ -1,0 +1,191 @@
+                                                                                                                              16/01/2025
+
+Serialization 
+=============
+The process of storing/writing object data in a file is called serialization.
+
+In general, serialization is a process of converting object state to file state.
+
+To perform serialization we need to use FileOutputStream and ObjectOutputStream class.
+
+We can perform serialization only for serializable object.
+
+To create a serializable object a class must implements java.io.Serializable interface.
+
+Diagram: class40.1
+
+ex:
+---
+import java.io.*;
+class Person implements Serializable
+{
+	//current class variables
+	private String name;
+	private int age;
+
+	Person(String name,int age)
+	{
+		this.name=name;
+		this.age=age;
+	}
+
+	public String toString()
+	{
+		return "Person:[Name : "+name+", Age: "+age+"]";
+	}
+}
+class Test 
+{
+	public static void main(String[] args)
+	{
+		Person p=new Person("Alan",29);
+
+		//serialization
+		try(ObjectOutputStream ostream = new ObjectOutputStream(new FileOutputStream("D:\\rahul.txt"));)
+		{
+				ostream.writeObject(p);
+				System.out.println("Serialization Done");
+		}
+		catch(IOException ioe)
+		{
+			ioe.printStackTrace();
+		}
+	}
+}
+
+Note:
+-----
+While performing serialization if we don't want to serialize the value of a perticular variable then we should declare that variable with transient keyword.
+
+At the time of serialization JVM ignores the original value of transient variable and save default value.
+
+ex:
+
+import java.io.*;
+class Person implements Serializable
+{
+	//current class variables
+	private String name;
+	private int age;
+	transient String gender;
+
+	Person(String name,int age,String gender)
+	{
+		this.name=name;
+		this.age=age;
+		this.gender=gender;
+	}
+
+	public String toString()
+	{
+		return "Person:[Name : "+name+", Age: "+age+"]";
+	}
+}
+class Test 
+{
+	public static void main(String[] args)
+	{
+		Person p=new Person("Alan",29,"male");
+
+		//serialization
+		try(ObjectOutputStream ostream = new ObjectOutputStream(new FileOutputStream("D:\\rahul.txt"));)
+		{
+				ostream.writeObject(p);
+				System.out.println("Serialization Done");
+		}
+		catch(IOException ioe)
+		{
+			ioe.printStackTrace();
+		}
+	}
+}
+
+
+
+Deserialization 
+===============
+The process of taking the data from a file and representing an object is called deserialization.
+
+In general, deserialization is a process of converting file state to object state.
+
+To perform deserialization we need to use FileInputStream and ObjectInputStream class.
+
+Diagram: class40.2
+
+ex:
+---
+import java.io.*;
+class Person implements Serializable
+{
+	//current class variables
+	private String name;
+	private int age;
+
+	Person(String name,int age)
+	{
+		this.name=name;
+		this.age=age;
+	}
+
+	public String toString()
+	{
+		return "Person:[Name : "+name+", Age: "+age+"]";
+	}
+}
+class Test 
+{
+	public static void main(String[] args)
+	{
+		//Deserialization
+		try(ObjectInputStream istream=new ObjectInputStream(new FileInputStream("D:\\rahul.txt"));)
+		{
+				Person p = (Person)istream.readObject();
+				System.out.println(p);
+				System.out.println("Deserialization Done");
+		}
+		catch(ClassNotFoundException | IOException ioe)
+		{
+			ioe.printStackTrace();
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

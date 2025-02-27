@@ -1,0 +1,487 @@
+
+                                                                                                 10/02/2025
+React components
+================
+A component is a building block of react application.
+
+React components are used to split our UI into reusable independent pieces.
+ex:
+	<Header> , <Footer>, <Section>, <Form>, <Table> and etc.
+
+React components are like javascript functions and takes arbitary inputs like props and returns react element to describe how an element should look like.
+
+In ReactJS, React components must start with uppercase letter.
+
+There are two ways to create react components.
+
+1) Function component / Functional component 
+
+2) Class component 
+
+
+1) Function component
+========================
+
+Function component is alway known as stateless component.
+
+Function component takes props as an argument and return react element.
+
+There are three ways to declare function component.
+
+i) Named function 
+-----------------
+function App()
+{
+	return (
+	
+	)
+}
+export default App;
+
+
+ii) Anonymous function 
+----------------------
+const App=function()
+{
+	return (
+	
+	)
+}
+export default App;
+
+
+iii) Arrow function 
+---------------------
+const App=()=>
+{
+	return (
+	
+	)
+}
+export default App;
+
+Project Structure 
+-------------------
+myapp4
+|
+|---node_modules 
+|
+|---public
+|	|
+	|---index.html (main template)
+	|---favicon.ico
+	|---manifest.json
+
+|-----src
+|	|
+	|---index.js  (entry point)
+	|---index.css
+	|
+	|---App.js  (parent component)
+	|---App.css
+	|---App.test.js 
+|
+|---package.json
+|---READMD.md 
+
+
+step1:
+------
+	Create a react project i.e myapp4.
+	ex:
+		
+		reactprojects> npx create-react-app myapp4
+
+step2:
+------
+	Open the VSC editor.
+	ex:
+		reactprojects> code . 
+
+step3:
+------
+	Switch to the project.
+	ex:
+		reactprojects> cd  myapp4
+
+
+step4:
+------
+	Install web-vitals using npm command.
+	ex:
+		reactprojects/myapp4> npm install web-vitals
+
+step5:
+-----
+	Run react application.
+	ex:
+		reactprojects/myapp4> npm start 
+
+step6:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+step7:
+------
+	Goto App.js file and write below code.	
+
+App.js 
+-------
+const App=()=>{
+  return(
+      <>
+      <h1>Function Component</h1>
+      <h1>Niyaz sir class</h1>
+      </>
+  )
+}
+export default App;
+
+
+Function component with props
+===============================
+
+index.js 
+---------
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App rollno={101} name="Alan"/>
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+
+
+App.js 
+------
+const App=(props)=>{
+  return(
+      <> 
+      <h1>Roll No : {props.rollno}</h1>
+      <h1>Name : {props.name}</h1>
+      </>
+  )
+}
+export default App;
+
+
+2) Class component 
+====================
+
+A class component is also known as statefull component.
+
+A class component must and should extends react Component class.
+
+A class component contains render() method that returns react elements.
+
+We can declare class component as follow.
+
+ex:
+	import {Component} from 'react';
+	class App extends Component
+	{
+		render()
+		{
+			return (
+	
+			)
+		}
+	}
+	export default App;
+
+
+
+Project Structure 
+-----------------
+myapp5
+|
+|---node_modules 
+|
+|---public
+|	|
+	|---index.html (main template)
+	|---favicon.ico
+	|---manifest.json
+
+|-----src
+|	|
+	|---index.js  (entry point)
+	|---index.css
+	|
+	|---App.js  (parent component)
+	|---App.css
+	|---App.test.js 
+|
+|---package.json
+|---READMD.md 
+
+
+
+
+step1:
+------
+	Create a react project i.e myapp5.
+	ex:
+		
+		reactprojects> npx create-react-app myapp5
+
+step2:
+------
+	Open the VSC editor.
+	ex:
+		reactprojects> code . 
+
+step3:
+------
+	Switch to the project.
+	ex:
+		reactprojects> cd  myapp5
+
+
+step4:
+------
+	Install web-vitals using npm command.
+	ex:
+		reactprojects/myapp5> npm install web-vitals
+
+step5:
+-----
+	Run react application.
+	ex:
+		reactprojects/myapp5> npm start 
+
+step6:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+step7:
+------
+	Goto App.js file and write below code.	
+
+App.js 
+-------
+import {Component} from 'react';
+
+class App extends Component
+{
+  render()
+  {
+    return(
+        <>
+            <h1>Class component</h1>
+            <h1>Niyaz Sir class</h1>
+        </>
+    )
+  }
+}
+export default App;
+
+
+Class component with props
+===========================
+
+index.js 
+--------
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App rollno={201} name={"Kelvin"}/>
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+App.js 
+-------
+import {Component} from 'react';
+
+class App extends Component
+{
+  render()
+  {
+    return(
+        <>
+            <h1>Roll No : {this.props.rollno}</h1>
+            <h1>Name : {this.props.name}</h1>
+        </>
+    )
+  }
+}
+export default App;
+
+
+Composing component in react
+=============================
+If a component calls another component such concept is called composing component.
+
+Project Structure 
+------------------
+myapp5
+|
+|---node_modules 
+|
+|---public
+|	|
+	|---index.html (main template)
+	|---favicon.ico
+	|---manifest.json
+
+|-----src
+|	|
+	|---index.js  (entry point)
+	|
+	|
+	|---App.js  (parent component)
+	|
+	|---Student.js 
+|
+|---package.json
+|---READMD.md 
+
+
+step1:
+------
+	Create a react project i.e myapp6.
+	ex:
+		
+		reactprojects> npx create-react-app myapp6
+
+step2:
+------
+	Open the VSC editor.
+	ex:
+		reactprojects> code . 
+
+step3:
+------
+	Switch to the project.
+	ex:
+		reactprojects> cd  myapp6
+
+
+step4:
+------
+	Install web-vitals using npm command.
+	ex:
+		reactprojects/myapp6> npm install web-vitals
+
+step5:
+-----
+	Run react application.
+	ex:
+		reactprojects/myapp6> npm start 
+
+step6:
+------
+	Test the application by using below request url.
+	ex:
+		http://localhost:3000
+
+step7:
+------
+	Create a Student.js component inside "src" folder.
+
+Student.js
+----------
+function Student()
+{
+    return (
+        <h1> Student Component </h1>
+    )
+}
+export default Student;
+
+
+step8:
+-----
+	Goto App.js file and call Student.js component.
+
+App.js 
+-------
+import Student from "./Student";
+
+function App()
+{
+    return(
+        <Student/>
+    )
+}
+export default App;
+
+
+Composing component with props
+===============================
+index.js
+---------
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App  rollno={501} firstName={"Lisa"}/>
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+App.js 
+--------
+import Student from "./Student";
+
+function App(props)
+{
+    return(
+        <Student  roll={props.rollno}  name={props.firstName}/>
+    )
+}
+export default App;
+
+Student.js
+----------
+function Student(props)
+{
+    return (
+        <> 
+            <h1>Roll No : {props.roll}</h1>
+            <h1>Name : {props.name}</h1>
+        </>
+    )
+}
+export default Student;
+
+
+
+
+
+

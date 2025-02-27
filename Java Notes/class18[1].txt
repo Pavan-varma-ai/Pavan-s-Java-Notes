@@ -1,0 +1,533 @@
+                                                                                                                  date:13/12/2024
+
+
+Q) Write a java program to check given alphabet is a vowel or consonent?
+
+import java.util.Scanner;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.println("Enter the alphabet :");
+		char ch=sc.next().charAt(0);
+
+		switch(ch)
+		{
+			case 'a' : System.out.println("It is a vowel"); break;
+			case 'e' : System.out.println("It is a vowel"); break;
+			case 'i' : System.out.println("It is a vowel"); break;
+			case 'o' : System.out.println("It is a vowel"); break;
+			case 'u' : System.out.println("It is a vowel"); break;
+			default: System.out.println("It is a consonent");
+		}
+
+	}
+}
+
+Q) write a java program to accept number from 1 to 12 then find out month of the year?
+
+Input:
+	10
+
+Output:
+	October
+
+
+import java.util.Scanner;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.println("Enter the Number :");
+		int n=sc.nextInt();
+
+		switch(n)
+		{
+			case 1 : System.out.println("January"); break;
+			case 2 : System.out.println("Febuary"); break;
+			case 3 : System.out.println("March"); break;
+			case 4 : System.out.println("April"); break;
+			case 5 : System.out.println("May"); break;
+			case 6 : System.out.println("June"); break;
+			case 7 : System.out.println("July"); break;
+			case 8 : System.out.println("Auguest"); break;
+			case 9 : System.out.println("September"); break;
+			case 10 : System.out.println("October"); break;
+			case 11 : System.out.println("November"); break;
+			case 12 : System.out.println("December"); break;
+			default: System.out.println("Invalid number");
+		}
+
+	}
+}
+
+2) Iteration statement 
+=======================
+Iteration statement is used to execute our code repeatedly.
+
+Iteration statement is possible by using LOOPS.
+
+We have four types of loops.
+
+i) do while loop 
+
+ii) while loop
+
+iii) for loop
+
+iv) for each loop 
+
+i) do while loop 
+----------------
+It executes the source code how long our condition is true.
+
+syntax:
+-------
+	do
+	{	
+		-
+		- //code to be execute 
+		-
+	}while(condition);
+
+ex:
+----
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int i=1;
+		
+		do
+		{
+			System.out.print(i+" ");//infinite 1 
+		}
+		while (i<=10);
+
+	}
+}
+
+
+In do while loop, our code will execute atleast for one time either our condition is true or false.
+
+ex:
+---
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int i=11;
+		
+		do
+		{
+			System.out.print(i+" ");//11
+		}
+		while (i<=10);
+
+	}
+}
+
+Q) Write a java program to display 10 natural numbers?
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int i=1;
+		do
+		{
+			System.out.print(i+" ");//1 2 3 4 5 6 7 8 9 10
+			i++;
+		}
+		while (i<=10);
+
+	}
+}
+
+Q) Write a java program to display sum of 10 natural numbers?
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int i=1,sum=0;
+		do
+		{
+			sum = sum + i;
+			i++;
+		}
+		while (i<=10);
+		
+		System.out.println(sum);
+	}
+}
+
+Q) Write a java program to find out multiplication table of a given number?
+
+import java.util.Scanner;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the number :");
+		int n=sc.nextInt();
+
+		int i=1;
+
+		do
+		{
+
+			System.out.println(n+" * "+i+" = "+n*i);
+			i++;
+		}
+		while (i<=10);
+	}
+}
+
+
+Q) Write a java program to find out factorial of a given number?
+
+Input:
+	5
+
+Output:
+	120 (5*4*3*2*1)
+
+
+import java.util.Scanner;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the number :");
+		int n=sc.nextInt(); //5
+
+		int i=n,fact=1;
+		do
+		{
+			fact = fact * i;
+			i--;
+		}
+		while (i>=1);
+
+		System.out.println(fact);
+	}
+}
+
+
+ii) while loop 
+----------------
+It executes the source code how long our condition is true.
+
+syntax:
+-------
+	while(condition)
+	{
+		-
+		- //code to be execute 
+		-
+	}
+
+ex:
+---
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int i=1;
+
+		while(i<=10)
+		{
+			System.out.print("Hello "); // infinite Hello 
+		}
+	}
+}
+
+ex:
+---
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int i=11;
+
+		while(i<=10)
+		{
+			System.out.print("Hello ");
+		}
+	}
+}
+
+
+ex:
+---
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int i=10;
+
+		while(i>=1)
+		{
+			System.out.print(i+" ");//10 9 8 7 6 5 4 3 2 1 
+
+			i--;
+		}
+	}
+}
+
+Q) Write a java program to display 100 natural numbers?
+
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int i=1;
+		while(i<=100)
+		{
+			System.out.print(i+" "); // 1 to 100
+
+			i++;
+		}
+	}
+}
+
+Q) Write a java program to display 10 natural numbers?
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int i=1,sum=0;
+
+		while(i<=10)
+		{
+			sum=sum+i;
+			
+			i++;
+		}
+		System.out.println(sum);
+	}
+}
+
+Q) Write a java program to find out multiplication table of a given number?
+
+import java.util.Scanner;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the number :");
+		int n=sc.nextInt();
+
+		int i=1;
+		while(i<=10)
+		{
+			System.out.println(n+" * "+i+" = "+n*i);
+
+			i++;
+		}
+	}
+}
+
+
+Q) Write a java program to find out factorial of a given number?
+
+import java.util.Scanner;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the number :");
+		int n=sc.nextInt();//5
+
+		int i=n,fact=1;
+		while(i>=1)
+		{
+			fact = fact * i;
+			i--;
+		}
+
+		System.out.println(fact);
+	}
+}
+
+Q) Write a java program to find out sum of digits of a given number?
+
+input:
+	123
+
+output:
+	6 (1+2+3)
+
+import java.util.Scanner;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the number :");
+		int n=sc.nextInt();//123
+
+		int rem,sum=0;
+
+		while(n>0)
+		{
+			rem = n % 10;
+
+			sum = sum + rem;
+
+			n = n / 10;
+		}
+
+		System.out.println(sum);
+	}
+}
+
+Q) Write a java program to find out given number is Armstrong or not?
+
+input:
+	153
+
+output:
+	It is a Armstrong number (1*1*1+5*5*5+3*3*3)(1+125+27)
+
+
+import java.util.Scanner;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the number :");
+		int n=sc.nextInt();//123
+
+		int temp=n;
+
+		int rem,sum=0;
+
+		while(n>0)
+		{
+			rem = n % 10;
+
+			sum = sum + rem * rem * rem;
+
+			n = n / 10;
+		}
+
+		if(temp==sum)
+			System.out.println("It is a Armstrong number ");
+		else
+			System.out.println("it is not a Armstrong number");
+	}
+}
+
+Q) Write a java program to find out reverse of a given number?
+
+input:
+	123
+
+output:
+	321
+
+ex:
+---
+import java.util.Scanner;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the number :");
+		int n=sc.nextInt();//123
+
+		int rem,rev=0;
+
+		while(n>0)
+		{
+			rem = n % 10;
+
+			rev = rev * 10 + rem;
+
+			n = n / 10;
+		}
+
+		System.out.println(rev);		
+	}
+}
+
+Q) Write a java program to check given number is palindrome or not?
+
+input:
+	121
+
+output:
+	It is a palindrome number 
+
+
+import java.util.Scanner;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the number :");
+		int n=sc.nextInt();//123
+
+		int temp=n;
+
+		int rem,rev=0;
+
+		while(n>0)
+		{
+			rem = n % 10;
+
+			rev = rev * 10 + rem;
+
+			n = n / 10;
+		}
+
+		if(temp==rev)
+			System.out.println("It is a plaindrome number");
+		else
+			System.out.println("It is not a palindrome number");
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

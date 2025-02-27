@@ -1,0 +1,512 @@
+
+                                                                                                                           17/02/2025
+React Images/Assets
+====================
+There are two ways to declare react images/assets.
+
+1) Inside the public folder 
+
+2) Inside the src folder
+
+
+Project Structure 
+------------------
+myapp14
+|
+|-----node_modules
+|
+|-----public
+	|		
+	|---index.html
+	|---manifest.json
+	|---favicon.ico
+|-----src
+|	|
+	|----index.js
+	|----App.js 
+	|----images (folder)
+		|
+		|---thumbnail1.jpg
+		|---thumbnail2.jpg
+		|---thumbnail3.jpg
+
+|---package.json
+|---READMD.md
+
+step1:
+-----
+	Create react aplication i.e myapp14.
+	ex:
+		npx create-react-app myapp14
+
+step2:
+------
+	Switch to the project.
+	ex:
+		cd  myapp14
+
+step3:
+-----
+	Download web-vitals dependency in our project.
+	ex:
+		npm install web-vitals
+
+
+step4:
+------
+	Run react application.
+	ex:
+		npm start 
+
+step5:
+-----
+	Create a "images" folder inside "src" folder.
+
+step6:
+-----
+	Copy and paste some images inside "images" folder.
+
+
+step7:
+------
+	Now display the images inside App.js file.
+
+App.js
+-------
+import pic1 from './images/thumbnail1.jpg';
+import pic2 from './images/thumbnail2.jpg';
+import pic3 from './images/thumbnail3.jpg';
+
+function App()
+{
+  return (
+    <>
+        <img src={pic1} style={{marginLeft:"20px"}} width="200px" height="200px"/>
+        <img src={pic2} style={{marginLeft:"20px"}} width="200px" height="200px"/>
+        <img src={pic3} style={{marginLeft:"20px"}} width="200px" height="200px"/>
+    </>
+  )
+}
+export default App;
+
+
+
+React Router           
+================
+Routing is a process in which a user is directed to different pages based on their action or request.
+
+ReactJS Router is mainly used for developing Single Page Web Applications. 
+
+React Router is used to define multiple routes in the application. 
+
+When a user types a specific URL into the browser, and if this URL path matches any 
+'route' inside the router file, the user will be redirected to that particular route.
+
+React Router is a standard library system built on top of the React and used to 
+create routing in the React application using React Router Package.
+
+React contains three different packages for routing.
+
+1)react-router: 
+----------------
+It provides the core routing components and functions for the React Router applications.
+
+2)react-router-native: 
+--------------------
+It is used for mobile applications.
+
+3)react-router-dom: 
+-------------------
+It is used for web applications design.
+
+Note:
+-------
+It is not possible to install react-router directly in your application. 
+To use react routing, first, you need to install react-router-dom modules in your application. 
+
+
+We have two types of router components.
+
+1)<BrowserRouter>: 
+-------------------
+		It is used for handling the dynamic URL.
+2)<HashRouter>: 
+--------------
+		It is used for handling the static request.
+
+Project Structure 
+------------------
+myapp15
+|
+|-----node_modules
+|
+|-----public
+	|		
+	|---index.html
+	|---manifest.json
+	|---favicon.ico
+|-----src
+|	|
+	|----index.js
+	|----App.js (routing file)
+	|----Home.js
+	|----About.js
+	|----Contact.js
+	|----Error.js
+
+|---package.json
+|---READMD.md
+
+step1:
+-----
+	Create react aplication i.e myapp15.
+	ex:
+		npx create-react-app myapp15
+
+step2:
+------
+	Switch to the project.
+	ex:
+		cd  myapp15
+
+step3:
+-----
+	Download web-vitals dependency in our project.
+	ex:
+		npm install web-vitals
+
+
+step4:
+------
+	Run react application.
+	ex:
+		npm start 
+
+step5:
+-----
+	Create Home.js, About.js, Contact.js and Error.js
+
+Home.js
+-------
+import React from 'react'
+
+function Home() {
+  return (
+    <div>
+        Home Component 
+    </div>
+  )
+}
+
+export default Home
+
+
+About.js
+-------
+import React from 'react'
+
+function About() {
+  return (
+    <div>
+        Abount Component
+    </div>
+  )
+}
+
+export default About
+
+
+Contact.js
+----------
+import React from 'react'
+
+function Contact() {
+  return (
+    <div>
+        Contact Component
+    </div>
+  )
+}
+
+export default Contact
+
+
+Error.js
+---------
+import React from 'react'
+
+function Error() {
+  return (
+    <div>
+            Sorry! 404 Error Page Not Found
+    </div>
+  )
+}
+
+export default Error
+
+
+
+step6:
+-----
+	Configure each component inside routing file i.e App.js.
+
+App.js
+------
+import {BrowserRouter,Routes,Route} from 'react-router-dom';
+import Home from './Home.js';
+import About from './About.js';
+import Contact from './Contact.js';
+import Error from './Error.js';
+
+function App()
+{
+  return(
+      <div>
+            <BrowserRouter>
+                <Routes>
+                    <Route exact path='/' element={<Home/>}></Route>
+                    <Route path='/about' element={<About/>}></Route>
+                    <Route path='/contact' element={<Contact/>}></Route>
+                    <Route path='*' element={<Error/>}></Route>   
+                </Routes>
+            </BrowserRouter>
+
+      </div>
+  )
+}
+export default App;
+
+
+step7:
+------
+	Now test the output by using below request url.
+	ex:
+		http://localhost:3000
+		http://localhost:3000/
+		http://localhost:3000/about
+		http://localhost:3000/contact 
+		http://localhost:3000/service  
+
+
+step8:
+-------
+	Add the <Link> to routing file to create SPA.
+
+App.js
+-------
+import {BrowserRouter,Routes,Route,Link} from 'react-router-dom';
+import Home from './Home.js';
+import About from './About.js';
+import Contact from './Contact.js';
+import Error from './Error.js';
+
+function App()
+{
+  return(
+      <div>
+            
+
+            <BrowserRouter>
+
+            <Link to='/' style={{display:"block"}} > Home </Link>
+            <Link to='/about' style={{display:"block"}} > About </Link>
+            <Link to='/contact' style={{display:"block"}} > Contact </Link>
+
+                <Routes>
+                    <Route exact path='/' element={<Home/>}></Route>
+                    <Route path='/about' element={<About/>}></Route>
+                    <Route path='/contact' element={<Contact/>}></Route>
+                    <Route path='*' element={<Error/>}></Route>   
+                </Routes>
+            </BrowserRouter>
+
+      </div>
+  )
+}
+export default App;
+
+
+Bootstrap in React
+=================
+A Single-page applications gaining popularity over the last few years, so many front-end frameworks have introduced such as Angular, Vue, Ember, etc. As a result, jQuery is not a necessary requirement for building web apps. 
+
+Currently, React is mostly used JavaScript library for building web applications, and Bootstrap become the most popular CSS framework. 
+
+Let see how to use bootstrap in react applications.
+
+
+Project Structure 
+------------------
+myapp16
+|
+|-----node_modules
+|
+|-----public
+	|		
+	|---index.html
+	|---manifest.json
+	|---favicon.ico
+|-----src
+|	|
+	|----index.js
+	|----App.js (routing file)
+	|----Home.js
+	|----About.js
+	|----Contact.js
+	|----Error.js
+
+|---package.json
+|---READMD.md
+
+step1:
+-----
+	Create react aplication i.e myapp16.
+	ex:
+		npx create-react-app myapp16
+
+step2:
+------
+	Switch to the project.
+	ex:
+		cd  myapp16
+
+step3:
+-----
+	Download web-vitals dependency in our project.
+	ex:
+		npm install web-vitals
+
+step4:
+-----
+	Download bootstrap package in our project.
+	ex:
+		npm install bootstrap
+
+
+step4:
+------
+	Switch to the project.
+	ex:
+		cd myapp16
+
+step5:
+-------
+	Run react application.
+	ex:
+		npm start 
+
+step5:
+-----
+	Import bootstrap inside index.js file.
+index.js
+--------
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import '../node_modules/bootstrap/dist/css/boostrap.css';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+
+
+step6:
+-----
+	Now add bootstrap code inside App.js file.
+
+App.js 
+-------	
+import React from 'react'
+
+function App() {
+  return (
+    <div className='container mt-5'>
+         <button className='btn btn-primary'> click me </button> 
+    </div>
+  )
+}
+
+export default App
+
+
+
+Q) 
+You are given three integers hour, min, and sec respectively. The hour denotes time in "hours", min denotes time in "minutes" and sec denotes time in "seconds". You are required to calculate the time in "seconds" and print the same.
+
+Input:
+	10 30 23
+
+Output:
+	37823
+
+ex:
+--
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int hours=10;
+		int minutes=30;
+		int seconds=23;
+
+		int totalSeconds = (hours * 3600) + (minutes * 60) + seconds;
+
+		System.out.println(totalSeconds);
+
+	}
+}
+
+
+Q) 
+
+Alice is planning to organize a contest with 4 players in each team. There are two types of players named Experienced and Freshers. To make the contest unbiased Alice wants to have a team in such a way that each team must contain at least 1 Experienced and 1 Fresher. You are given N the number of Experienced and M the number of Freshers. Your task is to determine the maximum number of team formations possible.
+
+Input:
+	5 5
+Output:
+	2
+
+Input:
+	10 1 
+Output:
+	1 
+
+
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		int N=5,M=5;
+
+		int team = Math.min((N+M)/4, Math.min(N,M));
+
+		System.out.println(team);
+
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

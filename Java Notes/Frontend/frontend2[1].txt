@@ -1,0 +1,276 @@
+                                                                                                                                      Date:10/12/2024 
+HTML Meta tag 
+==============
+HTML meta tag is used to declare metadata of a document.
+
+Metadata used by search engine, web browsers and other web services.
+
+To declare a metadata of a document we need to use <meta> tag.
+
+A <meta> tag must declare inside <head> tag.
+
+A <meta> tag is used to declare following things.
+
+1) Description 
+
+2) Author 
+
+3) Keywords 
+
+4) viewport 
+
+5) copyright 
+
+6) refresh 
+
+and etc.
+
+
+
+UTF-8
+------
+
+UTF stands for Unicode Transformation Format.
+
+It is a encoding method which describes what character set a website is written with.
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- metadata -->
+		<meta  charset="UTF-8">
+		<meta name="description" content="It is a niyaz sir class">
+		<meta name="author" content="Niyaz Sir">
+		<meta name="keywords" content="HTML,CSS,JavaScript">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="copyright" content="copy right by ihub talent">
+		<meta http-equiv="refresh" content="05">	
+			
+	</head>
+	<body>
+		Welcome to IHUB
+	</body>
+</html>
+
+Basic HTML Tags
+===============
+
+Heading Tags 
+============
+Heading tags are used to display the headings in a web page.
+
+Heading tags are used to display the text in bold and size of the text depends upon number of heading tags.
+
+We have six heading tags from h1 to h6.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>		
+	</head>
+	<body>
+		<h1>Heading Tag1</h1>
+		<h2>Heading Tag2</h2>
+		<h3>Heading Tag3</h3>
+		<h4>Heading Tag4</h4>
+		<h5>Heading Tag5</h5>
+		<h6>Heading Tag6</h6>		
+	</body>
+</html>
+
+Paragraph tag 
+=============
+A <p> tag is used to display the paragraph in html.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>		
+	</head>
+	<body>
+		<p>
+			In today's competitive business, the demand for efficient and cost-effective IT solutions has never been more critical.
+		</p>		
+	</body>
+</html>
+
+Bold tag 
+========
+A <b> tag is used to display the text in bold without importance.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>		
+	</head>
+	<body>
+		<b>This is bold tag</b>	
+	</body>
+</html>
+
+Strong tag 
+==========
+It is used to display the text in bold with importance.
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>		
+	</head>
+	<body>
+		<strong>This is strong tag</strong>	
+	</body>
+</html>
+
+italic tag 
+===========
+A <i> tag is used to display the text in italic without force.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>		
+	</head>
+	<body>
+		<i>This is italic text</i>
+	</body>
+</html>
+
+Emphasize tag 
+==============
+A <em> tag is used to display the text in italic with force.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>		
+	</head>
+	<body>
+		<em>This is Emphasize text</em>
+	</body>
+</html>
+
+
+Underline tag 
+============
+A <u> tag is used to display the text in underline.
+
+HTML5 does not support <u> tag.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>		
+	</head>
+	<body>
+		<u>This is underline text</u>
+	</body>
+</html>
+
+Break line  tag
+=============
+A <br> tag is used to break the line.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>		
+	</head>
+	<body>
+		<b> This is first stmt </b>
+		<br>
+		<i> This is second stmt </i>
+	</body>
+</html>
+
+Horizontal line 
+=================
+A <hr> tag is used to draw horizontal line in a web page.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>		
+	</head>
+	<body>
+		<b> This is first stmt </b>
+		<hr>
+		<i> This is second stmt </i>
+	</body>
+</html>
+
+center tag 
+==========
+A <center> tag is used to display the text in center.
+
+HTML5 does not support <center> tag.
+
+ex:
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>		
+	</head>
+	<body>
+		<center>
+			Welcome to  QT
+		</center>
+	</body>
+</html>
+
+Marquee tag 
+===========
+A <marquee> tag is display the text with scroll.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!</title>		
+	</head>
+	<body>
+		<marquee>
+			Welcome to Niyaz sir to learn HTML from basics
+		</marquee>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

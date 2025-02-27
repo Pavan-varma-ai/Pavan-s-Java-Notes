@@ -1,0 +1,442 @@
+                                                                                                                                                                               
+
+                                                                                                                      29/01/2025
+
+Java 8 Features
+================
+
+Functional interface
+=====================
+Interface which contains only one abstract method is called functional interface.
+
+It can have any number of default methods and static methods.
+
+It is also known as SAM interface or Single Abstract Method interface.
+
+The main objective of functional interface is to achieve functional programming.
+ex:
+	a = f1(){}
+
+	f1(f2(){})
+	{} 
+
+@FunctionalInterface annotation is used to declare functional interface that is optional.
+
+We can declare functional interface as follow.
+
+syntax:
+-------
+	@FunctionalInterface
+	interface <interface_name>
+	{
+		- 
+		- // 1 abstract method 
+		- // default methods
+		- // static methods
+		-
+	}
+
+ex:
+----
+@FunctionalInterface 
+interface A 
+{
+	//abstract method
+	public abstract void m1();
+}
+class B implements A 
+{
+	public void m1()
+	{
+		System.out.println("M1-Method");
+	}
+}
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		A a=new B();
+		a.m1();
+	}
+}
+
+ex:
+---
+@FunctionalInterface 
+interface A 
+{
+	//abstract method
+	public abstract void m1();
+}
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		A a=new A()
+		{
+			public void m1()
+			{
+				System.out.println("From M1 Method");
+			}
+		};
+		a.m1();
+	}
+}
+
+
+Lamda Expression
+=================
+Lamda expression introduced in Java 8.
+
+It is used to concise(reduce) the code.
+
+We can use lamda expression when we have functional interface.
+
+The main objective of lamda expression is to achieve functional programming.
+
+In java, lamda expression consider as a method.
+
+It does not allow name, returntype and modifier.
+
+ex:
+	Java method 
+	-----------
+	public void m1()
+	{
+		System.out.println("M1-Method");
+	}
+
+	Lamda expression 	
+	---------------
+	()->
+	{
+		System.out.println("M1-Method");
+	};
+
+ex:
+---
+@FunctionalInterface 
+interface A 
+{
+	//abstract method
+	public abstract void m1();
+}
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		A a=()->{
+					System.out.println("M1-Method");
+				};
+
+		a.m1();
+	}
+}
+
+ex:
+---
+@FunctionalInterface 
+interface A 
+{
+	//abstract method
+	public abstract void m1(int i,int j);
+}
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		A a=(int i,int j)->{
+					System.out.println(i+j);
+				};
+
+		a.m1(10,20);
+	}
+}
+
+ex:
+---
+@FunctionalInterface 
+interface A 
+{
+	//abstract method
+	public abstract int m1(int i,int j);
+}
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		A a=(int i,int j)->{
+					return i+j;
+				};
+
+		System.out.println(a.m1(20,30));
+	}
+}
+
+
+default methods in interface
+============================
+Default methods in interface introduced in Java 8.
+
+Java provides facility to declare a method with body and tagged with default keyword is called default method.
+
+Default methods are non-abstract methods.
+
+Default methods we can override. 
+
+ex:
+----
+interface A 
+{
+	//abstract method 
+	public abstract void m1();
+
+	//default method 
+	default void m2()
+	{
+		System.out.println("M2-Method");
+	}
+}
+class B implements A 
+{
+	@Override
+	public void m1()
+	{
+		System.out.println("M1-Method");
+	}
+}
+class Test 
+{
+	public static void main(String[] args)
+	{
+		A a = new B();
+		a.m1();
+		a.m2();
+	}
+}
+
+ex:
+----
+interface A 
+{
+	//abstract method 
+	public abstract void m1();
+
+	//default method 
+	default void m2()
+	{
+		System.out.println("M2-Method");
+	}
+}
+class B implements A 
+{
+	@Override
+	public void m1()
+	{
+		System.out.println("M1-Method");
+	}
+
+	@Override 
+	public void m2()
+	{
+		System.out.println("Override-M2-Method");
+	}
+}
+class Test 
+{
+	public static void main(String[] args)
+	{
+		A a = new B();
+		a.m1();
+		a.m2();
+	}
+}
+
+Using default methods of an interface we can achieve multiple inheritance.
+
+ex:
+---
+interface Right 
+{
+	default void m1()
+	{
+		System.out.println("Right-M1-Method");
+	}
+}
+interface Left
+{
+	default void m1()
+	{
+		System.out.println("Left-M1-Method");
+	}
+}
+class Middle implements Right,Left 
+{
+	@Override
+	public void m1()
+	{
+		System.out.println("Middle-M1-Method");
+	}
+}
+class Test 
+{
+	public static void main(String[] args)
+	{
+		Middle m=new Middle();
+		m.m1();
+	}
+}
+
+ex:
+---
+interface Right 
+{
+	default void m1()
+	{
+		System.out.println("Right-M1-Method");
+	}
+}
+interface Left
+{
+	default void m1()
+	{
+		System.out.println("Left-M1-Method");
+	}
+}
+class Middle implements Right,Left 
+{
+	@Override
+	public void m1()
+	{
+		Left.super.m1();
+	}
+}
+class Test 
+{
+	public static void main(String[] args)
+	{
+		Middle m=new Middle();
+		m.m1();
+	}
+}
+
+ex:
+---
+interface Right 
+{
+	default void m1()
+	{
+		System.out.println("Right-M1-Method");
+	}
+}
+interface Left
+{
+	default void m1()
+	{
+		System.out.println("Left-M1-Method");
+	}
+}
+class Middle implements Right,Left 
+{
+	@Override
+	public void m1()
+	{
+		Right.super.m1();
+	}
+}
+class Test 
+{
+	public static void main(String[] args)
+	{
+		Middle m=new Middle();
+		m.m1();
+	}
+}
+
+Static methods in interface
+==========================
+Static methods in interface introduced in java 8.
+
+Java provides facility to declare a method and tagged with static keyword is called static method.
+
+Static methods are non-abstract methods.
+
+We can't override static methods.
+
+ex:
+---
+interface A 
+{
+	static void m1()
+	{
+		System.out.println("M1-Method");
+	}
+}
+class Test 
+{
+	public static void main(String[] args)
+	{
+		A.m1();
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

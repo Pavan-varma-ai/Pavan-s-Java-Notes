@@ -1,0 +1,504 @@
+                                                                                                                 Date: 12/12/2024s
+
+Q) Write a java program to input week number (1-7) and print the corresponding day of week name?
+
+Input:
+		Enter week number: 1 
+Output:
+		Monday
+
+ex:
+---
+import java.util.Scanner;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the week number : ");
+		int n=sc.nextInt();
+
+		if(n<1 || n>7)
+		{
+			System.out.println("Invalid week number");
+			System.exit(0);
+		}
+		else
+		{
+			if(n==1)
+				System.out.println("Monday");
+			else if(n==2)
+				System.out.println("Tuesday");
+			else if(n==3)
+				System.out.println("Wednesday");
+			else if(n==4)
+				System.out.println("Thursday");
+			else if(n==5)
+				System.out.println("Friday");
+			else if(n==6)
+				System.out.println("Saturday");
+			else
+				System.out.println("Sunday");
+		}
+	}
+}
+
+
+Q) 
+
+Road Traveling program 
+
+If a user travel for 1 km then charge 5 rupees.
+If user travel less than and equals to 20 km then charge 2 rupees (per/km).
+If user travel more than 20 km then charge 1.5 rupees (per/km).
+
+Input:
+	Enter the user travel (km) : 15
+
+Output:
+	Total Charges: 30
+
+import java.util.Scanner;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the user travel (km) : ");
+		double kilometer=sc.nextDouble();
+
+		double charges=0;
+
+		if(kilometer==1)
+		{
+				charges=5;
+		}
+		else if(kilometer>1 && kilometer<=20)
+		{
+			charges=kilometer*2;
+		}
+		else
+		{
+			charges=kilometer*1.5d;
+		}
+		System.out.println("Total Charges :"+charges);
+	}	
+}
+
+Q) 
+
+John went to shoe showroom to buy a pair of shows. But he has a myth that if shoe price divisible by 3 and 5 then only he can purchase that show. Write a java program to enter the shoe price and display John can buy that show or not?
+
+Input:
+		Enter the shoe price: 15
+Output:
+		John can buy the shoe
+
+
+import java.util.Scanner;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the Shoe Price : ");
+		int price=sc.nextInt();
+
+		if(price%3==0 && price%5==0)
+			System.out.println("John can buy a shoe");
+		else
+			System.out.println("John can't buy a shoe");
+		
+	}	
+}
+
+
+Q) 
+
+Write a java program to calculate costs based on user input. The program should prompt users to enter the total weight of items (in kilograms) and the shipping destination (domestic or international). For domestic orders, the program should charge Rs.500 for weights up to 5 kg and Rs.100 per additional kg. For international orders, it should charge Rs.1000 for weights up to 5 kg, Rs.200 per additional kg, and an Rs.500 surcharge for weights exceeding 10 kg. Print calculated shipping cost.
+
+Input:
+	Enter total weight of items(kg) : 11 
+	Enter shipping destination :  domestic
+	
+Output:
+	shipping cost : 1100
+	
+
+import java.util.Scanner;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter total weight of items(kg) :");
+		int weight=sc.nextInt(); // 11
+
+		System.out.println("Enter shipping destination :");
+		String destination=sc.next(); // DOMESTIC
+
+		destination=destination.toLowerCase(); // domestic
+
+		int charges=0;
+
+		if(destination.equals("domestic"))
+		{
+			if(weight<=5)
+			{
+				charges=500;
+			}
+			else 
+			{
+				charges= 500 + (weight-5)*100;
+			}
+		}
+		else if(destination.equals("international"))
+		{
+			if(weight<=5)
+			{
+				charges=1000;
+			}
+			if(weight>5 && weight<=10)
+			{
+				charges=1000 + (weight-5)*200;
+			}
+			else
+			{
+				charges=1000 + (weight-5)*200 + 500;
+			}
+		}
+		System.out.println("shipping cost :"+charges);
+	}	
+}
+
+iv) nested if statement
+========================
+If statement contains another if statement is called nested if statement.
+
+syntax:
+-------
+	if(condition)
+	{
+		if(condition)
+		{
+			-
+			- //code to be execute 
+			-
+		}
+	}
+	
+ex:
+---
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("stmt1");
+		if(5>0)
+		{
+			System.out.println("stmt2");
+
+			if(true)
+			{
+				System.out.println("stmt3");
+			}
+
+			System.out.println("stmt4");
+		}
+		System.out.println("stmt5");
+	}	
+}
+output:
+	stmt1
+	stmt2
+	stmt3
+	stmt4
+	stmt5
+
+ex:
+---
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("stmt1");
+		if(5>10)
+		{
+			System.out.println("stmt2");
+
+			if(true)
+			{
+				System.out.println("stmt3");
+			}
+
+			System.out.println("stmt4");
+		}
+		System.out.println("stmt5");
+	}	
+}
+o/p:
+	stmt1
+	stmt5
+
+ex:
+---
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("stmt1");
+		if(!(5>10))
+		{
+			System.out.println("stmt2");
+
+			if(false)
+			{
+				System.out.println("stmt3");
+			}
+
+			System.out.println("stmt4");
+		}
+		System.out.println("stmt5");
+	}	
+}
+o/p:
+	stmt1
+	stmt2
+	stmt4
+	stmt5
+
+
+Q) Write a java program to find out given number is positive or negative by using nested if statement?
+
+import java.util.Scanner;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the number :");
+		int n=sc.nextInt(); // -5 
+
+		if(n!=0)
+		{
+			if(n>0)
+			{
+				System.out.println("It is a positive number");
+				System.exit(0);
+			}
+
+			System.out.println("It is a negative number");
+		}
+	}	
+}
+
+v) switch case 
+---------------
+It is used to execute the source code based on multiple conditions.
+
+It is similar to if else if ladder.
+
+sytnax
+------
+	switch(condition)
+	{
+		case value1:  //code to be execute 
+				break stmt
+
+		case value2:  //code to be execute 
+				break stmt 
+		-
+		-
+		default :  //code to be execute of all cases are false.
+	}
+
+ex:
+----
+import java.util.Scanner;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the option :");
+		int opt=sc.nextInt();
+
+		switch(opt)
+		{
+			case 100:  System.out.println("It is a police number");
+					   break;
+			case 103:  System.out.println("It is a enquiry number");
+					   break;
+			case 108:  System.out.println("It is a emergency number");
+					   break;
+			default:   System.out.println("Invalid option");
+		}
+
+	}	
+}
+
+Declaration of break statement is optional.If we won't declare then from where our condition is satisfied from there all cases will be executed that state is called fall through state of switch case.
+
+ex:
+---
+import java.util.Scanner;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the option :");
+		int opt=sc.nextInt();
+
+		switch(opt)
+		{
+			case 100:  System.out.println("It is a police number");
+					   //break;
+			case 103:  System.out.println("It is a enquiry number");
+					   //break;
+			case 108:  System.out.println("It is a emergency number");
+					   //break;
+			default:   System.out.println("Invalid option");
+		}
+
+	}	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

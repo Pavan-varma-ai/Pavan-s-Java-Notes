@@ -1,0 +1,522 @@
+                                                                                                                  08/01/2025
+ 
+JavaScript Functions 
+=====================
+JavaScript function is a block of code which is used to perform particular task.
+
+To declare JavaScript function we need to use function keyword followed by a name and followed by a parentheses  i.e ().
+
+JavaScript function contains letters, numbers, underscore and dollar symbol as we have same rules for variables.
+
+syntax:
+-------
+	function function_name()
+	{
+		-
+		- //code to be execute 
+		-
+	}
+
+JavaScript function will execute 
+
+1) When it is called 
+
+2) When event is occur
+
+3) Self invocation 
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+</head>
+<body>
+    
+     <script>
+         
+         function f1()
+         {
+            document.writeln("Welcome to Function");
+         } 
+         
+         //calling 
+         f1();
+     </script>
+          
+
+</body>
+</html>
+
+ex:
+----
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+</head>
+<body>
+      
+     <button onclick="f1()"> click Me </button> 
+
+     <script>
+         function f1()
+         {
+            document.writeln("Welcome Function");
+         }
+     </script>
+          
+
+</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+</head>
+<body>
+      
+     <button onclick="f1()"> click Me </button> 
+
+     <script>
+         function f1()
+         {
+            document.bgColor="#00FF00";
+         }
+     </script>
+          
+
+</body>
+</html>
+
+In JavaScript, every function is a case sensitive.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+</head>
+<body>
+      
+     <script>
+         function f1()
+         {
+            document.writeln("Function Example");
+         }
+
+
+         // F1(); -- invalid F1 is not defined
+
+         f1();
+
+     </script>
+          
+
+</body>
+</html>
+
+In JavaScript, one function can called to another function.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+</head>
+<body>
+      
+     <script>
+         function f1()
+         {
+            document.writeln("F1-Function <br>");
+            f2();
+         }
+         function f2()
+         {
+            document.writeln("F2-Function <br>");
+         }
+
+         f1();
+
+     </script>
+          
+
+</body>
+</html>
+
+In JavaScript, we can declare the function in four ways.
+
+1) No return type with No argument function 
+
+2) No return type with Argument function 
+
+3) With returntype with No argument function 
+
+4) With returntype with Argument function 
+
+
+1) No return type with No argument function
+--------------------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+</head>
+<body>
+      
+     <script>
+         function f1()
+         {
+            document.writeln("First Function");
+         }
+
+        f1();
+     </script>
+          
+
+</body>
+</html>
+
+
+2) No return type with Argument function
+----------------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+</head>
+<body>
+      
+     <script>
+         function f1(arg1,arg2)
+         {
+            document.writeln(arg1+arg2);
+         }
+
+        f1(10,20);
+     </script>
+          
+
+</body>
+</html>
+
+
+3) With returntype with No argument function 
+-------------------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+</head>
+<body>
+      
+     <script>
+         function f1()
+         {
+           return "Third Function";
+         }
+
+        document.writeln(f1());
+     </script>
+          
+
+</body>
+</html>
+
+4) With returntype with Argument function 
+-------------------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+</head>
+<body>
+      
+     <script>
+         function f1(i,j)
+         {
+           return i+j;
+         }
+
+        document.writeln(f1(10,20));
+     </script>
+          
+
+</body>
+</html>
+
+
+Q) What is Recursion in JavaScript?
+
+A function which call itself for many number of times is called recursion.
+
+Recursion similar to loopings. 
+
+Whenever we use recursion , we should not use loops.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+</head>
+<body>
+      
+     <script>
+          
+          function f1(i)
+          {
+              if(i<=10)
+              {
+                 document.writeln(i);//1 2 3 4 5 6 7 8 9 10
+                 f1(i+1);
+              }
+          }
+          f1(1);
+     </script>
+          
+
+</body>
+</html>
+
+
+Q) What is JavaScript Closure ?
+
+JavaScript closure is a functions bundled together along with lexical scope.
+
+JavaScript closure created automatically whenever function is created.
+
+In JavaScript closure inner function can access outer function data.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+</head>
+<body>
+      
+     <script>
+      
+          var i=10;
+
+          function f1()
+          {
+              var j=20;
+
+              function f2()
+              {
+                  var k=30;
+
+                  document.writeln(i+" "+j+" "+k);
+              }   
+
+              f2(); 
+          }
+          f1();
+     </script>
+          
+
+</body>
+</html>
+
+
+Q) Types of functions in JavaScript?
+
+We have three types of functions in JavaScript.
+
+1) Named Function 
+
+2) Anonymous Function 
+
+3) Arrow Function 
+
+1) Named Function 
+-------------------
+It contains name at the time of declaration.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+</head>
+<body>
+      
+     <script>
+      
+          function f1()
+          {
+              document.writeln("Named Function");
+          }
+
+          f1();
+     </script>
+</body>
+</html>
+
+2) Anonymous Function 
+-------------------------
+It does not have any name at the time of declaration.
+
+Anonymous function is used dynamically in javascript.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+</head>
+<body>
+      
+     <script>
+      
+          var f1=function(){
+            document.writeln("Anonymous Function");
+          }
+
+          f1();
+     </script>
+</body>
+</html>
+
+3) Arrow Function 
+-----------------
+According ES6 standard it is recommanded to use arrow function.
+
+Arrow function is more secure then named and anonymous function.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyPage!</title>
+</head>
+<body>
+      
+     <script>
+      
+          var f1=()=>{
+            document.writeln("Arrow Function");
+          }
+          f1();
+     </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

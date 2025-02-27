@@ -1,0 +1,444 @@
+                                                                                                                        21/01/2025
+
+ex:
+----
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		List<String> list= new ArrayList<String>();
+		list.add("one");
+		list.add("two");
+		list.add("three");
+		System.out.println(list);//[one,two,three]
+	}
+}
+
+ex:
+---
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		List<Integer> list=List.of(7,9,1,3,5,4);
+		System.out.println(list);
+	}
+}
+
+ex:
+---
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		List<Integer> list=Arrays.asList(7,9,1,3,5,4);
+		System.out.println(list);
+	}
+}
+
+Q) Write a java program display intersect elements?
+
+input:
+	list1 = html css java react javascript 
+	list2 = html css python angular javascript 
+
+output:
+	html css javascript 
+
+
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		ArrayList<String> list1=new ArrayList<String>();
+		list1.add("html");
+		list1.add("css");
+		list1.add("java");
+		list1.add("react");
+		list1.add("javascript");
+		System.out.println(list1);//[html, css, java, react, javascript]
+
+		ArrayList<String> list2=new ArrayList<String>();
+		list2.add("html");
+		list2.add("css");
+		list2.add("python");
+		list2.add("angular");
+		list2.add("javascript");
+		System.out.println(list2);//[html, css, python, angular, javascript]
+
+		list1.retainAll(list2);
+
+		System.out.println(list1);//[html, css, javascript]
+	}
+}
+
+
+LinkedList 
+============
+The underlying data structure is doubly LinkedList.
+
+Duplicate objects are allowed.
+
+Insertion order is preserved.
+
+Hetrogeneous objects are allowed.
+
+Null insertion is possible. 
+
+It implements Serializable, Cloneable and Deque interface.
+
+LinkedList interface contains following methods.
+ex:
+	public E getFirst();
+  	public E getLast();
+  	public E removeFirst();
+  	public E removeLast();
+  	public void addFirst(E);
+  	public void addLast(E);
+
+If our frequently operation is adding and removing the elements then LinkedList is a best choice.
+
+ex:
+----
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		LinkedList ll=new LinkedList();
+		ll.add("one");
+		ll.add("two");
+		ll.add("three");
+		System.out.println(ll);//[one,two,three]
+
+		ll.add("one");
+		System.out.println(ll);//[one,two,three,one]
+
+		ll.add(10);
+		System.out.println(ll); //[one,two,three,one,10]
+
+		ll.add(null);
+		System.out.println(ll); //[one,two,three,one,10,null]
+	}
+}
+
+ex:
+--
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		LinkedList<String> ll=new LinkedList<String>();
+		ll.add("one");
+		ll.add("two");
+		ll.add("three");
+		System.out.println(ll);//[one,two,three]
+
+		ll.addFirst("gogo");
+		ll.addLast("jojo");
+		System.out.println(ll); //[gogo,one,two,three,jojo]
+
+		System.out.println(ll.getFirst());//gogo
+		System.out.println(ll.getLast());//jojo
+
+		ll.removeFirst();
+		ll.removeLast();
+		System.out.println(ll); //[one,two,three]
+	}
+}
+
+ex:
+---
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		LinkedList<String> ll1=new LinkedList<String>();
+		ll1.add("one");
+		ll1.add("two");
+		ll1.add("three");
+		System.out.println(ll1);//[one,two,three]
+
+		LinkedList<String> ll2=new LinkedList<String>();
+		ll2.add("raja");
+		System.out.println(ll2);//[raja]
+
+		ll2.addAll(ll1);
+		System.out.println(ll2);//[raja,one,two,three]
+
+		System.out.println(ll2.containsAll(ll1));//true 
+
+		ll2.removeAll(ll1);
+		System.out.println(ll2); // [raja]
+
+	}
+}
+
+
+Q) What is the difference between ArrayList and LinkedList ?
+
+ArrayList					LinkedList 
+-------------					---------------
+The underlying data structure is resizable 	The underlying data structure is doubly	 
+array or growable array.			Linkedlist.
+
+
+ArrayList is better for storing and accessing 	LinkedList is better for manipuating the data.
+the data.
+
+
+Memory location for ArrayList elements is 	Memory location for LinkedList elements is not 
+contigeous.					contigenous.
+
+When an ArrayList is initialized, a default	There is no case of default capacity.
+capacity of 10 is assigned to the ArrayList.
+
+
+Vector 
+=======
+The underlying data structure is resizable array or growable array.
+
+Duplicate objects are allowed.
+
+Insertion order is preserved.
+
+Hetrogeneous objects are allowed.
+
+Null insertion is possible. 
+
+In Vector, all methods are synchronized. Hence Vector is thread safe.
+
+A Vector class contains following methods.
+
+ex:
+	 public synchronized E firstElement();
+  	 public synchronized E lastElement();
+  	 public synchronized void setElementAt(E, int);
+  	 public synchronized void removeElementAt(int);
+  	 public synchronized void insertElementAt(E, int);
+  	 public synchronized void addElement(E);
+	 and etc.
+
+ex:
+---
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Vector v=new Vector();
+
+		System.out.println(v.capacity()); // 10
+
+		for(int i=1;i<=10;i++)
+		{
+			v.addElement(i);
+		}
+		System.out.println(v); // [1,2,3,4,5,6,7,8,9,10]
+
+		System.out.println(v.firstElement());//1
+		System.out.println(v.lastElement());//10
+
+		v.removeElementAt(5);
+		System.out.println(v);//[1, 2, 3, 4, 5, 7, 8, 9, 10]
+
+		v.removeAllElements();
+		System.out.println(v); //[]
+	}
+}
+
+ex:
+---
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Vector v=new Vector();
+
+		System.out.println(v.capacity()); // 10
+
+		for(int i=1;i<=10;i++)
+		{
+			v.add(i);
+		}
+		System.out.println(v); // [1,2,3,4,5,6,7,8,9,10]
+
+		System.out.println(v.get(0));//1
+		System.out.println(v.get(v.size()-1));//10
+
+		v.remove(5);
+		System.out.println(v);//[1, 2, 3, 4, 5, 7, 8, 9, 10]
+
+		v.clear();
+		System.out.println(v); //[]
+	}
+}
+
+Q) What is the difference between ArrayList and Vector?
+
+ArrayList					Vector 
+----------					-----------
+It is a non-legacy class.			It is a legacy class.
+
+It is introduced in 1.2v.			It is introduced in 1.0v.
+
+Methods are not synchronized.			Methods are synchronized.
+
+
+At a time multiple Threads are allow to		At a time only one thread is allowed to operate
+operate on ArrayList object and hence		on Vector object and Hence Vector object is 
+ArrayList object is not Thread safe		thread safe.
+
+Relatively performance is high because		Relatively performance is low because Threads are 
+Threads are not required to wait.		required to wait.
+
+Stack 
+=======
+It is a child class of Vector class.
+
+If we depend upon Last In First Out order then we need to use Stack.
+
+constructor
+----------
+	Stack s = new Stack();
+
+methods 
+-------
+1) push(E)
+--------
+	It is used to push the element to stack.
+
+2) pop()
+--------
+	It is used to pop the element from stack.
+
+3) peek()
+----------
+	It returns toppest element of stack.
+
+4) isEmpty()
+------------
+	It is used to check stack is empty or not.
+
+5) search(E) 
+---------
+	It returns offset value if element is found otherwise it will return -1.
+
+
+ex:
+---
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		Stack<String> s = new Stack<String>();
+		s.push("A");
+		s.push("B");
+		s.push("C");
+		System.out.println(s); //[A,B,C]
+
+		s.pop();
+		System.out.println(s); //[A,B]
+
+		System.out.println(s.peek());//B
+
+		System.out.println(s.isEmpty());//false
+
+		System.out.println(s.search("E")); // -1
+
+		System.out.println(s.search("A"));//2
+	}
+}
+
+
+Q) Write a java program to check given string is balanced or not?
+
+input:
+	{[()]}
+
+output:
+	It is a balanced string 
+
+
+import java.util.*;
+class Test  
+{
+	public static void main(String[] args) 
+	{
+		String str="{[()]}";
+		if(isBalanced(str.toCharArray()))
+			System.out.println("It is a balanced string");
+		else
+			System.out.println("It is not a balanced string");
+	}
+
+	//callie method 
+	public static boolean isBalanced(char[] carr)
+	{
+		Stack<Character> stack=new Stack<Character>();
+
+		for(char ch:carr)
+		{
+			if(ch=='{' || ch=='[' || ch=='(')
+			{
+				stack.push(ch);
+			}
+			else if(ch==')' && !stack.isEmpty() && stack.peek()=='(')
+			{
+				stack.pop();
+			}
+			else if(ch==']' && !stack.isEmpty() && stack.peek()=='[')
+			{
+				stack.pop();
+			}
+			else if(ch=='}' && !stack.isEmpty() && stack.peek()=='{')
+			{
+				stack.pop();
+			}
+			else
+			{
+				return false;
+			}
+		}
+
+		return stack.isEmpty();
+	}
+}
+
+Set 
+====
+It is a child interface of Collection interface.
+
+If we want to represent group of individual objects in a single entity where duplicate objects are not allowed and order is not preserved then we need to use Set interface.
+
+Diagram: class43.1
+
+
+
+
+
+
+
+
+			
+
+
+
+
+
+
+
+
+
+
+
+
+

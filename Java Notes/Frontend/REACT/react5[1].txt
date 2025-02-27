@@ -1,0 +1,479 @@
+                                                                                                                       11/02/2025
+
+CSS in ReactJS 
+===============
+There are two ways to use CSS in react.
+
+1) Inline styling 
+
+2) CSS stylesheet
+
+1) Inline styling 
+-----------------
+We can represent inline styling by using "style" attribute.
+
+
+Project Structure 
+---------------
+myapp7
+|
+|---node_modules
+|
+|-----src
+	|	
+	|---index.html 
+	|---favicon.ico
+	|---manifest.json 
+
+|---public 
+|	|
+	|---index.js 
+	|---index.css
+	|
+	|---App.js 
+	|---App.css
+	|---App.test.js 
+
+|---package.json
+|---READMD.md
+
+step1:
+-------
+	Create a react application i.e myapp7
+	ex:
+		reactprojects> npx  create-react-app myapp7
+
+
+step2:
+------
+	Open the VSC Editor.
+	ex:
+		reactprojects> code . 
+
+step3:
+-----
+	Switch to the project.
+	ex:
+		reactprojects> cd  myapp7
+
+step4:
+-----
+	Install web-vitals by using npm command.
+	ex:
+		reactprojects/myapp7> npm  install web-vitals
+
+step5:
+----
+	Run react application.
+	ex:
+		reactprojects/myapp7> npm start 
+
+step6:
+------
+	Goto App.js file and write below code.
+
+App.js 
+-------
+
+function App()
+{
+  return (
+    <>
+        <h1 style={{color:"red"}}> Heading Tag </h1>
+        <p style={{backgroundColor:"cyan",color:"blue"}}> Paragraph Tag </p>
+    </>
+  )
+}
+export default App;
+
+or
+---
+
+function App()
+{
+  const paraStyle={
+    color:"blue",
+    backgroundColor:"cyan",
+    textAlign:"center",
+    fontSize:"40px"
+  }
+  return (
+    <>
+        <h1 style={{color:"red"}}> Heading Tag </h1>
+        <p style={paraStyle}> Paragraph Tag </p>
+    </>
+  )
+}
+export default App;
+
+
+2) CSS stylesheet
+-------------------
+In CSS stylesheet we will create sepeate .css file and later we can import this file which component it is needed.
+
+
+
+Project Structure 
+---------------
+myapp7
+|
+|---node_modules
+|
+|-----src
+	|	
+	|---index.html 
+	|---favicon.ico
+	|---manifest.json 
+
+|---public 
+|	|
+	|---index.js 
+	|---index.css
+	|
+	|---App.js 
+	|---App.css
+	|---App.test.js 
+
+|---package.json
+|---READMD.md
+
+step1:
+-------
+	Create a react application i.e myapp7
+	ex:
+		reactprojects> npx  create-react-app myapp7
+
+
+step2:
+------
+	Open the VSC Editor.
+	ex:
+		reactprojects> code . 
+
+step3:
+-----
+	Switch to the project.
+	ex:
+		reactprojects> cd  myapp7
+
+step4:
+-----
+	Install web-vitals by using npm command.
+	ex:
+		reactprojects/myapp7> npm  install web-vitals
+
+step5:
+----
+	Run react application.
+	ex:
+		reactprojects/myapp7> npm start 
+
+step6:
+------
+	Goto App.js file and write below code.
+
+App.js 
+-------
+import './App.css';
+function App()
+{
+  return (
+    <>
+        <h1 className="headStyle"> Heading Tag </h1>
+        <p id="paraStyle"> Paragraph Tag </p>
+    </>
+  )
+}
+export default App;
+
+
+step7:
+-----
+	Write the code inside App.css file.
+App.css 
+--------
+body
+{
+  background-color: cyan;
+}
+.headStyle
+{
+   text-align: center;
+   color:red;
+}
+#paraStyle
+{
+  font-size: 40px;
+  color:blue;
+}
+
+
+state
+======
+It is similar to props but it is fully private and controlled by component.
+
+We can declare the state only in class component.
+
+It can be updatable or modify where as props is read only.
+
+There are two ways to initialize the state in react.
+
+1) Inside the class 
+
+2) Inside the constructor 
+
+1) Inside the class 
+-------------------
+We can initialize the state in side the class as follow.
+
+ex:
+	import {Component} from 'react';
+	class App extends Component 
+	{
+		
+		state={
+			rollno:101,
+			name:"Alan"
+		}
+		render()
+		{
+		}
+	} 
+
+To display the properties of state we need to use this keyword.
+ex:
+	{this.state.rollno}
+	{this.state.name}
+
+step1:
+------
+	Open the VSC Editor.
+	ex:
+		reactprojects> code . 
+
+step2:
+-----
+	Install ES7 extension in VSC Editor.
+	ex:
+		ES7 React/Redux/GraphQL/React-Native snippets
+
+		ex:
+			rcc - class component 
+			rcfe - function component 
+			rafce - arrow function 
+
+step3:
+-----
+	Create a react application from VSC terminal.
+	ex:
+		npx create-react-app myapp8
+
+step4:
+-----
+	Switch to the project.
+	ex:
+		cd  myapp8
+
+step5:
+-----
+	Install web-vitals by using npm command.
+	ex:
+		npm install web-vitals
+
+step6:
+------
+	Run react application.
+	ex:
+		npm start 
+
+step7:
+------
+	Goto App.js file and write below code.
+
+App.js 
+-------
+import React, { Component } from 'react'
+
+export default class App extends Component 
+{
+  state={
+    rollno:101,
+    name:"Alan"
+  }
+  render() 
+  {
+    return (
+      <>
+          <h1>Roll No : {this.state.rollno}</h1>
+          <h1>Name : {this.state.name}</h1>
+      </>
+    )
+  }
+}
+
+
+
+
+2) Inside the constructor
+---------------------------
+We can initialize the state inside the constructor as follow.
+
+ex:
+	import {Component} from 'react';
+	class App extends Component 
+	{
+		constructor()
+		{
+			this.state={
+				rollno:101,
+				name:"Alan"
+			}
+		render()
+		{
+		}
+	} 
+
+To display the properties of state we need to use this keyword.
+ex:
+	{this.state.rollno}
+	{this.state.name}
+
+
+step1:
+------
+	Open the VSC Editor.
+	ex:
+		reactprojects> code . 
+
+step2:
+-----
+	Install ES7 extension in VSC Editor.
+	ex:
+		ES7 React/Redux/GraphQL/React-Native snippets
+
+		ex:
+			rcc - class component 
+			rcfe - function component 
+			rafce - arrow function 
+
+step3:
+-----
+	Create a react application from VSC terminal.
+	ex:
+		npx create-react-app myapp8
+
+step4:
+-----
+	Switch to the project.
+	ex:
+		cd  myapp8
+
+step5:
+-----
+	Install web-vitals by using npm command.
+	ex:
+		npm install web-vitals
+
+step6:
+------
+	Run react application.
+	ex:
+		npm start 
+
+step7:
+------
+	Goto App.js file and write below code.
+
+App.js 
+-------
+import React, { Component } from 'react'
+
+export default class App extends Component 
+{
+  constructor()
+  {   
+      super();
+      
+      this.state={
+        rollno:101,
+        name:"Alan"
+      }
+  }
+  render() 
+  {
+    return (
+      <>
+          <h1>Roll No : {this.state.rollno}</h1>
+          <h1>Name : {this.state.name}</h1>
+      </>
+    )
+  }
+}
+
+
+state with props
+=================
+
+index.js 
+-------
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App  rollno={601}/>
+  </React.StrictMode>
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+
+App.js 
+-------
+import React, { Component } from 'react'
+
+export default class App extends Component 
+{
+  constructor(props)
+  {   
+      super(props);
+
+      this.state={
+        rollno:this.props.rollno,
+        name:"Alan"
+      }
+  }
+  render() 
+  {
+    return (
+      <>
+          <h1>Roll No : {this.state.rollno}</h1>
+          <h1>Name : {this.state.name}</h1>
+      </>
+    )
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

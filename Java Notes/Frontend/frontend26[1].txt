@@ -1,0 +1,372 @@
+                                                                                                                  23/01/2025
+
+How to select multiple checkboxes using javascript
+==================================================
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+
+</head>
+<body>
+            All Courses Completed? <br><br>
+
+            <button onclick="f1()"> select all </button> <br><br>
+
+            <input type="checkbox" name="box" /> HTML <br>
+            <input type="checkbox" name="box" /> CSS <br>
+            <input type="checkbox" name="box" /> JavaScript <br>
+
+            <script>
+                function f1()
+                {
+                       var x = document.getElementsByName('box');
+
+                       for(var i=0;i<x.length;i++)
+                       {
+                            if(x[i].type="checkbox")
+                            {
+                                x[i].checked=true;
+                            }
+                       }
+                }
+            </script>
+
+</html>
+
+document.getElementsByTagName()
+===============================
+It is used to read the elements using specified tag name.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+
+</head>
+<body>
+           Name : <input type="text" />
+
+           <button onclick="f1()"> click </button>
+
+           <br>
+           <div id="result"></div>
+
+           <script>
+               function f1()
+               {
+                    var name = document.getElementsByTagName('input')[0].value;
+                    document.getElementById('result').innerHTML=name;
+               }
+           </script>
+
+</html>
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+
+</head>
+<body>
+           Name : <input type="text" />
+
+           <button onclick="f1()"> click </button>
+
+           <br>
+           <div id="result"></div>
+
+           <script>
+               function f1()
+               {
+                    var len = document.getElementsByTagName('input').length;
+                    document.getElementById('result').innerHTML=len;
+               }
+           </script>
+
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+
+</head>
+<body>
+           Name : <input type="text" />
+
+           <button onclick="f1()"> click </button>
+
+           <br>
+           <div id="result"></div>
+
+           <script>
+               function f1()
+               {
+                    var name = document.getElementsByTagName('input')[0].tagName;
+                    document.getElementById('result').innerHTML=name;
+               }
+           </script>
+
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+
+</head>
+<body>
+           <div> This is Division Tag 1</div>
+           <div> This is Division Tag 2</div>
+           <div> This is Division Tag 3</div>
+
+           <button onclick="f1()"> swap </button>
+
+           <script>
+               function f1()
+               {
+                    var x = document.getElementsByTagName('div');
+                    x[0].innerHTML="First Change";
+                    x[1].innerHTML="Second Change";
+                    x[2].innerHTML="Third Change";
+
+                    x[0].style.color="cyan";
+                    x[1].style.backgroundColor="yellow";
+                    x[2].style.textAlign="center";
+                    x[2].style.color="blue";
+                    x[2].style.backgroundColor="cyan";
+               }
+           </script>
+
+</html>
+
+
+document.getElementsByClassName()
+-------------------------------
+It is used to read the elements using specified class name.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+    <style>
+        .myClass
+        {
+            color:blue;
+            text-align: center;
+
+        }
+    </style>
+
+</head>
+<body>
+           <div class="myClass"> This is Division Tag </div>
+
+           <button onclick="f1()"> click </button>
+
+           <script>
+               function f1()
+               {
+                    var x = document.getElementsByClassName("myClass")[0].innerHTML;
+                    document.writeln(x);
+               }
+           </script> 
+</html>
+
+
+document.addEventListener()
+===========================
+It is used to add/attach handler to specific element.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+
+</head>
+<body>
+        <h2> Please click Anywhere </h2>   
+        <script>
+
+            document.addEventListener('click', function(){
+                alert("You have clicked!!");
+            } );
+            
+        </script>
+
+
+</html>
+
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+</head>
+<body>
+        <h2 id="hover"> Mouse Over Here  </h2>   
+        <script>
+
+            var id = document.getElementById('hover');
+
+            id.addEventListener('mouseover', function(){
+                alert("You have move the mouse!!");
+            } );
+            
+        </script>
+
+
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+
+</head>
+<body>
+        <h2 id="hover"> Mouse Over Here  </h2>   
+        <script>
+
+            var id = document.getElementById('hover');
+
+            id.addEventListener('mouseout', function(){
+                alert("You have move the mouse!!");
+            } );
+            
+        </script>
+
+
+</html>
+
+JavaScript program to convert Feet to Inches
+============================================
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MyPage!</title>
+
+</head>
+<body>
+            <h2 style="text-align: center;">
+                Conversion Application
+            </h2>
+
+            <table align="center" cellspacing="10px">
+                <tr>
+                    <td>Feet:</td>
+                    <td>&nbsp;</td>
+                    <td>Inches:</td>
+                </tr>
+                <tr>
+                    <td><input type="text" id="feet"/></td>
+                    <td><big>=</big></td>
+                    <td><input type="text" id="inches"/></td>
+                </tr>
+            </table> 
+
+            <script>
+                var feet=document.getElementById('feet');
+                var inches = document.getElementById('inches');
+
+                feet.addEventListener('input',function(){
+                    var f=this.value;
+                    var i=f*12;
+                    inches.value=i;
+
+                })
+
+                inches.addEventListener('input',function(){
+                    var i=this.value;
+                    var f=i/12;
+
+                    if(!Number.isInteger(f))
+                    {
+                        f = f.toFixed(2);
+                    }   
+
+                    feet.value=f;
+                })
+
+            </script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

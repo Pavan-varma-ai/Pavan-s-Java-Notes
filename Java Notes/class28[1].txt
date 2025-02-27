@@ -1,0 +1,362 @@
+                                                                                                                             25/12/2024
+
+In encapsulation , for every variable we need to write setter and getter method.
+
+Diagram: class28.1
+
+The main advantages of encapsulation are
+
+1) It gives security.
+
+2) Enhancement becomes more easy.
+
+3) It provides flexibility to the end-user.
+
+4) It improves maintainability of an application.
+
+The main disadvantage of encapsulation is , it will increase the length of our code and slowdown the execution process.
+
+ex:
+---
+class Student 
+{
+	//current class variables 
+	private int studId;
+	private String studName;
+	private double studFee;
+
+	//setter methods 
+	public void setStudId(int studId)
+	{
+		this.studId=studId;
+	}
+	public void setStudName(String studName)
+	{
+		this.studName=studName;
+	}
+	public void setStudFee(double studFee)
+	{
+		this.studFee=studFee;
+	}
+	
+	//getter methods 
+	public int getStudId()
+	{
+		return studId;
+	}
+	public String getStudName()
+	{
+		return studName;
+	}
+	public double getStudFee()
+	{
+		return studFee;
+	}
+}
+class Test 
+{
+	public static void main(String[] args)
+	{
+		Student s=new Student();
+		s.setStudId(101);
+		s.setStudName("Alan Morries");
+		s.setStudFee(1000d);
+
+		System.out.println("Student Id :"+s.getStudId());
+		System.out.println("Student Name :"+s.getStudName());
+		System.out.println("Student Fee :"+s.getStudFee());
+	}
+}
+
+
+Q) What is the difference between Abstraction and Encapsulation ?
+
+Abstraction					Encapsulation 
+-----------					---------------
+Hiding internal implementation and highlighting The process of encapsulating or binding variables 
+the set of services is called abstraction.	and it's associate methods in a single entity is 
+						called encapsulation.
+
+Using abstract classes and interfaces we 	Using access modifiers we can achieve  	
+can achieve abstraction.			encapsulation.
+
+It is used to hide the data.			It is used to protect the data.
+
+It is a process of gaining the information.	It is a process of containing the information.
+
+It solves issues at design level.		It solves issues at implementation level.
+
+
+
+
+Q) What is the difference between POJO class and java bean class?
+
+
+POJO						Java Bean 
+------------					------------
+It can't be serialized.				It can be serialized.
+
+Fields can have any visibility.			Fields can have only private visibility.
+
+It may or may not have 0-arg constructor.	It must contains 0-arg constructor.	
+
+It can't extends other class.			It can extends.
+
+It can't implements other interface.		It can implements.
+
+It does not allow outside annotations.		It allows outside annotations.
+
+
+Is-A relationship 
+==================
+Is-a relationship is also known as inheritance.
+
+Using extends keyword we can implements Is-A relationship.
+
+The main objective of Is-A relationship is to provide reusability.
+
+ex:
+---
+class Parent 
+{
+	public void m1()
+	{
+		System.out.println("Parent-M1 Method");
+	}
+}
+class Child extends Parent
+{
+	public void m2()
+	{
+		System.out.println("Child-M2 Method");
+	}
+}
+class Test 
+{
+	public static void main(String[] args)
+	{
+		Parent p=new Parent();
+		p.m1();
+
+		Child c=new Child();
+		c.m1();
+		c.m2();
+
+		Parent p1=new Child();
+		p1.m1();
+
+		Child c1=new Parent(); // invalid 
+	}
+}
+
+conclusion 
+-----------
+Whatever our parent contains property it goes to child.But whatever child contains property it never goes back to parent.
+
+A parent reference can hold child object. But child reference can't hold parent object.
+
+Inheritance 
+=============
+Inheritance is a mechanism in which one class will inherit the properties of another class.
+
+Inheritance is a mecahnism in which we will derived a class in the presence of existing class.
+
+Using extends keyword we can implements inheritance.
+
+The main objective of inheritance is to provide reusability.
+
+Diagram: class28.2
+
+We have following list of inheritance.
+
+1) Single level inheritance 
+
+2) Multi level inheritance 
+
+3) Multiple inheritance 
+
+4) Hierarchical inheritance
+
+5) Hybrid inheritance 
+
+
+1) Single level inheritance 
+----------------------------
+If we derived a class in the presence of one base class is called single level inheritance.
+
+Diagram:		
+		A  (Parent / super / Base class)
+		|
+		|
+		|
+		B  (child / sub / derived class)
+
+ex:
+---
+class Vehicle 
+{
+	String engine="150CC";
+	String tyres="CEAT";
+	String breaks="discbreak";
+}
+class Bike extends Vehicle
+{
+	double price=100000d;
+}
+class Test 
+{
+	public static void main(String[] args)
+	{
+		Vehicle v=new Vehicle();
+		System.out.println("Engine : "+v.engine);
+		System.out.println("Tyres "+v.tyres);
+		System.out.println("Breaks :"+v.breaks);
+
+		System.out.println("=====================");
+
+		Bike b=new Bike();
+		System.out.println("Price :"+b.price);
+		System.out.println("Engine : "+b.engine);
+		System.out.println("Tyres "+b.tyres);
+		System.out.println("Breaks :"+b.breaks);
+
+	}
+}
+
+ex:
+---
+class A 
+{
+	public void m1()
+	{
+		System.out.println("M1-Method");
+	}
+}
+class B extends A 
+{
+	public void m2()
+	{
+		System.out.println("M2-Method");
+	}
+}
+class Test
+{
+	public static void main(String[] args)
+	{
+		A a = new A();
+		a.m1();
+
+		B b = new B();
+		b.m1();
+		b.m2();
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

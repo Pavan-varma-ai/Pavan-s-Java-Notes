@@ -1,0 +1,507 @@
+                                                                                                                     Date: 12/12/2024
+
+HTML Hyperlink
+===============
+A <a> anchor tag is used to display hyperlink in HTML.
+
+Anchor tag contains "href" attribute which is used to navigate to other resources. 
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!!</title>
+	</head>
+	<body>
+		<a href="http://www.facebook.com/login"> Facebook </a>
+	</body>
+</html>
+
+Here a linked document open in a current window.
+
+In order to change the behaviour we need to use target attribute.
+
+A target attribute contains following values.
+
+ex:
+	values		description 
+	------		-----------
+	_self		It is used to open a document in a current window.	
+	_blank		It is used to open a document in a new window.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!!</title>
+	</head>
+	<body>
+		<a href="http://www.facebook.com/login" target="_self"> Facebook </a>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!!</title>
+	</head>
+	<body>
+		<a href="http://www.facebook.com/login" target="_blank"> Facebook </a>
+	</body>
+</html>
+
+Hyperlink with image 
+====================
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!!</title>
+	</head>
+	<body>
+		<center>
+			<a href="https://en.wikipedia.org/wiki/James_Gosling" target="_blank">
+				<img src="images/gosling.jpg" width="200px" height="200px"/>
+			</a>
+		</center>
+	</body>
+</html>
+
+
+
+Interview Questions
+===================
+
+Q) What is HTML entity ?
+
+HTML entity starts with '&' symbol and ends with semicolon(;).
+
+HTML entities are widely used to display reserved characters or hidden characters.
+
+We have following list of HTML entities.
+
+ex:
+	Entity 		Symbol
+	-------		-----------
+	&gt;		>
+	&lt;		<
+	&laquo;		<<
+	&raquo;		>>
+	&copy;		(copyright symbol)
+	&nbsp;		space
+	and etc.
+
+ex:
+--
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!!</title>
+	</head>
+	<body>
+		<center>
+			<h2> &gt; </h2>		
+			<h2> &lt; </h2>
+			<h2> &laquo; </h2>
+			<h2> &raquo; </h2>	
+			<h2> &copy; </h2>
+			<h2> &nbsp; </h2>						
+		</center>
+	</body>
+</html>
+	
+Q) What is the difference between HTML tag and HTML Element?
+
+HTML tag 
+---------
+HTML tag contains '<' symbol and  '>' symbol.
+ex:
+	<html>, <body>, <h1>, <p> and etc.
+
+HTML Element
+-----------
+HTML element contains opening tag, some content and closing tag.
+ex:
+	<h1> Heading Tag </h1>
+	<p> Paragraph </p>
+	and etc.
+
+Q) Types of elements?
+
+We have two types of elements.
+
+1) Inline elements 
+
+2) Block elements
+
+1) Inline elements 
+--------------------
+Inline elements start with same line and they will occupy the width as much as required.
+
+We have following list of inline elements.
+
+ex:
+	<b>, <i> , <u> , <img> , <a>, <span> and etc.	
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!!</title>
+	</head>
+	<body>
+		<b style="border:2px solid black;">It is bold tag </b>
+		<i>It is italic tag </i>
+		<span>It is span tag</span>	
+	</body>
+</html>
+
+
+2) Block elements
+------------------
+Block elements starts with new line and they will take 100% of width.
+
+We have following list of block elements.
+
+ex:
+	<h1>, <p>, <div> and etc.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!!</title>
+	</head>
+	<body>
+		<h1 style="border:2px solid black;"> Heading Tag </h1>
+		<p> Paragraph Tag </p>
+		<div> Division Tag </div>
+	</body>
+</html>
+
+Q) Types of list in HTML?
+
+We have three types of list in HTML.
+
+1) Ordered list 
+
+2) Unordered list 
+
+3) Description list 
+
+1) Ordered list 
+---------------
+A <ol> tag is used to represent ordered list.
+
+Ordered list starts with numerics and alphabets.
+
+Ordered list contains list of items.
+
+Each list of item we need to represent by using <li> tag.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!!</title>
+	</head>
+	<body>
+		Courses
+		<ol>
+			<li>MongoDB</li>
+			<li>ExpressJS</li>
+			<li>ReactJS</li>
+			<li>NodeJS</li>
+		</ol>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!!</title>
+	</head>
+	<body>
+		Courses
+		<ol start="101">
+			<li>MongoDB</li>
+			<li>ExpressJS</li>
+			<li>ReactJS</li>
+			<li>NodeJS</li>
+		</ol>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!!</title>
+	</head>
+	<body>
+		Courses
+		<ol type="i">
+			<li>MongoDB</li>
+			<li>ExpressJS</li>
+			<li>ReactJS</li>
+			<li>NodeJS</li>
+		</ol>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!!</title>
+	</head>
+	<body>
+		Courses
+		<ol type="I">
+			<li>MongoDB</li>
+			<li>ExpressJS</li>
+			<li>ReactJS</li>
+			<li>NodeJS</li>
+		</ol>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!!</title>
+	</head>
+	<body>
+		Courses
+		<ol type="a">
+			<li>MongoDB</li>
+			<li>ExpressJS</li>
+			<li>ReactJS</li>
+			<li>NodeJS</li>
+		</ol>
+	</body>
+</html>
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!!</title>
+	</head>
+	<body>
+		Courses
+		<ol type="A">
+			<li>MongoDB</li>
+			<li>ExpressJS</li>
+			<li>ReactJS</li>
+			<li>NodeJS</li>
+		</ol>
+	</body>
+</html>
+
+2) Unordered list 
+-------------------
+A <ul> tag is used to represent unordered list.
+
+Unordered list starts with bullets.
+
+Unordered list contains list of items.
+
+Each list of item we need to represent by using <li> tag.
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!!</title>
+	</head>
+	<body>
+		Courses
+		<ul type="disc">
+			<li>MongoDB</li>
+			<li>ExpressJS</li>
+			<li>ReactJS</li>
+			<li>NodeJS</li>
+		</ul>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!!</title>
+	</head>
+	<body>
+		Courses
+		<ul type="square">
+			<li>MongoDB</li>
+			<li>ExpressJS</li>
+			<li>ReactJS</li>
+			<li>NodeJS</li>
+		</ul>
+	</body>
+</html>
+
+ex:
+---
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!!</title>
+	</head>
+	<body>
+		Courses
+		<ul type="circle">
+			<li>MongoDB</li>
+			<li>ExpressJS</li>
+			<li>ReactJS</li>
+			<li>NodeJS</li>
+		</ul>
+	</body>
+</html>
+
+3) Description list 
+---------------------
+A <dl> tag is used to represent description list.
+
+A description list contains description term and description definition.
+
+A <dt> tag is used to represent description term.
+
+A <dd> tag is used to represent description definition.
+
+ex:
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!!</title>
+	</head>
+	<body>
+		<dl>
+			<dt>James Gosling<dt>
+			<dd>
+				Gosling attended William Aberhart High School in Calgary, Alberta. While in high school, he wrote some of the software to analyze data from the ISIS 2 satellite, working for the University of Calgary physics department.
+			</dd>
+		</dl>
+	</body>
+</html>
+
+HTML colors
+==========
+HTML supports only two colors.
+
+1) valid color name 
+
+2) Hexa value 
+
+
+1) valid color name 
+-------------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!!</title>
+	</head>
+	<body>	
+		<center>	
+		<font color="tomato">
+		<h1> Valid Color Name </h1>	
+		</font>	
+		</center>
+
+		<center>	
+		<font color="forestgreen">
+		<h1> Valid Color Name </h1>	
+		</font>	
+		</center>
+
+	</body>
+</html>
+
+2) Hexa value 
+--------------
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MyPage!!</title>
+	</head>
+	<body>	
+		<center>	
+		<font color="#0066FF">
+		<h1> Valid Color Name </h1>	
+		</font>	
+		</center>
+
+		<center>	
+		<font color="#FF0000">
+		<h1> Valid Color Name </h1>	
+		</font>	
+		</center>
+
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
